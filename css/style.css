@@ -39,7 +39,7 @@
 }
 
 .navbar-inverse .navbar-nav>li>a {
-	color: #f0ad4e;
+	color: #f0ad4e !important;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover {
@@ -240,7 +240,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .logo{
 padding: 20px;
 position: relative;
-top: -49;
+top: -49px;
 
 }
 .navbar-wrapper{
@@ -283,3 +283,5 @@ margin-top: 44px;
 .featurette{
 	margin-top: 50px;
 }
+
+

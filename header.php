@@ -4,33 +4,33 @@
 <div class="navbar-wrapper">
 	<div class="container">
 		<div class="navbar navbar-inverse navbar-static-top" role="navigation">
-    	<div class="container">
-        <div class="menuIdioma">
-          <a href="https://www.facebook.com/labfleibor" target="_banck" title='facebook' ><img class="img-circle banderas" src="img/facebook.jpg"></a>
-          <form method="post" action="swichIdioma.php" id="form_idioma">
-            <button value="1" type="submit" name="idioma" id="espa" class="selectidioma" title='Idioma Español'><img  class="img-circle banderas"   src="img/argid.jpg"></button>
-            <button value="2" type="submit" name="idioma" id="port" class="selectidioma" title='Idioma Portugues' ><img class="img-circle banderas" src="img/brasilport.jpg"></button>
-          </form>
-        </div>  
-  			<div class="navbar-header">
-        	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        	</button>
-          <a class="navbar-brand" <?php if($path[1] == "index.php") echo 'href="#"'; else echo 'href="index.php"';?>><img class="img-circle logo" src="img/logoweb2.jpg" width="130"></a>
+            <div class="container">
+                <div class="menuIdioma">
+                  <a href="https://www.facebook.com/labfleibor" target="_banck" title='facebook' ><img class="img-circle banderas" src="img/facebook.jpg"></a>
+                  <form method="post" action="swichIdioma.php" id="form_idioma">
+                    <button value="1" type="submit" name="idioma" id="espa" class="selectidioma" title='Idioma Español'><img  class="img-circle banderas"   src="img/argid.jpg"></button>
+                    <button value="2" type="submit" name="idioma" id="port" class="selectidioma" title='Idioma Portugues' ><img class="img-circle banderas" src="img/brasilport.jpg"></button>
+                  </form>
+                </div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" <?php if($path[1] == "index.php") echo 'href="#"'; else echo 'href="index.php"';?>><img class="img-circle logo" src="img/logoweb2.jpg" width="130"></a>
+                </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li <?php if($path[1] == "index.php") echo 'class="active"'; ?>><a <?php if($path[1] == "index.php") echo 'href="#"'; else echo 'href="index.php"';?>>Home</a></li>
+                <li <?php if($path[1] == "productos.php") echo 'class="active"'; ?>><a <?php if($path[1] == "productos.php") echo 'href="#"'; else echo 'href="productos.php"'?>>Productos</a></li>
+                <li <?php if($path[1] == "events.php") echo 'class="active"'; ?>><a <?php if($path[1] == "events.php") echo 'href="#"'; else echo 'href="events.php"'?>>Eventos</a></li>
+                <li <?php if($path[1] == "company.php") echo 'class="active"'; ?>><a <?php if($path[1] == "company.php") echo 'href="#"'; else echo 'href="company.php"'?>>Empresa</a></li>
+                <li <?php if($path[1] == "contact.php") echo 'class="active"'; ?>><a <?php if($path[1] == "contact.php") echo 'href="#"'; else echo 'href="contact.php"'; ?>>Contactenos</a></li>
+              </ul>
+            </div>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li <?php if($path[1] == "index.php") echo 'class="active"'; ?>><a <?php if($path[1] == "index.php") echo 'href="#"'; else echo 'href="index.php"';?>>Home</a></li>
-            <li <?php if($path[1] == "productos.php") echo 'class="active"'; ?>><a <?php if($path[1] == "productos.php") echo 'href="#"'; else echo 'href="productos.php"'?>>Productos</a></li>
-            <li <?php if($path[1] == "events.php") echo 'class="active"'; ?>><a <?php if($path[1] == "events.php") echo 'href="#"'; else echo 'href="events.php"'?>>Eventos</a></li>
-            <li <?php if($path[1] == "company.php") echo 'class="active"'; ?>><a <?php if($path[1] == "company.php") echo 'href="#"'; else echo 'href="company.php"'?>>Empresa</a></li>
-            <li <?php if($path[1] == "contact.php") echo 'class="active"'; ?>><a <?php if($path[1] == "contact.php") echo 'href="#"'; else echo 'href="contact.php"'; ?>>Contactenos</a></li>
-          </ul>
-        </div>
-      </div>
     </div>
   </div>
 </div>
