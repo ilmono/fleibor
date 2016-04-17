@@ -1,0 +1,129 @@
+@charset "utf-8";
+/* CSS Document */
+
+.clearfix:after {
+    content: "."; 
+    display:block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+.clearfix {display: block;margin:0px 0px 0px 0px;padding: 0px 0px 0px 0px;   }
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;margin:0px 0px 0px 0px;padding: 0px 0px 0px 0px;   }
+.clearfix {display: block;margin:0px 0px 0px 0px;padding: 0px 0px 0px 0px;   }
+/* End hide from IE-mac */
+html {overflow-y: scroll; height: 100%;}
+
+body {margin: 0px 0px 0px 0px;font-family: Verdana, Arial, Helvetica, sans-serif; color:#FFF;background: url(../img/bg.bmp);}
+a:link { font-size:12px;color: #1b3717 ; font-weight:normal; text-decoration: none;}
+a:active { font-size:12px;color: #1b3717;font-weight:normal; text-decoration: none; }
+a:visited { font-size:12px;color:#1b3717;font-weight:normal; text-decoration: none; }
+a:hover { font-size:12px;color: #33502f;font-weight:normal; text-decoration: none;}
+strong {color:#bd7b1e;font-weight:normal;}
+
+/*frz*/
+h1 {color: #333;font-weight:bold; font-size:18px;margin:10px 0px 0px 0px;padding:0px 0px 0px 5px; text-align:left; border-bottom:solid 1px #709F01; width:99%}
+h2 {color:#130a05;font-weight:normal; font-size:14px;margin:10px 0px 0px 20px;padding:0px 0px 0px 0px; text-align:left}
+
+/* HEADER */
+.Header {position:relative;width:1000px; height:133px; margin: 0px auto 0px auto; padding:0px 0px 0px 0px; background:#FFF }
+.Header  .H1{position:relative;width:347px; height:133px; margin: 0px 0px 0px 0px; padding:0px 0px 0px 0px;float:left; background: url(../img/logo.jpg) no-repeat}
+
+.Header  .H2{position:relative;width:400px; height:133px; margin: 0px 0px 0px 100px; padding:0px 0px 0px 0px;float:left }
+.Header  .H2 .Menu{position:relative;width:200px; height:33px; margin: 0px 0px 0px 90px; padding:0px 0px 0px 0px; font-size:11px; color:#0a2504; text-align:right; word-spacing:5px;}
+.Header  .H2 .Menu a{font-size:11px; color:#0a2504;}
+.Header  .H2 .Menu a:hover{font-size:11px; color:#458b39; }
+
+
+.Header  .H2 .Search{position:relative;width:264px; height:31px; margin: 50px 0px 0px 80px; padding:0px 0px 0px 0px; border:solid 1px #CCC}
+.Header  .H2 .Search input[type="text"]{ width:220px; height:20px;font-size:12px;margin:1px 0px 0px 5px;padding:0px 0px 0px 2px; text-align:left;color: #949494;font-weight:normal; border:none; vertical-align:middle; line-height:19px}
+.Header  .H2 .Search img{margin:0px 0px 0px 0px; padding:0px 0px 0px 0px;}
+
+.Header  .H3{position:relative;width:142px; height:133px; margin: 0px 0px 0px 0px; padding:0px 0px 0px 0px;float:right; background:url(../img/left.jpg) no-repeat }
+
+/*NAVIGATOR*/
+.Navigator {position:relative;width:1000px; height:40px; margin: 0px auto 0px auto; padding:0px 0px 0px 0px; background: url(../img/navi.jpg) repeat-x }
+.Navigator ul{position:relative;width:752px; height:40px;margin: 0px auto 0px auto; padding:0px 0px 0px 0px; }
+.Navigator li{position:relative;width:150px; height:31px;margin:5px 0px 0px 0px; padding:0px 0px 0px 0px;list-style:none; float:left; background:url(../img/surco.jpg) no-repeat}
+.Navigator li.a{ width:2px;height:31px; margin:5px 0px 0px 0px; padding:0px 0px 0px 0px; background:url(../img/surco.jpg) no-repeat}
+.Navigator li p{margin:5px 0px 0px 0px; padding:0px 0px 0px 0px; text-align:center; font-size:14px}
+.Navigator li p a{color:#FFF;font-size:14px}
+.Navigator li p a:hover{color:#d5b877;font-size:14px}
+
+/*CONTAINER*/
+.CCenter {position:relative;width:1000px;margin: 0px auto 0px auto; padding:0px 0px 40px 0px; background:#FFF}
+.CC {position:relative;width:1000px;margin: 0px auto 0px auto; padding:0px 0px 0px 0px; background:#FFF}
+
+
+
+/*frz*/
+.FeTit{position:relative;width:99%; height:46px;margin:20px 0px 0px 10px; padding:0px 0px 0px 0px; background:url(../img/repet.jpg) repeat-x}
+.CC .Gen{position:relative;width:1000px;margin: 10px auto 0px auto; padding:0px 0px 0px 0px; background:#FFF}
+.CC .Gen tr{ color:#333; font-size:12px}
+
+.CC .Gen p{ color:#333; font-size:12px; padding:5px}
+
+
+
+
+
+
+
+
+
+/*COLUMN LEFT*/
+.CC .CLeft {position:relative;width:716px;margin:0px 0px 0px 0px; padding:0px 0px 20px 0px; float:left;}
+.CC .CLeft .Pic{position:relative;width:706px; height:301px;margin:5px 0px 0px 10px; padding:0px 0px 0px 0px; background:url(../img/pic.jpg) no-repeat}
+.CC .CLeft .FeTit{position:relative;width:600px; height:46px;margin:20px 0px 0px 10px; padding:0px 0px 0px 0px; background:url(../img/repet.jpg)}
+
+.CC .CLeft .Product{position:relative;width:716px;margin:0px 0px 0px 0px; padding:0px 0px 0px 0px;}
+.CC .CLeft .Product ul{position:relative;width:716px;margin:0px 0px 0px 0px; padding:0px 0px 0px 0px;}
+.CC .CLeft .Product li{position:relative;width:207px; height:290px;margin:15px 0px 0px 22px; padding:0px 0px 0px 0px; float:left;border:solid 1px #f1f1f1; list-style:none}
+.CC .CLeft .Product li p.Tit{position:relative;width:200px; margin:10px 0px 0px 0px; padding:0px 0px 0px 0px; text-align:center; color:#ce8401; font-size:12px}
+.CC .CLeft .Product li .Image{position:relative;width:185px; height:96px; margin:10px auto 0px auto; padding:0px 0px 0px 0px; text-align:center; color:#ce8401; font-size:12px;border:solid 1px #f1f1f1}
+.CC .CLeft .Product li img{margin:8px 0px 0px 0px; padding:0px 0px 0px 0px; text-align:center;}
+.CC .CLeft .Product li p.Tex{position:relative;width:185px; height:70px;margin:0px auto 0px auto; padding:0px 0px 0px 0px; text-align: justify; color:#0b2906; font-size:11px;}
+.CC .CLeft .Product li p.Price{position:relative;width:185px; height:30px;margin:10px auto 0px auto; padding:0px 0px 0px 0px; text-align:center; color:#416d04; font-size:16px; font-weight:bold}
+.CC .CLeft .Product li .Buttom {position:relative;width:207px; height:24px; margin:0px auto 0px auto; padding:0px 0px 0px 0px;}
+.CC .CLeft .Product li .Buttom .AddToCart {position:relative;width:89px; height:24px; margin:0px 0px 0px 10px; padding:0px 0px 0px 0px; float:left; background:url(../img/button_cart.jpg) no-repeat}
+.CC .CLeft .Product li .Buttom .AddToCart p{margin:4px 0px 0px 0px; padding:0px 0px 0px 0px; text-align:center; font-size:12px}
+.CC .CLeft .Product li .Buttom .AddToCart p a{ color:#FFF;font-size:12px}
+.CC .CLeft .Product li .Buttom .AddToCart p a:hover{ color:#e5e9e4;font-size:12px}
+
+.CC .CLeft .Product li .Buttom .Details {position:relative;width:89px; height:24px; margin:0px 0px 0px 8px; padding:0px 0px 0px 0px; float:left; background:url(../img/button_d.jpg) no-repeat}
+.CC .CLeft .Product li .Buttom .Details  p{margin:4px 0px 0px 0px; padding:0px 0px 0px 0px; text-align:center; font-size:12px}
+.CC .CLeft .Product li .Buttom .Details p a{ color:#FFF;font-size:12px}
+.CC .CLeft .Product li .Buttom .Details p a:hover{ color:#ffcc87;font-size:12px}
+/*COLUMN RIGHT*/
+.CC .CRight {position:relative;width:267px;margin:10px 0px 0px 14px; padding:0px 0px 10px 0px; float:left;}
+.CC .CRight .Form{position:relative;width:265px;margin:0px 0px 0px 0px; padding:0px 0px 10px 0px;float:left;border:solid 1px #f1f1f1}
+.CC .CRight .Form .Brra1{position:relative;width:265px; height:32px;margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; background:url(../img/categ.jpg);}
+.CC .CRight .Form .Brra1 p{margin:0px 0px 0px 10px; padding:0px 0px 0px 0px; font-size:14px; color:#FFF}
+
+.CC .CRight .Form table{}
+.CC .CRight .Form table td{ font-size:12px; color:#0b2906}
+.CC .CRight .Form table input[type="text"]{width:167px; height:19px;padding:5px 0px 0px 3px;  font-size: 12px;color:#0b2906;font-weight: normal; background:#FFF; border:solid 1px #eae9e9}
+.Cbox {width:172px; height:24px; font-size: 12px;color:#0b2906;font-weight: normal; background:#FFF; border:solid 1px #eae9e9}
+
+.CC .CRight .Form .Btn{position:relative;width:211px; height:47px;margin:10px 0px 0px 25px; padding:0px 0px 0px 0px;background:url(../img/signup.jpg)}
+.CC .CRight .Form .Btn p{margin:0px 0px 0px 0px; padding:10px 0px 0px 70px; font-size:16px;}
+.CC .CRight .Form .Btn a{ color:#FFF;font-size:16px;}
+.CC .CRight .Form .Btn a:hover{ color:#d5b877;font-size:16px;}
+
+
+.CC .CRight .New {position:relative;width:265px;margin:20px 0px 0px 0px; padding:0px 0px 10px 0px; float:left;border:solid 1px #f1f1f1}
+.CC .CRight .New .Brra1{position:relative;width:265px; height:32px;margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; background:url(../img/categ.jpg);}
+.CC .CRight .New .Brra1 p{margin:0px 0px 0px 10px; padding:0px 0px 0px 0px; font-size:14px; color:#FFF}
+.CC .CRight .New p.Tx {margin:0px 0px 0px 0px; padding:10px 0px 0px 0px; text-align:center; font-size:11px;color:#0b2906;}
+.CC .CRight .New input[type="text"]{width:167px; height:19px;margin:10px 0px 0px 42px;padding:5px 0px 0px 3px;font-size: 12px;color:#0b2906;font-weight: normal; background:#FFF; border:solid 1px #eae9e9}
+.CC .CRight .New .Sub {position:relative;width:109px; height:30px;margin:10px auto 0px auto; padding:0px 0px 0px 0px; font-size:11px;color:#0b2906; background:url(../img/subcr.jpg) no-repeat}
+.CC .CRight .New .Sub p{margin:0px 0px 0px 0px; padding:6px 0px 0px 23px; font-size:11px;color:#FFF;}
+.CC .CRight .New .Sub p a{font-size:11px;color:#FFF;}
+.CC .CRight .New .Sub p a:hover{font-size:11px;color:#ffcc87;}
+
+/*FOOTER*/
+.Footer {position:relative;width:1000px; height:125px;margin:0px auto 0px auto; padding:0px 0px 0px 0px; clear:both; background:#eef0ed;}
+.Footer .Log{position:relative;width:264px; height:125px;margin:0px 0px 0px 0px; padding:0px 0px 0px 0px;background: url(../img/footer_logo.jpg); float:left}
+.Footer .Text{position:relative;width:500px; height:80px;margin:20px 0px 0px 0px; padding:0px 0px 0px 0px;float:left}
+.Footer .Text p{margin:15px 0px 0px 0px; padding:0px 0px 0px 0px; text-align:center; font-size:12px; color:#1b3717}

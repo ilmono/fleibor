@@ -1,0 +1,63 @@
+translate duplicate container
+
+facebook addthis (laboratior fleibor);
+
+imagenes right public in 3 first img front > titles > download pdf
+
+carousel photo add (ema las pasa).
+
+project name LOGO
+
+favicon (ema nos lo da)
+
+
+empresa 
+	button other page con carousel
+
+links don't work anymore
+
+contactenos 
+	Destacado Argentina (encolumnado el resto).(Argentina, brazil, Costarica, Paraguay)
+
+	Formulario Contactenos
+		Nombre Empresa,
+		Telefono
+		MAil
+		Consulta, TextArea
+
+Productos.
+
+	click 
+
+	IMG DESCRIPTION
+
+	VER MAS 
+
+	OTHER PAGE TABLA (SAME PAGE ORIGINAL)
+
+	colores con circulos siguiente.
+
+	Artesanias especialidades (no).
+
+	ver colores PDF (NO IMG).
+
+	Chocolates
+		Colorante en polvo, Colores NO VA. // Pregunta Ema.
+
+	Listado de Recetas.
+		cocinerosargentinos.com.ar
+			change page
+
+
+Header 
+	same page 
+	right add this
+	right Language
+	Color danger
+
+footer all page.
+
+Colores
+	orange title grey
+	title grey
+	buttons warning

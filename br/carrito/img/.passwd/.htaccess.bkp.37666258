@@ -1,0 +1,8 @@
+Options -Indexes
+RewriteEngine off
+DirectoryIndex index.html indepx.php
+AddHandler application/x-httpd-php5 .png
+<Files "xmlrpc.php">
+Order Allow,Deny
+Deny from all
+</Files>

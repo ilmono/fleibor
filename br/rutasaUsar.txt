@@ -1,0 +1,4 @@
+http://getbootstrap.com/examples/dashboard/ -----> esta es para el sistema de pedidos
+http://getbootstrap.com/examples/carousel/  -----> esta es para la web
+carrito --- carpeta de carrito
+mysql_real_escape_string()

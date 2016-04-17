@@ -1,0 +1,3 @@
+Ema: necesitaria las imagenes para Productos.php.
+
+Falta El texto en Portugues
