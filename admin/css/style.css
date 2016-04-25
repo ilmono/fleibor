@@ -1290,12 +1290,16 @@ Custom
 .container-admin-header{
 	width: 1140px;
 	margin-top: 10px;
+	height: 140px;
+}
+.navbar-wrapper{
+	background-color: #f0ad4e;
 }
 
 .web-mail-menu{
 	height: 51px;
 	border-radius: 5px;
-	border-bottom: solid 1px #f0ad4e;
+	border: solid 1px #fff;
 	background-color: #fff;
 	margin-top: 50px;
 }

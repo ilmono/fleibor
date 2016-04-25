@@ -1,0 +1,2698 @@
+[
+  {
+    "cliente": "AAS001",
+    "razon_social": "ARTE Y AZUCAR S.R.L",
+    "domicilio": "EVA PERON 598",
+    "localidad": "VILLA CONSTITUCION",
+    "telefono": "03461-463452",
+    "mail": "lagosjorgel@hotmail.com"
+  },
+  {
+    "cliente": "ABC001",
+    "razon_social": "LUIS ABUD",
+    "domicilio": "SANTA ROSA 54",
+    "localidad": "CORDOBA",
+    "telefono": 0,
+    "mail": "gabrielrigo@gabrielrigo.com.ar"
+  },
+  {
+    "cliente": "ABC002",
+    "razon_social": "GUILLERMO Y ALEJANDRO BETHER",
+    "domicilio": "LOPE DE VEGA 2061",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4567-0973",
+    "mail": 0
+  },
+  {
+    "cliente": "ABC003",
+    "razon_social": "ABALLAY CLAUDIA ELIZABETH",
+    "domicilio": "ALBERDI JUAN B. AV. 4835",
+    "localidad": "CABA",
+    "telefono": "4635-8838",
+    "mail": "fortunatopapelera@hotmail.com"
+  },
+  {
+    "cliente": "ACB001",
+    "razon_social": "ANDREU CAMILO",
+    "domicilio": "SAENZ PEÑA 766",
+    "localidad": "SAN ANTONIO DE PADUA",
+    "telefono": "0220 4832106",
+    "mail": "dist_andreu@hotmail.com"
+  },
+  {
+    "cliente": "ACM001",
+    "razon_social": "ANDES DE CUYO SA.",
+    "domicilio": "PRES. ILLIA 3042 (EX SOLIS)",
+    "localidad": "RAFAEL CALZADA",
+    "telefono": "4219-3089",
+    "mail": "suralimenticio@gmail.com"
+  },
+  {
+    "cliente": "AGB003",
+    "razon_social": "AGROMENTA S.R.L.",
+    "domicilio": "JUAN DE GARAY (91) 554",
+    "localidad": "VILLA LYNCH",
+    "telefono": "4755-0764",
+    "mail": "agromenta@yahoo.com.ar"
+  },
+  {
+    "cliente": "ALB002",
+    "razon_social": "ALEIXO CLAUDIA",
+    "domicilio": "PABLO GUIDELLO 1995",
+    "localidad": "SANTOS LUGARES",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "ALE001",
+    "razon_social": "HUGO SEBASTIAN ALMARA",
+    "domicilio": "GUALEGUAYCHU 8",
+    "localidad": "PARANA",
+    "telefono": "0343-4233739",
+    "mail": "pezcampero@yahoo.com.ar"
+  },
+  {
+    "cliente": "AMC001",
+    "razon_social": "AMUI S.A.C.I.F.I.",
+    "domicilio": "AV. CORRIENTES 2561",
+    "localidad": "CAPITAL FEDEDERAL",
+    "telefono": "4952-5918/8606/3145",
+    "mail": "consultas@donaclara.com.ar"
+  },
+  {
+    "cliente": "ANB002",
+    "razon_social": "ANDANZAS S.A.",
+    "domicilio": "HIPOLITO YRIGOYEN 1570",
+    "localidad": "JOSE C. PAZ",
+    "telefono": "4461-3062",
+    "mail": "administracion@cotymania.com"
+  },
+  {
+    "cliente": "ANB003",
+    "razon_social": "ANAGUA WILLY",
+    "domicilio": "COLON 1432",
+    "localidad": "SAN FERNANDO",
+    "telefono": "4746-5437",
+    "mail": 0
+  },
+  {
+    "cliente": "ANB004",
+    "razon_social": "NESTOR JORGE ANGELINI",
+    "domicilio": "GODOY CRUZ 1386",
+    "localidad": "BAHIA BLANCA",
+    "telefono": "0291-4810831",
+    "mail": "donrufino@ar.inter.net"
+  },
+  {
+    "cliente": "ANB005",
+    "razon_social": "ANDREU SERGIO A.",
+    "domicilio": "CHICLANA 1070",
+    "localidad": "MERLO",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "ANC001",
+    "razon_social": "ANALBA S.A.",
+    "domicilio": "12 DE OCTUBRE 948",
+    "localidad": "VILLA BOSCH",
+    "telefono": "4840-1122",
+    "mail": "info@analba.com"
+  },
+  {
+    "cliente": "ANS001",
+    "razon_social": "ANSOL S.R.L.",
+    "domicilio": "IRIONDO 1917",
+    "localidad": "ROSARIO",
+    "telefono": "0341-4323138",
+    "mail": "andressollima@hotmail.com"
+  },
+  {
+    "cliente": "APS001",
+    "razon_social": "M. ALEJANDRA G. DE PEROTTI",
+    "domicilio": "JOSE M. ARAGON 716",
+    "localidad": "RAFAELA",
+    "telefono": "03492-501977",
+    "mail": "aleperotti22@gmail.com"
+  },
+  {
+    "cliente": "ARB001",
+    "razon_social": "ARIENTI GABRIEL Y SERGIO S.H.",
+    "domicilio": "CONCEJAL TRIBULATO 1159",
+    "localidad": "SAN MIGUEL",
+    "telefono": "4664-9615",
+    "mail": "cotillondisparates@gmail.com"
+  },
+  {
+    "cliente": "ARC001",
+    "razon_social": "ANDREA ROLDAN/ARTISTICA RAINERO",
+    "domicilio": "GRAL. PAZ 519",
+    "localidad": "RIO CUARTO",
+    "telefono": "0358 4628195",
+    "mail": "artistica_rainero@yahoo.com.ar"
+  },
+  {
+    "cliente": "ARC002",
+    "razon_social": "ARCO IRIS GROUP S.R.L.",
+    "domicilio": "ENTRE RIOS 232",
+    "localidad": "CORDOBA",
+    "telefono": "0351-4235735",
+    "mail": "administracion@cotillonarcoiris.com"
+  },
+  {
+    "cliente": "ARM001",
+    "razon_social": "NILDA ARCE",
+    "domicilio": "CARLOS PELLEGRINI 1145",
+    "localidad": "GENERAL ALVEAR",
+    "telefono": "02625-425859",
+    "mail": "losprimostodosueltoalvear@hotmail.com"
+  },
+  {
+    "cliente": "ARS001",
+    "razon_social": "ARTE RUSTICO S.H.",
+    "domicilio": "AV. DEL LIBERTADOR 1172",
+    "localidad": "EL CALAFATE",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "ASC001",
+    "razon_social": "ASTUTTI - DALTON - FORLANI S.H.",
+    "domicilio": "PEDRO LOZANO 3009 PISO 3 D 14",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4585-0272",
+    "mail": "cotizaciones@sodapasta.com"
+  },
+  {
+    "cliente": "ATS001",
+    "razon_social": "ATRIA S.R.L.",
+    "domicilio": "HIPOLITO YRIGOYEN 321",
+    "localidad": "RAFAELA",
+    "telefono": "03492-570049",
+    "mail": "rafaela@cosmosushuaia.com.ar"
+  },
+  {
+    "cliente": "AZC001",
+    "razon_social": "AZUCAR MORENO S.A./LA REPOSTERITA",
+    "domicilio": "ONCATIVO 101",
+    "localidad": "CORDOBA",
+    "telefono": "0351 157605512",
+    "mail": "hector@lareposterita.com.ar"
+  },
+  {
+    "cliente": "BAB001",
+    "razon_social": "BATTOLLA Y CAPURRO S.H.",
+    "domicilio": "BOULOGNE SUR MER 1298",
+    "localidad": "TAPIALES",
+    "telefono": "4442-4834",
+    "mail": "elgran-nogal@hotmail.com.ar"
+  },
+  {
+    "cliente": "BAB002",
+    "razon_social": "BARBIERI AGUSTINA ANTONIA",
+    "domicilio": "AV. MITRE 6324",
+    "localidad": "WILDE",
+    "telefono": 0,
+    "mail": "todofiestacotillon@yahoo.com.ar"
+  },
+  {
+    "cliente": "BAB003",
+    "razon_social": "BALLESTEROS ALICIA SUSANA",
+    "domicilio": "ILLIA 2419",
+    "localidad": "SAN JUSTO",
+    "telefono": "4441-2830",
+    "mail": "cotillonandrea@gmail.com"
+  },
+  {
+    "cliente": "BAB006",
+    "razon_social": "VIRGINIA B. BALGAC",
+    "domicilio": "RIVADAVIA 320",
+    "localidad": "QUILMES",
+    "telefono": 0,
+    "mail": "todofiestacotillon@yahoo.com.ar"
+  },
+  {
+    "cliente": "BAS001",
+    "razon_social": "BRUNO ALEJANDRO CESAR",
+    "domicilio": "PJE. SANTOS DUMONT 1229",
+    "localidad": "ROSARIO",
+    "telefono": 0,
+    "mail": "distribuidorabruno@hotmail.com.ar"
+  },
+  {
+    "cliente": "BCC001",
+    "razon_social": "BAZAR CHEF S.R.L.",
+    "domicilio": "AV. JUJUY 1228",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4308-4679",
+    "mail": "sistemas@bazarchef.com"
+  },
+  {
+    "cliente": "BEB001",
+    "razon_social": "GUILLERMO BERSELLI",
+    "domicilio": "HIPOLITO YRIGOYEN 1650",
+    "localidad": "JOSE C. PAZ",
+    "telefono": "02320-425997",
+    "mail": 0
+  },
+  {
+    "cliente": "BEB002",
+    "razon_social": "BELLINI ALBERTO MARCOS",
+    "domicilio": "BARILOCHE 5168",
+    "localidad": "GONZALEZ CATAN",
+    "telefono": "15-24255246",
+    "mail": 0
+  },
+  {
+    "cliente": "BEB003",
+    "razon_social": "BELLINI PARRA LUCIANO N.",
+    "domicilio": "ACHUPALLAS 6399",
+    "localidad": "GONZALEZ CATAN",
+    "telefono": "02202-454727",
+    "mail": "lucianobellini2@gmail.com"
+  },
+  {
+    "cliente": "BER001",
+    "razon_social": "BELANTI MARIEL ELIZABET",
+    "domicilio": "SAN LORENZO 6286",
+    "localidad": "ROSARIO",
+    "telefono": 0,
+    "mail": "rosario.comercial@hotmail.com"
+  },
+  {
+    "cliente": "BES001",
+    "razon_social": "FERMIN BECCACECE",
+    "domicilio": "MITRE 1023",
+    "localidad": "ROSARIO",
+    "telefono": "0341-4211702",
+    "mail": "la_portena_rosario@hotmail.com"
+  },
+  {
+    "cliente": "BES004",
+    "razon_social": "BENAVIDEZ MARTIN Y CAVALLO GISELA",
+    "domicilio": "GENERAL LOPEZ ESQ. BELGRANO 0",
+    "localidad": "SAN GUILLERMO",
+    "telefono": "03562-468396",
+    "mail": "plastidul-c@hotmail.com"
+  },
+  {
+    "cliente": "BIC001",
+    "razon_social": "BIANCO LEONARDO",
+    "domicilio": "AV. JUAN DE GARAY 3865",
+    "localidad": "CABA",
+    "telefono": "4921-8139",
+    "mail": "info@biancoycia.com.ar"
+  },
+  {
+    "cliente": "BNC001",
+    "razon_social": "BAUMANN NANCY SUSANA",
+    "domicilio": "SALTA 259",
+    "localidad": "VILLA MARIA",
+    "telefono": "0353-4528768",
+    "mail": "nancy_bau@hotmail.com"
+  },
+  {
+    "cliente": "BOB002",
+    "razon_social": "BOLOGNA ADRIANA PAOLA",
+    "domicilio": "CALLE 6 Nº 1390 ENTRE 60 Y 61",
+    "localidad": "LA PLATA",
+    "telefono": "0221-4601683",
+    "mail": "adrianabologna@hotmail.com"
+  },
+  {
+    "cliente": "BOC002",
+    "razon_social": "IRIS BOSCACCI",
+    "domicilio": "J. B. JUSTO 748",
+    "localidad": "SAN FRANCISCO",
+    "telefono": 0,
+    "mail": "mundodulce1157@hotmail.com"
+  },
+  {
+    "cliente": "BOT001",
+    "razon_social": "NATALIA BOSIO",
+    "domicilio": "MAGALLANES 2385",
+    "localidad": "USHUAIA",
+    "telefono": 0,
+    "mail": "ventas@cosmosushuaia.com.ar"
+  },
+  {
+    "cliente": "BRB002",
+    "razon_social": "BRUNI E HIJOS S. H.",
+    "domicilio": "CNO. GRAL. BELGRANO 3298",
+    "localidad": "BERAZATEGUI",
+    "telefono": "4391-1004",
+    "mail": "info@brunismaderas.com.ar"
+  },
+  {
+    "cliente": "BRC001",
+    "razon_social": "NORBERTO BRUNO",
+    "domicilio": "SAN MARTIN 515",
+    "localidad": "CORDOBA",
+    "telefono": "0351-4248857",
+    "mail": "gabrielrigo@gabrielrigo.com.ar"
+  },
+  {
+    "cliente": "BRC002",
+    "razon_social": "BRONIA S.A.",
+    "domicilio": "MAIPU 464 PISO 4 DTO 92",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4954-4433",
+    "mail": "compras@ticoral.com"
+  },
+  {
+    "cliente": "BTR001",
+    "razon_social": "BISCHOF Y TOLEDO S.H.",
+    "domicilio": "DON BOSCO 1342",
+    "localidad": "CIPOLLETTI",
+    "telefono": "0299-4772470",
+    "mail": "proveedores@toledodist.com.ar"
+  },
+  {
+    "cliente": "CAB002",
+    "razon_social": "CAPURRO Y VAZQUEZ S. H.",
+    "domicilio": "AV. CROVARA 665",
+    "localidad": "TABLADA",
+    "telefono": "4454-3027",
+    "mail": "pucho22@hotmail.com.ar"
+  },
+  {
+    "cliente": "CAB003",
+    "razon_social": "CAVAGNERO VIVIANA LAURA",
+    "domicilio": "FAMATINA 1799 ESQ. AV. RATTI",
+    "localidad": "ITUZAINGO",
+    "telefono": "15-3785604",
+    "mail": "payser@hotmail.com.ar"
+  },
+  {
+    "cliente": "CAB004",
+    "razon_social": "CAPITAN DEL ESPACIO S.A.",
+    "domicilio": "GRAN CANARIA 350",
+    "localidad": "QUILMES",
+    "telefono": "4253-5224",
+    "mail": "capitandelespacio@speedy.com.ar"
+  },
+  {
+    "cliente": "CAB008",
+    "razon_social": "CLAUDIA CAPODAGLIO",
+    "domicilio": "ACEVEDO 15",
+    "localidad": "LOMAS DE ZAMORA",
+    "telefono": "4244-1916",
+    "mail": "naty_solla@hotmail.com"
+  },
+  {
+    "cliente": "CAC002",
+    "razon_social": "CAMPISANO ADRIAN MARCELO",
+    "domicilio": "PUMACAHUA 1289",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "2046-5713",
+    "mail": "ericayadrianc.cakes@hotmail.com"
+  },
+  {
+    "cliente": "CAC003",
+    "razon_social": "JORGELINA CAMARDA",
+    "domicilio": "PIO ANGULO 629",
+    "localidad": "BELL VILLE",
+    "telefono": 0,
+    "mail": "jorgelinacamarda@hotmail.com"
+  },
+  {
+    "cliente": "CAC004",
+    "razon_social": "GABRIEL CALIGARIS",
+    "domicilio": "ZAVALA 3402",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4554-2857",
+    "mail": "info@lescroquants.com.ar"
+  },
+  {
+    "cliente": "CAC005",
+    "razon_social": "LILIANA CAMPI",
+    "domicilio": "AV. CABILDO 1306",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4784-8605",
+    "mail": "lilicotillon@hotmail.com"
+  },
+  {
+    "cliente": "CAC006",
+    "razon_social": "DANIEL CAVILLA",
+    "domicilio": "AV. BRASIL 2699",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4941-7862/4941-9517",
+    "mail": "danielcavilla@hotmail.com"
+  },
+  {
+    "cliente": "CAC008",
+    "razon_social": "CARVALLO MATIAS ALEJANDRO",
+    "domicilio": "LARREA 1050 7º D",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "CAM001",
+    "razon_social": "RUBEN CANO",
+    "domicilio": "RECONQUISTA 1350",
+    "localidad": "GODOY CRUZ",
+    "telefono": "0261 4283735",
+    "mail": "rubencanomayorista@gmail.com"
+  },
+  {
+    "cliente": "CAM002",
+    "razon_social": "ELISABETH E. CARAM",
+    "domicilio": "ENTRE RIOS 345",
+    "localidad": "MENDOZA",
+    "telefono": "0261-4264706",
+    "mail": "elisabethcaram5@hotmail.com"
+  },
+  {
+    "cliente": "CAS001",
+    "razon_social": "JULIO CATTANEO",
+    "domicilio": "ITUZAINGO 452",
+    "localidad": "SALTA",
+    "telefono": 0,
+    "mail": "marucotillon@hotmail.com"
+  },
+  {
+    "cliente": "CAS002",
+    "razon_social": "CARISOL COTILLON S.R.L.",
+    "domicilio": "URQUIZA 766",
+    "localidad": "SALTA",
+    "telefono": "03874-314085",
+    "mail": "carisolcotillon@fibertel.com.ar"
+  },
+  {
+    "cliente": "CAS003",
+    "razon_social": "CARNAVAL S.R.L.",
+    "domicilio": "EMILIO ZOLA 2179",
+    "localidad": "VILLA GDOR. GALVEZ",
+    "telefono": "02320-446656",
+    "mail": "distribuidoraprovincial@yahoo.com.ar"
+  },
+  {
+    "cliente": "CDB001",
+    "razon_social": "COOK DULCERIA S.A.",
+    "domicilio": "ESMERALDA 4851",
+    "localidad": "MUNRO",
+    "telefono": "4760-1038",
+    "mail": "administracion@cookdulceria.com"
+  },
+  {
+    "cliente": "CET001",
+    "razon_social": "JOSE R. CEBALLOS Y CIA. SRL",
+    "domicilio": "LAS PIEDRAS 1749",
+    "localidad": "SAN MIGUEL DE TUCUMA",
+    "telefono": 0,
+    "mail": "joseceballosycia@hotmail.com"
+  },
+  {
+    "cliente": "CFS001",
+    "razon_social": "COTILLON FIESTA S.R.L.",
+    "domicilio": "GRAL. PAZ 5359",
+    "localidad": "SANTA FE",
+    "telefono": "0342-4604613",
+    "mail": "cotillonfiesta@hotmail.com"
+  },
+  {
+    "cliente": "CHC001",
+    "razon_social": "CHIALVO S.R.L.",
+    "domicilio": "BUENOS AIRES 390",
+    "localidad": "CORDOBA",
+    "telefono": 0,
+    "mail": "chialvosrl@live.com.ar"
+  },
+  {
+    "cliente": "CHC003",
+    "razon_social": "COTILLON CHIALVO SRL",
+    "domicilio": "BUENOS AIRES 356",
+    "localidad": "CORDOBA",
+    "telefono": 0,
+    "mail": "silvina@cotillonchialvo.com"
+  },
+  {
+    "cliente": "CHJ001",
+    "razon_social": "PABLO CHANI",
+    "domicilio": "MARIANO MORENO 503",
+    "localidad": "PERICO",
+    "telefono": 0,
+    "mail": "gabrielrigo@gabrielrigo.com.ar"
+  },
+  {
+    "cliente": "CHS004",
+    "razon_social": "CHOCOLATE DE R. GONZALEZ",
+    "domicilio": "MUNSTER 136",
+    "localidad": "RIO GALLEGOS",
+    "telefono": "02966-436319",
+    "mail": "chocolate1@speedy.com.ar"
+  },
+  {
+    "cliente": "CIB002",
+    "razon_social": "COTILLON INTEGRAL SRL",
+    "domicilio": "AYACUCHO 2767",
+    "localidad": "SAN ANDRES",
+    "telefono": "4752-3440/4755-8833(INTERIOR)",
+    "mail": "gerardo@cotilloncasaalberto.com.ar"
+  },
+  {
+    "cliente": "CIC001",
+    "razon_social": "CIOTTI S.A.C.I.F.I.A.",
+    "domicilio": "DORREGO 588",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4855-8111/4856-5556",
+    "mail": "info@ciotti.com.ar"
+  },
+  {
+    "cliente": "CIC003",
+    "razon_social": "ESTEBAN CISTERNA",
+    "domicilio": "LASCANO 6590",
+    "localidad": "CABA",
+    "telefono": "4643-0136/1551426504",
+    "mail": 0
+  },
+  {
+    "cliente": "CIC004",
+    "razon_social": "CIENCIAS PARA TODOS SRL",
+    "domicilio": "JOSE LEON CABEZON 2478 PB",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4571-1888",
+    "mail": "administracion@cienciaparatodos.com.ar"
+  },
+  {
+    "cliente": "CIC005",
+    "razon_social": "CIENFUEGOS S.A.",
+    "domicilio": "AV. TRIUNVIRATO 3063",
+    "localidad": "CABA",
+    "telefono": "02226-49-1202",
+    "mail": "fabricacanuelas@cienfuegos.com.ar"
+  },
+  {
+    "cliente": "CMC001",
+    "razon_social": "CARBALLO MARIA JOSEFA",
+    "domicilio": "ZUVIRIA 2591",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4631-8835/4633-8946",
+    "mail": 0
+  },
+  {
+    "cliente": "CME001",
+    "razon_social": "COT. MAKUKO'S DE M. RIOS",
+    "domicilio": "AV. P. ZANNI 1402 ESQ. MEDUS",
+    "localidad": "PARANA",
+    "telefono": "0343-4364900",
+    "mail": "miguel@cotillonmakukos.com.ar"
+  },
+  {
+    "cliente": "CNR001",
+    "razon_social": "CASA NESTOR SA",
+    "domicilio": "CERRITO 4205",
+    "localidad": "ROSARIO",
+    "telefono": "0341-4320830",
+    "mail": "adm@casanestormayorista.com.ar"
+  },
+  {
+    "cliente": "COB001",
+    "razon_social": "GRANERO NESTOR JORGE",
+    "domicilio": "ALMIRANTE BROWN 658",
+    "localidad": "MORON",
+    "telefono": "4627-8344",
+    "mail": "coti_express@hotmail.com"
+  },
+  {
+    "cliente": "COB002",
+    "razon_social": "COMASA S.A.",
+    "domicilio": "GRAL. M. BELGRANO 2658",
+    "localidad": "EL TALAR",
+    "telefono": "4726-3600",
+    "mail": "dbenitez@comasa-sa.com"
+  },
+  {
+    "cliente": "COB003",
+    "razon_social": "COTIMAX BAHIA S.A.",
+    "domicilio": "PALAU 25",
+    "localidad": "BAHIA BLANCA",
+    "telefono": "0291-4565352",
+    "mail": "administracion@cotillonamorosi.com"
+  },
+  {
+    "cliente": "COB004",
+    "razon_social": "CODELAND S.A.",
+    "domicilio": "ALICIA M. DE JUSTO 1266",
+    "localidad": "SAN MARTIN",
+    "telefono": "4755-7820",
+    "mail": "proveedores@chocolatescodeland.com.ar"
+  },
+  {
+    "cliente": "COB005",
+    "razon_social": "COMER MART BOL S.R.L",
+    "domicilio": "AV. LURO 3990",
+    "localidad": "MAR DEL PLATA",
+    "telefono": 0,
+    "mail": "todoresuelto@speedy.com.ar"
+  },
+  {
+    "cliente": "COB006",
+    "razon_social": "COOP. COT. SANDRA LIM.",
+    "domicilio": "CRISOLOGO LARRALDE 848",
+    "localidad": "MORON",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "COM001",
+    "razon_social": "CLAUDIA A. CONTE",
+    "domicilio": "PASO DE LOS ANDES 2106",
+    "localidad": "GODOY CRUZ",
+    "telefono": "02616568308/4282428",
+    "mail": "contejuan@live.com.ar"
+  },
+  {
+    "cliente": "COS001",
+    "razon_social": "LAURA COLUSSI",
+    "domicilio": "CASEY E ITURRASPE",
+    "localidad": "VENADO TUERTO",
+    "telefono": "03462-437348",
+    "mail": "lauracolussi@hotmail.com"
+  },
+  {
+    "cliente": "COS002",
+    "razon_social": "HORACIO CORTOPASSI",
+    "domicilio": "SAN GERONIMO 2460",
+    "localidad": "SANTA FE",
+    "telefono": "0342-4522924/4531581",
+    "mail": "cortopassi@arnetbiz.com.ar"
+  },
+  {
+    "cliente": "COT001",
+    "razon_social": "COTISHOW S.R.L",
+    "domicilio": "24 DE SETIEMBRE 360",
+    "localidad": "SAN MIGUEL DE TUC.",
+    "telefono": 0,
+    "mail": "frutifull@yahoo.com.ar"
+  },
+  {
+    "cliente": "CPB002",
+    "razon_social": "CORONEL PABLO GUILLERMO",
+    "domicilio": "ROCA 699",
+    "localidad": "TRENQUE LAUQUEN",
+    "telefono": "02392-15624290",
+    "mail": "valerianeira@hotmail.com"
+  },
+  {
+    "cliente": "CRB001",
+    "razon_social": "COTILLON Y RESPOSTERIA RULITO",
+    "domicilio": "LA ROCHE 827",
+    "localidad": "MORON",
+    "telefono": 0,
+    "mail": "proveedores@cotillonrulito.com"
+  },
+  {
+    "cliente": "CSB001",
+    "razon_social": "COTILLON SANDRA S.A.",
+    "domicilio": "BARTOLOME MITRE 1499",
+    "localidad": "MORON",
+    "telefono": "4627-2273",
+    "mail": 0
+  },
+  {
+    "cliente": "CSL001",
+    "razon_social": "COT. DE SAN LUIS MR. S.R.L",
+    "domicilio": "AV. EDISON 333",
+    "localidad": "MAR DEL PLATA",
+    "telefono": "0223-4895531/4807559",
+    "mail": "cotillon_elpuntano@hotmail.com"
+  },
+  {
+    "cliente": "CVC001",
+    "razon_social": "COOP. TRABAJO VIEYTES LTDA",
+    "domicilio": "AV. VIEYTES 1743",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4302-0812/2888/0794",
+    "mail": "andresghelco@hotmail.com"
+  },
+  {
+    "cliente": "DDB001",
+    "razon_social": "DISTRIB. DULCE HARINA",
+    "domicilio": "AV. SAVIO 428",
+    "localidad": "SAN NICOLAS",
+    "telefono": "03364-428040",
+    "mail": "hmelina25@yahoo.com.ar"
+  },
+  {
+    "cliente": "DEB001",
+    "razon_social": "DELI FOOD ARG. S.R.L",
+    "domicilio": "9 (8 Y 10 ) B1 RPI . P. INDUST",
+    "localidad": "PILAR",
+    "telefono": 0,
+    "mail": "esanchez@deli-arts.com.ar"
+  },
+  {
+    "cliente": "DEB002",
+    "razon_social": "DEGAS PLUS S.H.",
+    "domicilio": "CHASCOMUS 24",
+    "localidad": "VILLA DOMINICO",
+    "telefono": "4227-1279",
+    "mail": "degasplus@hotmail.com"
+  },
+  {
+    "cliente": "DEC003",
+    "razon_social": "DECIMO ARTE S.R.L",
+    "domicilio": "ACOYTE 1565",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4856-7022",
+    "mail": "info@decimoarte.com.ar"
+  },
+  {
+    "cliente": "DFJ001",
+    "razon_social": "GOMEZ MARTA",
+    "domicilio": "BELGRANO 892",
+    "localidad": "SAN SALV. DE JUJUY",
+    "telefono": "0388-4232911",
+    "mail": "martagomez_df@hotmail.com"
+  },
+  {
+    "cliente": "DIB002",
+    "razon_social": "LILIANA DIEGUEZ",
+    "domicilio": "CROVARA 3094",
+    "localidad": "TABLADA",
+    "telefono": "4453-8659",
+    "mail": 0
+  },
+  {
+    "cliente": "DIB004",
+    "razon_social": "DISTRASIL S.A",
+    "domicilio": "BV. ROCHA 140",
+    "localidad": "PERGAMINO",
+    "telefono": "02477-444005",
+    "mail": 0
+  },
+  {
+    "cliente": "DIB005",
+    "razon_social": "DIVERFIESTAS S.A.",
+    "domicilio": "SALTA 2",
+    "localidad": "MORON",
+    "telefono": 0,
+    "mail": "facturacion@cotymania.com"
+  },
+  {
+    "cliente": "DIC002",
+    "razon_social": "DIMAR S.H.",
+    "domicilio": "MARIANO MORENO 657",
+    "localidad": "PTE. R. SAENZ PEÑA",
+    "telefono": "0364-4425475",
+    "mail": "cayetanocodutti@arnet.com.ar"
+  },
+  {
+    "cliente": "DJB002",
+    "razon_social": "DE JESUS YESICA A.",
+    "domicilio": "ALVARADO 217",
+    "localidad": "RAMOS MEJIA",
+    "telefono": "4654-7847",
+    "mail": "info@alldiet.com.ar"
+  },
+  {
+    "cliente": "DLC001",
+    "razon_social": "LA CASA DE DON LUCAS S.R.L.",
+    "domicilio": "IGUALDAD 61",
+    "localidad": "CORDOBA",
+    "telefono": "0351-4263939",
+    "mail": "alejandrobarroni@hotmail.com"
+  },
+  {
+    "cliente": "DLC002",
+    "razon_social": "DE LAS NUBES S.A.",
+    "domicilio": "CHARCAS 4518 4º D",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4662-1128",
+    "mail": "info@suarezdelcerro.com.ar"
+  },
+  {
+    "cliente": "DMB002",
+    "razon_social": "DI MARTINO Y ALVAREZ S.H.",
+    "domicilio": "EIZAGUIRRE 2473",
+    "localidad": "SAN JUSTO",
+    "telefono": "4484-1886",
+    "mail": "compushop@telecentro.com.ar"
+  },
+  {
+    "cliente": "DMB003",
+    "razon_social": "DISTRIB. CARLOS MULLER S.R.L.",
+    "domicilio": "RIVADAVIA 2345",
+    "localidad": "LOS POLVORINES",
+    "telefono": "4664-0374/4663-0139",
+    "mail": "calsadmuller@yahoo.com.ar"
+  },
+  {
+    "cliente": "DRB001",
+    "razon_social": "DISTRIBUIDORA RALIME S.R.L.",
+    "domicilio": "ANGEL DE ASTRADA 2121",
+    "localidad": "LA REJA - MORENO",
+    "telefono": 0,
+    "mail": "ventas@ralime.com.ar"
+  },
+  {
+    "cliente": "DSB002",
+    "razon_social": "DE SOUZA PIRES MARTA",
+    "domicilio": "AV. RIVADAVIA 18283",
+    "localidad": "MORON",
+    "telefono": "4628-0400",
+    "mail": "josemendespereira@hotmail.com"
+  },
+  {
+    "cliente": "DSS001",
+    "razon_social": "DISTRIBUIDORA SAN ROQUE S.R.L.",
+    "domicilio": "JUNIN 3444",
+    "localidad": "SANTA FE",
+    "telefono": "0342-4552280/4557298",
+    "mail": "javierbottazzi@hotmail.com"
+  },
+  {
+    "cliente": "DSS002",
+    "razon_social": "DISTRIBUIDORA SUAREZ S.R.L.",
+    "domicilio": "BV. RONDEAU 4191",
+    "localidad": "ROSARIO",
+    "telefono": 0,
+    "mail": "gustavo@suarezmayorista.com.ar"
+  },
+  {
+    "cliente": "DTB001",
+    "razon_social": "DISTRIB. TABLADA/KARINA SEMINARA",
+    "domicilio": "FINLANDIA 5119",
+    "localidad": "TABLADA",
+    "telefono": 46529800,
+    "mail": "distribuidoratablada@gmail.com"
+  },
+  {
+    "cliente": "DUB002",
+    "razon_social": "RUBEN DURANTE",
+    "domicilio": "ACEVEDO 2724",
+    "localidad": "REMEDIOS DE ESCALADA",
+    "telefono": "4202-9052",
+    "mail": "dserubendurante@gmail.com"
+  },
+  {
+    "cliente": "DVB001",
+    "razon_social": "DE VINCENZO IDA",
+    "domicilio": "AV. CROVARA 856",
+    "localidad": "CIUDAD MADERO",
+    "telefono": "4634-1872",
+    "mail": "dieteticamila@gmail.com"
+  },
+  {
+    "cliente": "EAL001",
+    "razon_social": "EL ALMACEN DE LA ALEGRIA",
+    "domicilio": "S. NICOLAS DE BARI (O) 215",
+    "localidad": "LA RIOJA",
+    "telefono": "0380-4435196",
+    "mail": "elalmacendelaalegria1@yahoo.com.ar"
+  },
+  {
+    "cliente": "EHC001",
+    "razon_social": "EL HELADO CUBANO S.A.",
+    "domicilio": "ARAOZ 1978",
+    "localidad": "CABA",
+    "telefono": 1540245851,
+    "mail": "heladosbuffala@gmail.com"
+  },
+  {
+    "cliente": "ELS001",
+    "razon_social": "EL RELOJ S.R.L.",
+    "domicilio": "ALCORTA 54",
+    "localidad": "RIO GALLEGOS",
+    "telefono": "02966-430178",
+    "mail": "elreloj@speedy.com.ar"
+  },
+  {
+    "cliente": "EMACHI",
+    "razon_social": "MANO DULCE LIMITADA",
+    "domicilio": "CAMINO BUIN MAIPO 2815 PAR 18",
+    "localidad": "SANTIAGO DE CHILE",
+    "telefono": 0,
+    "mail": "cortezmatta@hotmail.com"
+  },
+  {
+    "cliente": "ENC001",
+    "razon_social": "EL NUEVO EMPORIO S.A.",
+    "domicilio": "COCHABAMBA 2577/79",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4941-6722/4942-6644",
+    "mail": "losfuentes4@gmail.com"
+  },
+  {
+    "cliente": "ENC002",
+    "razon_social": "ENDEMOL ARG. S.A.",
+    "domicilio": "JOSE A. CABRERA 5870",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "ENM001",
+    "razon_social": "ENCINAS G. L. Y OT. SH",
+    "domicilio": "GOB. GABRIELLI 3304",
+    "localidad": "LUZURIAGA-MAIPU",
+    "telefono": "0291-4930325/4933286",
+    "mail": "eencinas@panhel.com"
+  },
+  {
+    "cliente": "EPB002",
+    "razon_social": "COT. EL PRINCIPITO S.R.L.",
+    "domicilio": "JOSE HERNANDEZ 3269",
+    "localidad": "GREG. DE LAFERRERE",
+    "telefono": "4626-3141 / 4457-2637",
+    "mail": "elprincipito_2005@yahoo.com.ar"
+  },
+  {
+    "cliente": "EPM001",
+    "razon_social": "EL PORTEÑITO S.A.",
+    "domicilio": "AV. ESPAÑA 1531",
+    "localidad": "MENDOZA",
+    "telefono": "0261-4380780",
+    "mail": "elportenitocotillon@yahoo.com.ar"
+  },
+  {
+    "cliente": "ETM002",
+    "razon_social": "EL TUPINAMBA/F. PORQUERES",
+    "domicilio": "AV. SAN MARTIN 542",
+    "localidad": "LUJAN DE CUYO",
+    "telefono": "0261-4981241",
+    "mail": "el_tupinamba@yahoo.com.ar"
+  },
+  {
+    "cliente": "EUC001",
+    "razon_social": "PLATA Y PLATA ICSA.",
+    "domicilio": "ZEPITA 3137/39",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4301-6152/4303-1211",
+    "mail": "cabraladrianagabriela@gmail.com"
+  },
+  {
+    "cliente": "EZAURU",
+    "razon_social": "ZANETTI S.A.",
+    "domicilio": "COLONIA 917",
+    "localidad": "MONTEVIDEO",
+    "telefono": 59829030470,
+    "mail": "roberto@zanetti.com.uy"
+  },
+  {
+    "cliente": "FCIARA",
+    "razon_social": "FERNANDO D. CIARAMELLA",
+    "domicilio": 0,
+    "localidad": 0,
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "FEB001",
+    "razon_social": "ALBERTO J. FERNANDEZ Y CIA.",
+    "domicilio": "MORENO 1111",
+    "localidad": "QUILMES",
+    "telefono": "4253-2315",
+    "mail": "ajfycia@gmail.com"
+  },
+  {
+    "cliente": "FEB002",
+    "razon_social": "FERNANDEZ JOSE LUIS",
+    "domicilio": "MONTES DE OCA 2281",
+    "localidad": "CASTELAR",
+    "telefono": 0,
+    "mail": "medinia12@hotmail.com"
+  },
+  {
+    "cliente": "FEB004",
+    "razon_social": "L. FERNANDEZ DE MEIER/ODIN VIEDMA",
+    "domicilio": "ALVARO BARROS 268",
+    "localidad": "VIEDMA",
+    "telefono": "02920-428170",
+    "mail": "odinviedma@gmail.com"
+  },
+  {
+    "cliente": "FEC001",
+    "razon_social": "RAUL ALEJANDRO FERREYRA",
+    "domicilio": "RIVERA INDARTE 225",
+    "localidad": "CORDOBA BO. CENTRO N",
+    "telefono": 0,
+    "mail": "gabrielrigo@gabrielrigo.com.ar"
+  },
+  {
+    "cliente": "FEC002",
+    "razon_social": "FEYLO S. R. L.",
+    "domicilio": "AV. CORRIENTES 2076",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4951-0036",
+    "mail": "ventas@feylo.com"
+  },
+  {
+    "cliente": "FEC004",
+    "razon_social": "DANIELA FERRETTI",
+    "domicilio": "HUMBERTO 1º 20",
+    "localidad": "CORDOBA",
+    "telefono": "0351-4241867",
+    "mail": "danielaferrettis@yahoo.com.ar"
+  },
+  {
+    "cliente": "FEM001",
+    "razon_social": "LUIS FERRANDO",
+    "domicilio": "AV. ESPAÑA 93",
+    "localidad": "SAN MARTIN",
+    "telefono": "0263-425045",
+    "mail": "luisferrafa@outlook.com"
+  },
+  {
+    "cliente": "FES001",
+    "razon_social": "FENOGLIO EDA - M. Y F. S.H.",
+    "domicilio": "LAVALLE 668",
+    "localidad": "RAFAELA",
+    "telefono": "03492-435997",
+    "mail": "fenogliorepresentaciones@gmail.com"
+  },
+  {
+    "cliente": "FIB001",
+    "razon_social": "FINOCCHIO RUBEN DARIO",
+    "domicilio": "PALACIOS 660",
+    "localidad": "LOMAS DE ZAMORA",
+    "telefono": "HORACIO( CORREDOR) 4701-5590",
+    "mail": 0
+  },
+  {
+    "cliente": "FRC001",
+    "razon_social": "EDUARDO FRANCO",
+    "domicilio": "SAN GERONIMO 2263",
+    "localidad": "CORDOBA",
+    "telefono": "0351-4557490",
+    "mail": "compras.cotillon.cordoba@gmail.com"
+  },
+  {
+    "cliente": "GAB001",
+    "razon_social": "PEDRO GARCIA E HIJOS SA",
+    "domicilio": "AV. CROVARA 641",
+    "localidad": "LOMAS DEL MIRADOR",
+    "telefono": "4652-9406",
+    "mail": "pgarciaehsa@yahoo.com.ar"
+  },
+  {
+    "cliente": "GAC001",
+    "razon_social": "GARCIA CARLOS GUSTAVO",
+    "domicilio": "GUAMINI 5369",
+    "localidad": "CABA",
+    "telefono": 0,
+    "mail": "garzot@gmail.com"
+  },
+  {
+    "cliente": "GAS004",
+    "razon_social": "GARCIA IVANA EDITH",
+    "domicilio": "GRAL. ACHA (SUR) 30",
+    "localidad": "SAN JUAN",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "GCS001",
+    "razon_social": "GONZALEZ CLAUDIO RUBEN",
+    "domicilio": "ALSINA 885",
+    "localidad": "ROSARIO",
+    "telefono": "0341-4376441",
+    "mail": "ventas@mileidistribuciones.com"
+  },
+  {
+    "cliente": "GEB002",
+    "razon_social": "GELI & CO. S.A.I.C.A.",
+    "domicilio": "LUIS MARIA CAMPOS 511",
+    "localidad": "MORON",
+    "telefono": "4627-2630",
+    "mail": "geli@gelico.com.ar"
+  },
+  {
+    "cliente": "GIS001",
+    "razon_social": "GIORGINI BRUNO MANUEL",
+    "domicilio": "URQUIZA 1470",
+    "localidad": "TOTORAS",
+    "telefono": "03476-461774",
+    "mail": "papelerasuper@hotmail.com"
+  },
+  {
+    "cliente": "GKB001",
+    "razon_social": "GABRIEL ADRIAN KALMAN",
+    "domicilio": "PIEDRABUENA 6125",
+    "localidad": "GREGORIO DE LAFERRER",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "GLB002",
+    "razon_social": "GIROTTI ANDRES EDUARDO",
+    "domicilio": "PIEDRABUENA 6176",
+    "localidad": "GREGORIO DE LAFERRER",
+    "telefono": "4626-7472",
+    "mail": "girotti1994@gmail.com"
+  },
+  {
+    "cliente": "GOB002",
+    "razon_social": "RAMON ALBERTO GONZALEZ",
+    "domicilio": "RUTA 3 KM. 34.700",
+    "localidad": "VIRREY DEL PINO",
+    "telefono": "02202-494610/447056",
+    "mail": "pycalberto@hotmail.com"
+  },
+  {
+    "cliente": "GOB003",
+    "razon_social": "RICARDO GONZALEZ (RENE)",
+    "domicilio": "B.G.J.M. DE ROSAS 14876",
+    "localidad": "GONZALEZ CATAN",
+    "telefono": "02202-453679",
+    "mail": 0
+  },
+  {
+    "cliente": "GOB004",
+    "razon_social": "GODOY CARLOS DANIEL",
+    "domicilio": "CRAVIOTTO 3770",
+    "localidad": "QUILMES OESTE",
+    "telefono": 42003752,
+    "mail": "distribuidoralaflorida@gmail.com"
+  },
+  {
+    "cliente": "GON001",
+    "razon_social": "GOMEZ RUBEN JESUS",
+    "domicilio": "PERITO MORENO 12",
+    "localidad": "NEUQUEN",
+    "telefono": "0299-4424440/4483081",
+    "mail": "rubengomez12pm@gmail.com"
+  },
+  {
+    "cliente": "GOS001",
+    "razon_social": "GOMEZ ZULEMA BEATRIZ",
+    "domicilio": "SAN LORENZO 6286",
+    "localidad": "ROSARIO NORTE",
+    "telefono": "0341-4587004",
+    "mail": 0
+  },
+  {
+    "cliente": "GRB001",
+    "razon_social": "GRANERO RODRIGO HERNAN",
+    "domicilio": "EIZAGUIRRRE 2525",
+    "localidad": "SAN JUSTO",
+    "telefono": "4482-6443",
+    "mail": "proveedores@pantanito.com.ar"
+  },
+  {
+    "cliente": "GRM001",
+    "razon_social": "MARIANO S. GRUNBLATT",
+    "domicilio": "ENTRE RIOS 73",
+    "localidad": "MENDOZA CIUDAD",
+    "telefono": "0261-4254242",
+    "mail": "info@almacendelartesano.com.ar"
+  },
+  {
+    "cliente": "GRS001",
+    "razon_social": "GROSSI OSCAR A.",
+    "domicilio": "BV. RONDEAU 760",
+    "localidad": "ROSARIO NORTE",
+    "telefono": "0341-4549507",
+    "mail": "contacto@plastipel.com.ar"
+  },
+  {
+    "cliente": "GUB001",
+    "razon_social": "MICAELA GUALTIERI GUTIERREZ",
+    "domicilio": "VENEZUELA 6049",
+    "localidad": "WILDE",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "GUB003",
+    "razon_social": "GUSCELMEHER S.A",
+    "domicilio": "AVELLANEDA 3671",
+    "localidad": "MAR DEL PLATA",
+    "telefono": "0223-4728526/4729075",
+    "mail": "info@lacasadelarepostera.com.ar"
+  },
+  {
+    "cliente": "GUB004",
+    "razon_social": "EVANGELINA GUERRERO",
+    "domicilio": "AV. CAZON 1255",
+    "localidad": "TIGRE",
+    "telefono": "4731-3397",
+    "mail": "cotymasexpress@hotmail.com"
+  },
+  {
+    "cliente": "GUC001",
+    "razon_social": "GUELFI OMAR ALCIDES",
+    "domicilio": "AV. DE LA SEMILLERIA 1495",
+    "localidad": "BARRIO AMPL. YAPEYU",
+    "telefono": 0,
+    "mail": "oguelfi@live.com.ar"
+  },
+  {
+    "cliente": "GUC002",
+    "razon_social": "GUERINI HNOS Y M. LANA",
+    "domicilio": "JOSE LEON SUAREZ 120",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4642-3475",
+    "mail": "jorgeguerini@gmail.com"
+  },
+  {
+    "cliente": "HAB001",
+    "razon_social": "HELADOS ARTI S.A.",
+    "domicilio": "CALLE 839 NRO. 2460",
+    "localidad": "SAN FRANCISCO SOLANO",
+    "telefono": "4212-6542",
+    "mail": "administracion@utilidades.com.ar"
+  },
+  {
+    "cliente": "HBC001",
+    "razon_social": "HAPPY BIRTHDAY S.R.L",
+    "domicilio": "AV. SANTA FE 719",
+    "localidad": "CORDOBA",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "HEB002",
+    "razon_social": "HEBRASOL S.R.L",
+    "domicilio": "HIPOLITO YRIGOYEN 15490",
+    "localidad": "BURZACO",
+    "telefono": "4238-4934",
+    "mail": "hebrasolsrl@gmail.com"
+  },
+  {
+    "cliente": "HEC002",
+    "razon_social": "CRISTIAN L. HERRERA",
+    "domicilio": "AV. RIVADAVIA 9866",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4682-1121",
+    "mail": "info@elmundodelartesano.com.ar"
+  },
+  {
+    "cliente": "HOB001",
+    "razon_social": "HERBOESTE S.A.",
+    "domicilio": "BRUSELOTTI 187",
+    "localidad": "VILLA TESEI",
+    "telefono": "4450-8690",
+    "mail": "info@herboeste.com.ar"
+  },
+  {
+    "cliente": "HUS001",
+    "razon_social": "OMAR HUSAIN HALLAR",
+    "domicilio": "ALBERDI 254",
+    "localidad": "RIO GALLEGOS",
+    "telefono": "02966-420757",
+    "mail": "adminsitracion@zoco.com.ar"
+  },
+  {
+    "cliente": "JAS001",
+    "razon_social": "ROBERTO L. JAIME",
+    "domicilio": "TUCUMAN 659 (SUR)",
+    "localidad": "SAN JUAN",
+    "telefono": "0264-4225966",
+    "mail": "administracionrj@r-jaime.com.ar"
+  },
+  {
+    "cliente": "JAS002",
+    "razon_social": "ROBERTO JAIME E HIJOS SRL EF",
+    "domicilio": "ACCESO ESTE Y GUEMES S/N",
+    "localidad": "STA. LUCIA-SAN JUAN",
+    "telefono": "0264-4225966",
+    "mail": "administracionrj@r-jaime.com.ar"
+  },
+  {
+    "cliente": "JBB001",
+    "razon_social": "J.B. DISTRIBUIDORA S.R.L.",
+    "domicilio": "PRIMERA JUNTA 979",
+    "localidad": "SAN MIGUEL",
+    "telefono": "4451-1439",
+    "mail": 0
+  },
+  {
+    "cliente": "JUT002",
+    "razon_social": "JUEGOS Y COLORES S.R.L.",
+    "domicilio": "JUNIN 285",
+    "localidad": "SAN MIGUEL DE TUCUMA",
+    "telefono": "0381-4219291",
+    "mail": 0
+  },
+  {
+    "cliente": "KAB001",
+    "razon_social": "KALMAN PABLO DANIEL",
+    "domicilio": "CONSTITUCION 461",
+    "localidad": "PINAMAR",
+    "telefono": "NEXTEL 276* 511",
+    "mail": "pablokalman@hotmail.com"
+  },
+  {
+    "cliente": "KAT001",
+    "razon_social": "KAYROS S.A.",
+    "domicilio": "ISLA SOLEDAD 1721",
+    "localidad": "USHUAIA",
+    "telefono": "02901-423492",
+    "mail": "ventas@cosmosushuaia.com.ar"
+  },
+  {
+    "cliente": "KET001",
+    "razon_social": "KENA S.R.L.",
+    "domicilio": "CORDOBA 778",
+    "localidad": "SAN MIGUEL DE TUCUMA",
+    "telefono": "0381-4306084",
+    "mail": "lareposteratuc@hotmail.com"
+  },
+  {
+    "cliente": "KIC002",
+    "razon_social": "KIBYSZ ENRIQUE FERNANDO",
+    "domicilio": "BV. LOS GRANADEROS 2431",
+    "localidad": "B.SAN MARTIN CORDOBA",
+    "telefono": "0351-4762570",
+    "mail": "myriamcotilandia@hotmail.com"
+  },
+  {
+    "cliente": "KUB001",
+    "razon_social": "KUCHEN SRL",
+    "domicilio": "AV. EDISON 444",
+    "localidad": "MAR DEL PLATA",
+    "telefono": 0,
+    "mail": "reposteriaexpress@outlook.com.ar"
+  },
+  {
+    "cliente": "LAC003",
+    "razon_social": "NATALIA LA ROCCA",
+    "domicilio": "REP. DE ISRAEL 91",
+    "localidad": "CORDOBA",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "LAC004",
+    "razon_social": "LA CASA DEL COMERCIO S.R.L.",
+    "domicilio": "ENTRE RIOS 1155",
+    "localidad": "VILLA MARIA",
+    "telefono": 0,
+    "mail": "corderoalb@infovia.com.ar"
+  },
+  {
+    "cliente": "LAJ001",
+    "razon_social": "SUSANA LARA",
+    "domicilio": "ALBERDI 262",
+    "localidad": "SAN PEDRO",
+    "telefono": "03884-425743",
+    "mail": "susanaelenalara14@hotmail.com"
+  },
+  {
+    "cliente": "LEM001",
+    "razon_social": "LEIDA S.A.",
+    "domicilio": "LEIDA S.A.",
+    "localidad": "GODOY CRUZ 76",
+    "telefono": "0261-4233230",
+    "mail": "leidasa@gmail.com"
+  },
+  {
+    "cliente": "LET001",
+    "razon_social": "LENCINA ROBERTO EDUARDO",
+    "domicilio": "AV. SOLANO VERA 267",
+    "localidad": "SAN MIGUEL DE TUCUMA",
+    "telefono": 0,
+    "mail": "robertoeduardo.lencina@yahoo.com"
+  },
+  {
+    "cliente": "LOB001",
+    "razon_social": "LOPEZ R Y LOPEZ LJ SH",
+    "domicilio": "MARIO BRAVO 269",
+    "localidad": "AVELLANEDA",
+    "telefono": "4208-2044",
+    "mail": 0
+  },
+  {
+    "cliente": "LOB002",
+    "razon_social": "LOPEZ CECILIA Y LOPEZ PAULA",
+    "domicilio": "PTE. PERON EX GAONA 4554",
+    "localidad": "BUENOS AIRES",
+    "telefono": "4483-1085",
+    "mail": "info@cotillonmayoristaalegria.com"
+  },
+  {
+    "cliente": "LOB005",
+    "razon_social": "PEDRO IGNACIO LOPEZ",
+    "domicilio": "AV. LURO 5863",
+    "localidad": "G. DE LAFERRERE",
+    "telefono": "4231-4453",
+    "mail": "puntarojapop@hotmail.com.ar"
+  },
+  {
+    "cliente": "LON001",
+    "razon_social": "NILDA BEATRIZ LOPEZ",
+    "domicilio": "ELENA DE LA VEGA 440",
+    "localidad": "ZAPALA",
+    "telefono": "02942-424119",
+    "mail": "jose.sandoval@speedy.com.ar"
+  },
+  {
+    "cliente": "LRT001",
+    "razon_social": "LA REPOSTERA DEL NOA SRL",
+    "domicilio": "ALVAREZ CONDARCO 55",
+    "localidad": "VILLA CONSTITUCION",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "LUB001",
+    "razon_social": "LUCERO LEANDRO SEBASTIAN",
+    "domicilio": "NECOCHEA 4138",
+    "localidad": "BAHIA BLANCA",
+    "telefono": "0291-154745909",
+    "mail": "espaciodecocineros@outlook.com"
+  },
+  {
+    "cliente": "MAB003",
+    "razon_social": "MARTINEZ MARIA CLERIA",
+    "domicilio": "CALLE 15 Nº 4711",
+    "localidad": "BERAZATEGUI",
+    "telefono": "4259-7657",
+    "mail": "todofiestacotillon@yahoo.com.ar"
+  },
+  {
+    "cliente": "MAB004",
+    "razon_social": "MARINUCCI FEDERICA",
+    "domicilio": "ALVEAR 402",
+    "localidad": "MARTINEZ",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "MAB007",
+    "razon_social": "MARIA LAURA TRONCOSO",
+    "domicilio": "CALLE 163 Nº 553",
+    "localidad": "BERNAL",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "MAB010",
+    "razon_social": "ROBERTO MAZZUCCHELLI",
+    "domicilio": "SUIPACHA 640",
+    "localidad": "MERLO",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "MAC001",
+    "razon_social": "MACIA HNOS. Y CIA. S.R.L.",
+    "domicilio": "CULPINA 744",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4612-6365",
+    "mail": "maciaalberto69@hotmail.com"
+  },
+  {
+    "cliente": "MAC002",
+    "razon_social": "MOSTO ADRIAN",
+    "domicilio": "LISANDRO DE LA TORRE 3663",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4602-8218",
+    "mail": 0
+  },
+  {
+    "cliente": "MAC003",
+    "razon_social": "JORGE GUSTAVO MARTINELLI",
+    "domicilio": "PTE. PERON 2875",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4864-4875",
+    "mail": 0
+  },
+  {
+    "cliente": "MAC004",
+    "razon_social": "MARTINEZ MAXIMILIANO",
+    "domicilio": "AV. PATRICIOS 1028",
+    "localidad": "COMODORO RIVADAVIA",
+    "telefono": 0,
+    "mail": "lareposteria@yahoo.com.ar"
+  },
+  {
+    "cliente": "MAC005",
+    "razon_social": "MARINI LASTENIA RENE",
+    "domicilio": "RIVERA INDARTE 225",
+    "localidad": "CORDOBA",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "MAC009",
+    "razon_social": "MARANA S.R.L.",
+    "domicilio": "AV. SABATTINI 245",
+    "localidad": "VILLA MARIA",
+    "telefono": "0353-4536305",
+    "mail": "emepe@arnetbiz.com.ar"
+  },
+  {
+    "cliente": "MAE001",
+    "razon_social": "MALABA S.R.L.",
+    "domicilio": "CONCEJAL VEIGA 1386",
+    "localidad": "CONCORDIA",
+    "telefono": "0345-4210309",
+    "mail": "distribuidorajlc2012@gmail.com"
+  },
+  {
+    "cliente": "MAM001",
+    "razon_social": "MAYORGA Y BONAFEDE S. H.",
+    "domicilio": "MAZA 2451",
+    "localidad": "GUTIERREZ",
+    "telefono": "0261-4979416",
+    "mail": "noguelinsumos@gmail.com"
+  },
+  {
+    "cliente": "MAR001",
+    "razon_social": "MAMUSCHKA S.R.L.",
+    "domicilio": "MITRE 298",
+    "localidad": "S. C. BARILOCHE",
+    "telefono": "0294-4423294 INT. 103",
+    "mail": "proveedores@mamuschka.com"
+  },
+  {
+    "cliente": "MAS001",
+    "razon_social": "MARINO S.R.L.",
+    "domicilio": "BV. 27 DE FEBRERO 3272/86",
+    "localidad": "ROSARIO",
+    "telefono": "0341-4311314",
+    "mail": "administracion@marinosrl.com.ar"
+  },
+  {
+    "cliente": "MAS002",
+    "razon_social": "MARINELLI VIVIANA G.",
+    "domicilio": "GRAL. C. ALVEAR 4402",
+    "localidad": "SANTA FE",
+    "telefono": "0342-4562604",
+    "mail": "vivig_marinelli@yahoo.com.ar"
+  },
+  {
+    "cliente": "MAT001",
+    "razon_social": "MARTINEZ MARIA BEATRIZ",
+    "domicilio": "ALVAREZ CONDARCO 55",
+    "localidad": "S. MIGUEL DE TUCUMAN",
+    "telefono": 0,
+    "mail": "lareposteradelnoa@yahoo.com.ar"
+  },
+  {
+    "cliente": "MBA001",
+    "razon_social": "MB AUTOS S.A.",
+    "domicilio": "AV. JUAN B. ALBERDI 5024-1º P",
+    "localidad": "CABA",
+    "telefono": "4684-0656",
+    "mail": "ventas@mbservicios.com.ar"
+  },
+  {
+    "cliente": "MEC001",
+    "razon_social": "MENDES NUNES GABRIEL F.",
+    "domicilio": "SARMIENTO 1541",
+    "localidad": "COMODORO RIVADAVIA",
+    "telefono": "0297-4064157",
+    "mail": "mendesnunesg@hotmail.com"
+  },
+  {
+    "cliente": "MEC003",
+    "razon_social": "MENDES NUNES ANDREA",
+    "domicilio": "SAN MARTIN 681",
+    "localidad": "COMODORO RIVADAVIA",
+    "telefono": 0,
+    "mail": "lacalesita2@hotmail.com"
+  },
+  {
+    "cliente": "MIB002",
+    "razon_social": "EDUARDO H. MILA",
+    "domicilio": "VARELA 1133",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4634-1872",
+    "mail": "ruta6club@gmail.com"
+  },
+  {
+    "cliente": "MIC001",
+    "razon_social": "MAURICIO MIORI",
+    "domicilio": "SAN JERONIMO 2498",
+    "localidad": "CORDOBA",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "MMB001",
+    "razon_social": "MARIANELA MAS",
+    "domicilio": "HIPOLITO YRIGOYEN 830",
+    "localidad": "PACHECO",
+    "telefono": "4726-3000",
+    "mail": "cotymasexpress@hotmail.com"
+  },
+  {
+    "cliente": "MMB002",
+    "razon_social": "MERINO MARTIN LUCAS",
+    "domicilio": "DE LOS INMIGRANTES 435",
+    "localidad": "MAR DEL PLATA",
+    "telefono": "0223-4103755",
+    "mail": 0
+  },
+  {
+    "cliente": "MNC001",
+    "razon_social": "MONICA PAROLINI",
+    "domicilio": "EMILIO LAMARCA 2634",
+    "localidad": "CABA",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "MNJ001",
+    "razon_social": "MAZALA NILDA - COT. FRANQUITO",
+    "domicilio": "REP. DEL LIBANO 378",
+    "localidad": "PERICO",
+    "telefono": 0,
+    "mail": "nildamazala@hotmail.com"
+  },
+  {
+    "cliente": "MOB001",
+    "razon_social": "CHRISTIAN MOYA",
+    "domicilio": "AV. 3 Y PASEO 130 2995",
+    "localidad": "VILLA GESELL",
+    "telefono": "15-53434382",
+    "mail": "moyasur@hotmail.com"
+  },
+  {
+    "cliente": "MOB002",
+    "razon_social": "MORETTO ADRIANA BEATRIZ",
+    "domicilio": "ALBARELLOS 1310",
+    "localidad": "MARTINEZ",
+    "telefono": "4792-4032",
+    "mail": "cotillon-alas@hotmail.com"
+  },
+  {
+    "cliente": "MOC001",
+    "razon_social": "HASNE DE MORANDI ANA M.",
+    "domicilio": "DOMINGA CULLEN 357",
+    "localidad": "SAN FRANCISCO",
+    "telefono": 0,
+    "mail": "morpack@hotmail.com.ar"
+  },
+  {
+    "cliente": "MOC002",
+    "razon_social": "MONUMENTAL DEL PLATA S.A.",
+    "domicilio": "AV. SCALABRINI ORTIZ 119",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4855-9023/8152",
+    "mail": "silvia@monumentaldelplata.com.ar"
+  },
+  {
+    "cliente": "MOC003",
+    "razon_social": "MORENO CLAUDIA ANDREA",
+    "domicilio": "SAN MARTIN 515",
+    "localidad": "CORDOBA",
+    "telefono": "0351-4248857/4284230",
+    "mail": "norbertobruno@hotmail.com"
+  },
+  {
+    "cliente": "MOC004",
+    "razon_social": "ALICIA GONEL DE MONTOYA",
+    "domicilio": "COLON 387",
+    "localidad": "RIO CUARTO",
+    "telefono": "0358-4625637",
+    "mail": "imperpack_ali@hotmail.com"
+  },
+  {
+    "cliente": "MOC005",
+    "razon_social": "MONTI PABLO SIMON",
+    "domicilio": "RODRIGUEZ PEÑA 675",
+    "localidad": "CURUZU CUATIA",
+    "telefono": 0,
+    "mail": "hectormonti@curuzu.net"
+  },
+  {
+    "cliente": "MPB002",
+    "razon_social": "MATPRI S.R.L.",
+    "domicilio": "AV. SAN MARTIN 2491",
+    "localidad": "FLORIDA",
+    "telefono": "4837-9136",
+    "mail": "hoc@materia-prima.com.ar"
+  },
+  {
+    "cliente": "MPC001",
+    "razon_social": "MORONI PABLO",
+    "domicilio": "REP. DE ISRAEL 77",
+    "localidad": "CORDOBA",
+    "telefono": 0,
+    "mail": "macacotillon@gmail.com"
+  },
+  {
+    "cliente": "MUB001",
+    "razon_social": "MUNDO PASTEL-C. RESTUCCI",
+    "domicilio": "CALLE 44 Nº 1088",
+    "localidad": "LA PLATA",
+    "telefono": "0221-4821505",
+    "mail": "cristinarestucci@yahoo.com.ar"
+  },
+  {
+    "cliente": "MUB003",
+    "razon_social": "CARLOS NICOLAS MULLER",
+    "domicilio": "RIVADAVIA 2345",
+    "localidad": "LOS POLVORINES",
+    "telefono": "4664-0374/4663-0139",
+    "mail": 0
+  },
+  {
+    "cliente": "NAS001",
+    "razon_social": "NAGEL DIEGO ELIAS",
+    "domicilio": "GABOTO 6847",
+    "localidad": "SANTA FE",
+    "telefono": 0,
+    "mail": "cotillon.lodemartinez@gmail.com"
+  },
+  {
+    "cliente": "NEB001",
+    "razon_social": "NEZONI S.A.",
+    "domicilio": "AV. LURO 3934",
+    "localidad": "MAR DEL PLATA",
+    "telefono": 0,
+    "mail": "todoresuelto@infovia.com.ar"
+  },
+  {
+    "cliente": "NEB002",
+    "razon_social": "NEW COT ARGENTINA S.A.",
+    "domicilio": "LAVALLE 618",
+    "localidad": "QILMES",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "NOB001",
+    "razon_social": "NOVOA HECTOR ANDRES",
+    "domicilio": "25 DE MAYO 25",
+    "localidad": "MORON",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "NOB002",
+    "razon_social": "HERMIDA NORBERTO",
+    "domicilio": "PILCOMAYO 779",
+    "localidad": "ALDO BONZI",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "OBB001",
+    "razon_social": "OBLEAS S.R.L. (KAAS)",
+    "domicilio": "FRIAS 2890",
+    "localidad": "BANFIELD",
+    "telefono": "4231-9101",
+    "mail": "obleas@gmail.com"
+  },
+  {
+    "cliente": "OGB001",
+    "razon_social": "OUTON G. - P. Y M. S. H.",
+    "domicilio": "CACHI 212",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4911-8686/9586",
+    "mail": "gustavo.outon@dgmweb.com.ar"
+  },
+  {
+    "cliente": "ONC001",
+    "razon_social": "ONROVIL S. A.",
+    "domicilio": "ESMERALDA 776",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4322-7754/7652",
+    "mail": "brocolino.oficina@gmail.com"
+  },
+  {
+    "cliente": "OPB001",
+    "razon_social": "ORIENTAL PARTY S.R.L.",
+    "domicilio": "TUCUMAN 2224 PISO 2º A",
+    "localidad": "VILLA LIBERTAD",
+    "telefono": "4713-3872",
+    "mail": "gerardo@cotilloncasaalberto.com.ar"
+  },
+  {
+    "cliente": "ORC001",
+    "razon_social": "LEONARDO ORZAN",
+    "domicilio": "ITUZAINGO 363",
+    "localidad": "CORDOBA",
+    "telefono": 0,
+    "mail": "cotillon.todofiesta@hotmail.com"
+  },
+  {
+    "cliente": "ORC002",
+    "razon_social": "ORBEGOZO MARIA MONICA J.",
+    "domicilio": "THAMES 2189",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4774-2979",
+    "mail": 0
+  },
+  {
+    "cliente": "ORT002",
+    "razon_social": "MIGUEL ORTEGA",
+    "domicilio": "MENDOZA 775",
+    "localidad": "S. MIGUEL DE TUCUMAN",
+    "telefono": 0,
+    "mail": "gabrielrigo@gabrielrigo.com.ar"
+  },
+  {
+    "cliente": "OSB001",
+    "razon_social": "COTILLON OSITO PANDA SH",
+    "domicilio": "ESTOMBA 262",
+    "localidad": "BAHIA BLANCA",
+    "telefono": "0291-4565020",
+    "mail": "ositopandaconsultas@gmail.com"
+  },
+  {
+    "cliente": "OTM001",
+    "razon_social": "OTTERO MABEL L-COTIDIET",
+    "domicilio": "MOLDES 1023 LOCAL 33",
+    "localidad": "GUAYMALLEN",
+    "telefono": "0261-4059183",
+    "mail": "cotidiet@yahoo.com.ar"
+  },
+  {
+    "cliente": "PAB001",
+    "razon_social": "PAEZ ALFREDO ORLANDO",
+    "domicilio": "RAFAELA 3287 PISO:PB DPTO:B",
+    "localidad": "CIUDADELA",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "PAB005",
+    "razon_social": "SONIA M. PAEZ",
+    "domicilio": "D'ONOFRIO 176",
+    "localidad": "CIUDADELA",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "PAB006",
+    "razon_social": "PATAY S. R. L.",
+    "domicilio": "BARTOLOME MITRE 189",
+    "localidad": "JUNIN",
+    "telefono": "0236-4420828",
+    "mail": "fernanda@pataysrl.com.ar"
+  },
+  {
+    "cliente": "PAB007",
+    "razon_social": "PAZ OLGA ARGEMINA",
+    "domicilio": "SIMON PEREZ 4535",
+    "localidad": "GONZALEZ CATAN",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "PAC002",
+    "razon_social": "ADRIAN PALERMO",
+    "domicilio": "ANGEL GALLARDO 231",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4857-5863",
+    "mail": "adrianpalermo@gmail.com"
+  },
+  {
+    "cliente": "PAC003",
+    "razon_social": "PACK EXPRESS S.R.L.",
+    "domicilio": "AV. BOEDO 452",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4931-5123/0670/0607",
+    "mail": "santiago@packexpress.com.ar"
+  },
+  {
+    "cliente": "PAM002",
+    "razon_social": "PADILLA JORGE RAUL",
+    "domicilio": "PAROISSIEN 532",
+    "localidad": "SAN JOSE",
+    "telefono": "0261-4454095",
+    "mail": 0
+  },
+  {
+    "cliente": "PEB001",
+    "razon_social": "PETERS HNOS. C.C.I.S.A.",
+    "domicilio": "JUAN BAUTISTA ALBERDI 5364",
+    "localidad": "CASEROS",
+    "telefono": "4811-9302/4716-1293",
+    "mail": "sramirez@peters.com.ar"
+  },
+  {
+    "cliente": "PEB002",
+    "razon_social": "PRODUCTOS EDULI S.R.L.",
+    "domicilio": "AV. SAN MARTIN 5446",
+    "localidad": "CIUDAD MADERO",
+    "telefono": "4652-1499/6006",
+    "mail": "compras@eduli.com.ar"
+  },
+  {
+    "cliente": "PEB003",
+    "razon_social": "RUSSO GISELA CARINA",
+    "domicilio": "DEL VALLE IBARLUCEA 3046",
+    "localidad": "GERLI",
+    "telefono": "4241-1955",
+    "mail": 0
+  },
+  {
+    "cliente": "PEB005",
+    "razon_social": "PEREZ ANDREA VALERIA",
+    "domicilio": "BOULOGNE SUR MER 1371",
+    "localidad": "TAPIALES",
+    "telefono": "4442-5271",
+    "mail": 0
+  },
+  {
+    "cliente": "PEC001",
+    "razon_social": "GUILLERMO PELLEGRINI",
+    "domicilio": "VELEZ SARSFIELD 130",
+    "localidad": "RIO CUARTO",
+    "telefono": 0,
+    "mail": "mipayasocotillon@mipayasocotillon.com"
+  },
+  {
+    "cliente": "PEC002",
+    "razon_social": "PEREZ CONTRERAS OLGA M.",
+    "domicilio": "BELISARIO ROLDAN 299",
+    "localidad": "ALTA GRACIA",
+    "telefono": "03547-427999",
+    "mail": "haigolosinas@gmail.com"
+  },
+  {
+    "cliente": "PES002",
+    "razon_social": "PEREZ FEDERICO PABLO",
+    "domicilio": "MORENO 2724",
+    "localidad": "ROSARIO",
+    "telefono": "0341-4824225",
+    "mail": "fpinsumos@yahoo.com.ar"
+  },
+  {
+    "cliente": "PGB001",
+    "razon_social": "PALLANTE GERALDINA",
+    "domicilio": "DR. IGNACIO ARIETA 1296",
+    "localidad": "VILLA LUZURIAGA",
+    "telefono": "4461-2621",
+    "mail": "geraldina_pallante@yahoo.com.ar"
+  },
+  {
+    "cliente": "PIB001",
+    "razon_social": "MARIA ROSARIO PIETRANTUONO",
+    "domicilio": "PIROVANO 1017",
+    "localidad": "MONTE CHINGOLO",
+    "telefono": "4246-2377",
+    "mail": "distribuidora.heidi@gmail.com"
+  },
+  {
+    "cliente": "PIB002",
+    "razon_social": "FERNANDO PITRELLA",
+    "domicilio": "EISTEIN 99",
+    "localidad": "JOSE C. PAZ",
+    "telefono": "02320-446656",
+    "mail": "distribuidoraprovincial@yahoo.com.ar"
+  },
+  {
+    "cliente": "PIB003",
+    "razon_social": "PICCIOLA ALEJANDRO",
+    "domicilio": "AV. 44 Nº 2201 ESQ. 139",
+    "localidad": "LA PLATA",
+    "telefono": "0221-4701171",
+    "mail": "cotillonvictoria@hotmail.com"
+  },
+  {
+    "cliente": "PJB001",
+    "razon_social": "PEREZ JORGE Y PEREZ EMILIANO SH",
+    "domicilio": "RIO NEGRO 737",
+    "localidad": "BAHIA BLANCA",
+    "telefono": "0291-4555814",
+    "mail": "administracion@distribuidoralapaz.com.ar"
+  },
+  {
+    "cliente": "PJJ001",
+    "razon_social": "POLONIA JAIN",
+    "domicilio": "JUAN B. ALBERDI 251",
+    "localidad": "PERICO",
+    "telefono": 0,
+    "mail": "csaikita@hotmail.com"
+  },
+  {
+    "cliente": "PLC002",
+    "razon_social": "PROCOPIO LAURA VERONICA",
+    "domicilio": "MANUELA PEDRAZA 5347",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "6698-6839",
+    "mail": "davismercado2010@hotmail.com"
+  },
+  {
+    "cliente": "PRB004",
+    "razon_social": "NORMA PROVENZANO",
+    "domicilio": "AV. LURO 7660",
+    "localidad": "MAR DEL PLATA",
+    "telefono": "0223-4773410",
+    "mail": "info@reposteriachocolate.com.ar"
+  },
+  {
+    "cliente": "PUC001",
+    "razon_social": "PUERTO ALEGRIA S.R.L.",
+    "domicilio": "BUENOS AIRES 376",
+    "localidad": "CORDOBA",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "QUB002",
+    "razon_social": "VIVIANA DE LA QUINTANA",
+    "domicilio": "9 DE JULIO 1320",
+    "localidad": "LANUS ESTE",
+    "telefono": "4249-1025",
+    "mail": 0
+  },
+  {
+    "cliente": "RAB001",
+    "razon_social": "REPOSTERIA ARTESANAL S.R.L.",
+    "domicilio": "AYACUCHO 2767",
+    "localidad": "SAN ANDRES",
+    "telefono": "4713-3614/3872",
+    "mail": "gerardo@cotilloncasaalberto.com.ar"
+  },
+  {
+    "cliente": "RAC002",
+    "razon_social": "RANTI S.R.L.",
+    "domicilio": "AMENABAR 1202",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4783-0975",
+    "mail": 0
+  },
+  {
+    "cliente": "RBB001",
+    "razon_social": "RANIERI BEATRIZ YOLANDA",
+    "domicilio": "JUAN. M. DE ROSAS 3261",
+    "localidad": "CASEROS",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "RCB001",
+    "razon_social": "ROBERTO ANTONIO COSTA",
+    "domicilio": "ALTOLAGUIRRE 330",
+    "localidad": "TAPIALES",
+    "telefono": "4622-3120",
+    "mail": "confiteriariviera@gmail.com"
+  },
+  {
+    "cliente": "RDB001",
+    "razon_social": "RATTO Y DARMAN S.R.L.",
+    "domicilio": "GORRITI 48",
+    "localidad": "LA TABLADA",
+    "telefono": "4454-6539",
+    "mail": 0
+  },
+  {
+    "cliente": "REB001",
+    "razon_social": "FABIAN E. REQUENA",
+    "domicilio": "RIVADAVIA 3285",
+    "localidad": "MAR DEL PLATA",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "REC001",
+    "razon_social": "RECOR S.R.L.",
+    "domicilio": "AV. 25 DE MAYO 963",
+    "localidad": "RESISTENCIA",
+    "telefono": "03624-423203/424201",
+    "mail": "recorsrl@arnetbiz.com.ar"
+  },
+  {
+    "cliente": "REC002",
+    "razon_social": "RECOR S.R.L.",
+    "domicilio": "AV. PEDRO FERRE 1949",
+    "localidad": "CORRIENTES",
+    "telefono": 0,
+    "mail": "compras_recorsrl@arnetbiz.com.ar"
+  },
+  {
+    "cliente": "REC005",
+    "razon_social": "RETAMOZO JESICA MARIA",
+    "domicilio": "FOURNIER 2950",
+    "localidad": "CABA",
+    "telefono": "4918-4331",
+    "mail": "jmrtortasdecoradas@gmail.com"
+  },
+  {
+    "cliente": "REM001",
+    "razon_social": "RECOR S.R.L.",
+    "domicilio": "PEDRO MENDEZ 2294",
+    "localidad": "POSADAS",
+    "telefono": "03764-435273/426251",
+    "mail": "compras_recorsrl@arnetbiz.com.ar"
+  },
+  {
+    "cliente": "RHB001",
+    "razon_social": "RECIEN HORNEADO S.A.",
+    "domicilio": "L. DE LA TORRE 1609",
+    "localidad": "LA TABLADA",
+    "telefono": "4454-0066",
+    "mail": "andrea@quijotelunch.com.ar"
+  },
+  {
+    "cliente": "RIB002",
+    "razon_social": "JORGE RIVADENEIRA",
+    "domicilio": "SARMIENTO 836",
+    "localidad": "MORON",
+    "telefono": "4483-3039",
+    "mail": 0
+  },
+  {
+    "cliente": "RIC001",
+    "razon_social": "RIESTRA SILVIA BEATRIZ",
+    "domicilio": "25 DE MAYO 321",
+    "localidad": "PUERTO MADRYN",
+    "telefono": 0,
+    "mail": "regaleria@speedy.com.ar"
+  },
+  {
+    "cliente": "RIC002",
+    "razon_social": "RICALDONE S. A.",
+    "domicilio": "ESMERALDA 776",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4322-7754",
+    "mail": 0
+  },
+  {
+    "cliente": "RIE001",
+    "razon_social": "RIOS MARIA NELIDA",
+    "domicilio": "SAN MARTIN 1120",
+    "localidad": "PARANÁ",
+    "telefono": 0,
+    "mail": "jmk_pna@hotmail.com"
+  },
+  {
+    "cliente": "RIM001",
+    "razon_social": "RINCA S.A.",
+    "domicilio": "AV. ESPAÑA 1544",
+    "localidad": "MENDOZA",
+    "telefono": "0261-4292648",
+    "mail": "eltupinamba@hotmail.com"
+  },
+  {
+    "cliente": "RJB001",
+    "razon_social": "RUIZ JUAN CLAUDIO",
+    "domicilio": "VICENTE LOPEZ 2402",
+    "localidad": "BAHIA BLANCA",
+    "telefono": "0291-4883846",
+    "mail": "fliaruizurban@gmail.com"
+  },
+  {
+    "cliente": "RJC001",
+    "razon_social": "DISTR. RJ DE LANFRANCO R Y LANFRANCO J",
+    "domicilio": "CHICLANA 73",
+    "localidad": "TRELEW",
+    "telefono": "0280-4428787",
+    "mail": "distribuidora-rj@outlook.com"
+  },
+  {
+    "cliente": "RLJ001",
+    "razon_social": "ROSENBLUTH LUCIANA",
+    "domicilio": "J. M. GORRITI 927",
+    "localidad": "S. SALVADOR DE JUJUY",
+    "telefono": 0,
+    "mail": "gabrielrigo@gabrielrigo.com.ar"
+  },
+  {
+    "cliente": "ROB001",
+    "razon_social": "ROLDAN SILVIA DEL VALLE",
+    "domicilio": "JULIO VERNE 4558",
+    "localidad": "NUEVE DE ABRIL",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "ROC004",
+    "razon_social": "RODRIGUEZ PAULO ALBERTO",
+    "domicilio": "SANTA ROSA 396",
+    "localidad": "CORDOBA",
+    "telefono": "0351-4243302",
+    "mail": 0
+  },
+  {
+    "cliente": "ROT001",
+    "razon_social": "DANIEL ROMERO",
+    "domicilio": "DON BOSCO 1622",
+    "localidad": "S. MIGUEL DE TUCUMAN",
+    "telefono": "0341-4321819",
+    "mail": "clowncotillon@arnet.com.ar"
+  },
+  {
+    "cliente": "RUN001",
+    "razon_social": "RULITO'S S.A.",
+    "domicilio": "SARMIENTO 574",
+    "localidad": "NEUQUEN",
+    "telefono": "0299-4432319/4429670",
+    "mail": "alicia@cotillonrulitonqn.com.ar"
+  },
+  {
+    "cliente": "SAB001",
+    "razon_social": "SALECIANO S.R.L.",
+    "domicilio": "GOBERNADOR UGARTE 3650",
+    "localidad": "REMEDIOS DE ESCALADA",
+    "telefono": "4267-3985/5100",
+    "mail": "clamor@speedy.com.ar"
+  },
+  {
+    "cliente": "SAB004",
+    "razon_social": "SAMARCO S. R. L.",
+    "domicilio": "AV. EVA PERON 1341",
+    "localidad": "GRAND BOURG",
+    "telefono": "02320-412806",
+    "mail": 0
+  },
+  {
+    "cliente": "SAJ002",
+    "razon_social": "SAIQUITA LUCIANA M.",
+    "domicilio": "VILLAFAÑE 443",
+    "localidad": "PERICO",
+    "telefono": 0,
+    "mail": "magsaiquita@hotmail.com"
+  },
+  {
+    "cliente": "SCB001",
+    "razon_social": "NOEMI E. SCIANCA",
+    "domicilio": "CALLE 13 Nº 260",
+    "localidad": "LA PLATA",
+    "telefono": "0221-4229025",
+    "mail": "nscianca@hotmail.com"
+  },
+  {
+    "cliente": "SCB002",
+    "razon_social": "SCALETZKY IRENE BEATRIZ",
+    "domicilio": "AV. NAZCA 1758",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4581-2048",
+    "mail": "info@la-repostera.com.ar"
+  },
+  {
+    "cliente": "SCB003",
+    "razon_social": "SCHAVLOVSKY JUAN CARLOS",
+    "domicilio": "AV. HIPOLITO YRIGOYEN 10421",
+    "localidad": "TEMPERLEY",
+    "telefono": "4231-7994",
+    "mail": "juanschlavo@yahoo.com.ar"
+  },
+  {
+    "cliente": "SCB005",
+    "razon_social": "JUAN CARLOS SCIGLITANO",
+    "domicilio": "LOPEZ MAY 3132",
+    "localidad": "G. DE LAFERRERE",
+    "telefono": "4467-7248",
+    "mail": 0
+  },
+  {
+    "cliente": "SEB001",
+    "razon_social": "JORGE SENRA",
+    "domicilio": "AV. VELEZ SARFIELD 928",
+    "localidad": "CIUDAD MADERO",
+    "telefono": "4622-3874",
+    "mail": 0
+  },
+  {
+    "cliente": "SFS001",
+    "razon_social": "SBROCCO FRANCO AUGUSTO",
+    "domicilio": "ABSALON ROJAS 208",
+    "localidad": "SANTIAGO DEL ESTERO",
+    "telefono": 0,
+    "mail": "gabrielrigo@gabrielrigo.com.ar"
+  },
+  {
+    "cliente": "SGB001",
+    "razon_social": "SAEZ MARIO GUSTAVO",
+    "domicilio": "JOSE ALICO 1195",
+    "localidad": "ALDO BONZI",
+    "telefono": "4442-7566",
+    "mail": 0
+  },
+  {
+    "cliente": "SGB002",
+    "razon_social": "SGALIPPA MIRTA ELENA",
+    "domicilio": "AV. CARLOS ARROYO 115",
+    "localidad": "CARLOS CASARES",
+    "telefono": "02395-453453",
+    "mail": "cotillontf@hotmail.com"
+  },
+  {
+    "cliente": "SGC001",
+    "razon_social": "SONZINI GLORIA MERCEDES",
+    "domicilio": "CARLOS PELLEGRINI 935",
+    "localidad": "COMODORO RIVADAVIA",
+    "telefono": "0297-4060000",
+    "mail": "cotillondelcentro@gmail.com"
+  },
+  {
+    "cliente": "SIB001",
+    "razon_social": "VICTOR SILVA",
+    "domicilio": "LA PINTURA 11035",
+    "localidad": "MORENO",
+    "telefono": "02320-450886",
+    "mail": "mandyrs87@gmail.com"
+  },
+  {
+    "cliente": "SIS002",
+    "razon_social": "SIGLO XXI S.R.L.",
+    "domicilio": "SALTA 68",
+    "localidad": "SANTIAGO DEL ESTERO",
+    "telefono": "0385-4222299",
+    "mail": "negromoya@gmail.com"
+  },
+  {
+    "cliente": "SIS003",
+    "razon_social": "SILVA MARINA Y SILVA NATALIA S.H.",
+    "domicilio": "ARTIGAS 641",
+    "localidad": "SAN LORENZO",
+    "telefono": "03476-422123",
+    "mail": "compras@elnuevorepostero.com.ar"
+  },
+  {
+    "cliente": "SMC001",
+    "razon_social": "SMILE S.R.L.",
+    "domicilio": "ESQUIU 473",
+    "localidad": "CORDOBA",
+    "telefono": 0,
+    "mail": "gabrielrigo@gabrielrigo.com.ar"
+  },
+  {
+    "cliente": "SMN001",
+    "razon_social": "SANDRA AGUSTINA MARTIN",
+    "domicilio": "PASTEUR 780",
+    "localidad": "NEUQUEN",
+    "telefono": "0299-4435766",
+    "mail": "sandramartinnqn@hotmail.com"
+  },
+  {
+    "cliente": "SOB002",
+    "razon_social": "SOLE MARTIN IGNACIO",
+    "domicilio": "CALLE 26 Nº 4374",
+    "localidad": "CITY BELL",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "SOB003",
+    "razon_social": "SOTO ALICIA",
+    "domicilio": "LAVALLOL 1044",
+    "localidad": "HAEDO",
+    "telefono": "4659-9156",
+    "mail": "elchanguitosoto@hotmail.com"
+  },
+  {
+    "cliente": "SOS001",
+    "razon_social": "MARTIN ROBERTO SORIA",
+    "domicilio": "GABOTO 1881",
+    "localidad": "SANTO TOME",
+    "telefono": "0342-4744944",
+    "mail": "lacasadelasgalletitassrl@yahoo.com.ar"
+  },
+  {
+    "cliente": "SSC001",
+    "razon_social": "SUGAR & SPICE S.R.L.",
+    "domicilio": "GUATEMALA 5415",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4777-5423",
+    "mail": "fabiana@sugarandspice.com.ar"
+  },
+  {
+    "cliente": "STB001",
+    "razon_social": "ALDO STAFFOLANI",
+    "domicilio": "RIVADAVIA 1659",
+    "localidad": "LINCOLN",
+    "telefono": "02355-423561",
+    "mail": "aldo@cotillonpibes.com.ar"
+  },
+  {
+    "cliente": "STB002",
+    "razon_social": "GUSTAVO N. STAFFOLANI",
+    "domicilio": "BENITO DE MIGUEL 482",
+    "localidad": "JUNIN",
+    "telefono": "0236-434365",
+    "mail": "gustavo@cotillonpibes.com.ar"
+  },
+  {
+    "cliente": "STB004",
+    "razon_social": "STATEX S.A.C.I.F.",
+    "domicilio": "DIAZ VELEZ 4268",
+    "localidad": "MUNRO",
+    "telefono": "4762-4819",
+    "mail": 0
+  },
+  {
+    "cliente": "SUB002",
+    "razon_social": "CARLOS ROMUALDO SUELDO",
+    "domicilio": "SARMIENTO 787",
+    "localidad": "MORON",
+    "telefono": "4627-6196",
+    "mail": 0
+  },
+  {
+    "cliente": "SUC001",
+    "razon_social": "SUAREZ DEL CERRO MARGARITA",
+    "domicilio": "DEL BARCO CENTENERA 295",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4902-5917",
+    "mail": "caballito@suarezdelcerro.com.ar"
+  },
+  {
+    "cliente": "SUS001",
+    "razon_social": "SUAREZ EMILSE ELIDA",
+    "domicilio": "25 DE MAYO BIS 649",
+    "localidad": "ROSARIO",
+    "telefono": "0341-4510251/4510086",
+    "mail": "gustavo@suarezmayorista.com.ar"
+  },
+  {
+    "cliente": "SUS002",
+    "razon_social": "SUC. DE PERVERSI HUGO R.",
+    "domicilio": "ESPAÑA ESQ. RIVADAVIA",
+    "localidad": "LA BANDA",
+    "telefono": 0,
+    "mail": "cieloperversi@hotmail.com"
+  },
+  {
+    "cliente": "TES001",
+    "razon_social": "TETUAN S.A.",
+    "domicilio": "EJERCITO DE LOS ANDES 823",
+    "localidad": "SAN LUIS",
+    "telefono": "0266-4432036",
+    "mail": "comprasvalentino@gmail.com"
+  },
+  {
+    "cliente": "TFB001",
+    "razon_social": "TODO FIESTA S.R.L.",
+    "domicilio": "AV. LOS QUILMES 69",
+    "localidad": "BERNAL OESTE",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "TIC001",
+    "razon_social": "TICORAL S.R.L.",
+    "domicilio": "LAVALLE 2318",
+    "localidad": "CAPITAL FEDERAL",
+    "telefono": "4954-4433",
+    "mail": "noemi@ticoral.com"
+  },
+  {
+    "cliente": "TMB001",
+    "razon_social": "TORTAS MARIA RENEE",
+    "domicilio": "DELLA PAOLERA 952",
+    "localidad": "MAR DEL PLATA",
+    "telefono": "0223-4792894/7887",
+    "mail": "info@mariarenee.com"
+  },
+  {
+    "cliente": "TOL001",
+    "razon_social": "TODO COTILLON S.A.",
+    "domicilio": "AV. PEÑALOZA 1880",
+    "localidad": "LA RIOJA",
+    "telefono": "0380-4438483",
+    "mail": "todocotillonsa@hotmail.com"
+  },
+  {
+    "cliente": "TPB001",
+    "razon_social": "TODO PARA LA GASTRONOMIA SA",
+    "domicilio": "JUAN B. JUSTO 5978",
+    "localidad": "MAR DEL PLATA",
+    "telefono": "0223-1833311",
+    "mail": "compras@tpgastronomia.com.ar"
+  },
+  {
+    "cliente": "TRB001",
+    "razon_social": "NANCY F. P. DE TROVATO",
+    "domicilio": "BALCARCE 2957",
+    "localidad": "OLAVARRIA",
+    "telefono": "02284-444977",
+    "mail": "nancysucasa@hotmail.com"
+  },
+  {
+    "cliente": "TRB002",
+    "razon_social": "TRIAGEN S.A.",
+    "domicilio": "VIRREY LORETO 2435",
+    "localidad": "MUNRO",
+    "telefono": "4509-6696",
+    "mail": "triagensa@gmail.com"
+  },
+  {
+    "cliente": "TRB004",
+    "razon_social": "DANIEL TREVES",
+    "domicilio": "INDEPENDENCIA 1795",
+    "localidad": "LUIS GUILLON",
+    "telefono": "4296-3656",
+    "mail": 0
+  },
+  {
+    "cliente": "TRR001",
+    "razon_social": "TRONADOR S. C. A.",
+    "domicilio": "MITRE 202",
+    "localidad": "S.CARLOS DE BARILOCH",
+    "telefono": "02944-433999",
+    "mail": "fabrica@chocolatesrapanui.com.ar"
+  },
+  {
+    "cliente": "TRT001",
+    "razon_social": "TUCUMAN REPOSTERIA S.H.",
+    "domicilio": "PJE. PADILLA 63",
+    "localidad": "SAN MIGUEL DE TUCUMA",
+    "telefono": "0381-4224395",
+    "mail": "papelshop@gmail.com"
+  },
+  {
+    "cliente": "URB001",
+    "razon_social": "GRISELDA UREÑA",
+    "domicilio": "ARGENTINA 4924",
+    "localidad": "LA TABLADA",
+    "telefono": "4694-0880",
+    "mail": "edu_millo@live.com.ar"
+  },
+  {
+    "cliente": "VAB001",
+    "razon_social": "CELESTINO VAZQUEZ",
+    "domicilio": "BARTOLOME MITRE 1977",
+    "localidad": "LUJAN",
+    "telefono": "02323-434587",
+    "mail": 0
+  },
+  {
+    "cliente": "VAB002",
+    "razon_social": "ARNALDO Y DANTE VALLEJOS",
+    "domicilio": "NECOCHEA 4244",
+    "localidad": "LA TABLADA",
+    "telefono": "4454-2336",
+    "mail": "aldevash@speedy.com.ar"
+  },
+  {
+    "cliente": "VAB003",
+    "razon_social": "VARANO ENRIQUE PEDRO",
+    "domicilio": "SANTA MARIA M. 3221",
+    "localidad": "SAN JUSTO",
+    "telefono": "4651-4906",
+    "mail": 0
+  },
+  {
+    "cliente": "VAM001",
+    "razon_social": "MARCELO VALDEZ",
+    "domicilio": "B.DITRA MZ D CASA 14",
+    "localidad": "GUAYMALLEN",
+    "telefono": "0261-4266218",
+    "mail": "cotiva2011@hotmail.com"
+  },
+  {
+    "cliente": "VEB001",
+    "razon_social": "CRISTINA E. VEGA",
+    "domicilio": "H. YRIGOYEN 1787",
+    "localidad": "JOSE C. PAZ",
+    "telefono": "02320-425997",
+    "mail": "guillermoberselli@yahoo.com.ar"
+  },
+  {
+    "cliente": "VEC001",
+    "razon_social": "VETDIET S.A.",
+    "domicilio": "ROJAS 12",
+    "localidad": "CABA",
+    "telefono": "4247-2800",
+    "mail": "dieteticalanus@outlook.com"
+  },
+  {
+    "cliente": "VEC002",
+    "razon_social": "VEGA JORGE GABRIEL",
+    "domicilio": "SARMIENTO 447",
+    "localidad": "BARRIO CENTRO NORTE",
+    "telefono": "0351-4284536",
+    "mail": "productos_paz@hotmail.com"
+  },
+  {
+    "cliente": "VES001",
+    "razon_social": "FABIAN VENTICINQUE",
+    "domicilio": "SAN JUAN 1096",
+    "localidad": "ROSARIO",
+    "telefono": "0341-4326733/4114677",
+    "mail": "venticinquefabian@hotmail.com"
+  },
+  {
+    "cliente": "VHC001",
+    "razon_social": "VALERIA HOFFMAN",
+    "domicilio": "HONDURAS 5874",
+    "localidad": 0,
+    "telefono": "15-5619-4491",
+    "mail": "info@caramelosartesanos.com.ar"
+  },
+  {
+    "cliente": "VHC002",
+    "razon_social": "HECTOR VERDU",
+    "domicilio": "CORDOBA 265",
+    "localidad": "CORRAL DE BUSTOS",
+    "telefono": 0,
+    "mail": "gabrielrigo@gabrielrigo.com.ar"
+  },
+  {
+    "cliente": "VIB001",
+    "razon_social": "MARTIN R. VISCARDI",
+    "domicilio": "AV. PTE PERON 3930",
+    "localidad": "MORON",
+    "telefono": 0,
+    "mail": "administracion@cotymania.com"
+  },
+  {
+    "cliente": "VIB002",
+    "razon_social": "VICENTE VICARIO",
+    "domicilio": "PRIMERA JUNTA 53",
+    "localidad": "TAPIALES",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "VIC002",
+    "razon_social": "VICENTE MARIA BELEN",
+    "domicilio": "AV. STORNI 215 LOCAL 2",
+    "localidad": "BARRIO PARQUE LICEO",
+    "telefono": "0351-4922741",
+    "mail": 0
+  },
+  {
+    "cliente": "ZECATH",
+    "razon_social": "CATHERINE PAVEZ",
+    "domicilio": "VALLE CENTRAL 1381 PUERTO ALTO",
+    "localidad": "SANTIAGO DE CHILE",
+    "telefono": 0,
+    "mail": 0
+  },
+  {
+    "cliente": "ZKATIE",
+    "razon_social": "KAYROS S.A.",
+    "domicilio": "ISLA SOLEDAD 1721",
+    "localidad": "USHUAIA",
+    "telefono": 0,
+    "mail": "ventas@cosmosushuaia.com.ar"
+  },
+  {
+    "cliente": "ZOB001",
+    "razon_social": "ZODIAC S.H.",
+    "domicilio": "CHARCAS 421",
+    "localidad": "RAMOS MEJIA",
+    "telefono": "4657-4683",
+    "mail": "cotillonmayoristadulces@hotmail.com"
+  },
+  {
+    "cliente": "ZOE001",
+    "razon_social": "ZORRAQUIN-CASSANO HECTOR",
+    "domicilio": "VELEZ SARSFIELD 27",
+    "localidad": "CONCORDIA",
+    "telefono": "0345-4224765",
+    "mail": "distribuidorazorraquin@hotmail.com"
+  },
+  {
+    "cliente": "ZUM002",
+    "razon_social": "ZUIN S.R.L.",
+    "domicilio": "COBOS 1008",
+    "localidad": "CNEL. DORREGO",
+    "telefono": 0,
+    "mail": "marielazuin@yahoo.com.ar"
+  }
+]

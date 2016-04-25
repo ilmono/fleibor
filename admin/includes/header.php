@@ -4,7 +4,7 @@
             <div class="container web-mail-menu">
                 <div class="menuIdioma">
                     <a href="https://www.facebook.com/labfleibor" target="_banck" title='facebook' ><img class="img-circle banderas" src="../img/facebook.jpg"></a>
-                    <form method="post" action="../swichIdioma.php" id="form_idioma">
+                    <form method="post" action="/swichIdioma.php" id="form_idioma">
                         <button value="1" type="submit" name="idioma" id="espa" class="selectidioma" title='Idioma Español'>
                             <img  class="img-circle banderas"   src="../img/argid.jpg">
                         </button>

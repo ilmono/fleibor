@@ -35,6 +35,40 @@ class User
         }
     }
 
+    /********************************************************
+    Este metodo devuelve todos los Usuarios de la base de datos
+     ********************************************************/
+    public function getUsuarios()
+    {
+
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                usuarios.id as id,
+                usuarios.nombre as nombre,
+                usuarios.telefono as telefono,
+                categoria.nombre as categoria,
+                usuarios.mail as mail
+            FROM
+                usuarios,
+                categoria
+            where
+                usuarios.categoria = categoria.id
+		';
+        $result = $mysqli->query($query);
+        if($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()){
+                $users[] = $row;
+            }
+            $result->free();
+            $mysqli->close();
+            return $users;
+        }else{
+            return false;
+        }
+    }
+
+    /*Las dejo por si me sirve alguna*/
     public function verificar_mail_repetido($mail, $id) {
 
         $mysqli = DataBase::connex();
@@ -255,54 +289,7 @@ class User
         return $form;
     }
 
-    /********************************************************
-    Este metodo devuelve todos los Usuarios de la base de datos
-     ********************************************************/
-    public function getUsuarios($page, $fecha)
-    {
-        if($page == 1){
-            $start = 0;
-            $end = 200;
-        }else{
-            $start = $page * 200 + 1;
-            $end = $page * 200 + 200;
-        }
-        if(strpos($fecha, '/')){
-            $fechaFinal = explode('/', $fecha);
-            $fechaFinal = $fechaFinal[2] . '-' . $fechaFinal[0] . '-' . $fechaFinal[1];
-        }else{
-            $fechaFinal = $fecha;
-        }
-        $rows['pager'] = $this->getPager($page, $fechaFinal);
-        $mysqli = DataBase::connex();
-        $query = '
-			SELECT * FROM
-				registro
-			WHERE
-				fecha = "' . $mysqli->real_escape_string(date($fechaFinal)) . '"
-			ORDER BY fecha DESC
-			LIMIT '.$start.' , '. $end
-        ;
-        $result = $mysqli->query($query);
-        if($result->num_rows > 0){
-            while ($row = $result->fetch_assoc())
-            {
-                $usuario['id'] = $row['id'];
-                $usuario['mail'] = $row['mail'];
-                $usuario['estado'] = $row['estado'];
-                $usuario['fecha'] = $row['fecha'];
-                $usuarios[] = $usuario;
-            }
-            $result->free();
-            $mysqli->close();
-            $rows['list'] = $this->format_list_usuarios($usuarios);
-            $rows['email'] = $this->format_list_usuarios_email($usuarios);
 
-            return $rows;
-        }else{
-            return false;
-        }
-    }
     /********************************************************
     Muestra solo los mails  para seleccionar
      ********************************************************/
