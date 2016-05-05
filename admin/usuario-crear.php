@@ -5,10 +5,12 @@ if(!isset($_SESSION['usuario'])){
 }
 include 'includes.php';
 $user = new User();
+$categorias = $user->getCategorias();
 if(isset($_POST['codigo'])){
     echo '<pre>';
-    var_dump($_POST);
-    die;
+    if($user->registratUsuario($_POST)){
+        header("Location: usuario-lista.php");
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -69,10 +71,11 @@ if(isset($_POST['codigo'])){
                         <div class="controls">
                             <select class='form-control span6' name="categoria">
                                 <option value=''>Seleccionar</option>
-                                <option value='1'>Administrador</option>
-                                <option value='2'>Planta</option>
-                                <option value='3'>Facturacion</option>
-                                <option value='4'>Cliente</option>
+                                <?php
+                                    foreach($categorias as $categoria){
+                                        echo '<option value="' . $categoria['id'] . '">' . ucfirst($categoria['nombre']) . '</option>';
+                                    }
+                                ?>
                             </select>
                         </div>
                     </div>
@@ -85,19 +88,19 @@ if(isset($_POST['codigo'])){
                     <div class="control-group">
                         <label class="control-label" for="firstname">Domicilio</label>
                         <div class="controls">
-                            <input type="text" class="span6" id="usuario" name="usuario">
+                            <input type="text" class="span6" id="domicilio" name="domicilio">
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="firstname">Localidad</label>
                         <div class="controls">
-                            <input type="text" class="span6" id="usuario" name="usuario">
+                            <input type="text" class="span6" id="localidad" name="localidad">
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="firstname">Telefono</label>
                         <div class="controls">
-                            <input type="text" class="span6" id="usuario" name="usuario">
+                            <input type="text" class="span6" id="telefono" name="telefono">
                         </div>
                     </div>
                     <div class="form-actions">

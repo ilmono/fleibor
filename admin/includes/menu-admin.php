@@ -23,7 +23,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="usuario-lista.php">Listado de Usuarios</a></li>
                         <li><a href="usuario-crear.php">Agregar Usuario</a></li>
-                        <li><a href="#">Agregar Tipo de Usuario</a></li>
+                        <li><a href="usuario-categoria.php">Agregar Tipo de Usuario</a></li>
                     </ul>
                 </li>
 

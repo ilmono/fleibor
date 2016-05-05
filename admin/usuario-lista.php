@@ -51,7 +51,7 @@ $listadoUsuarios = $user->getUsuarios();
                             <td><?php echo $usuario['categoria']?></td>
                             <td><?php echo $usuario['telefono']?></td>
                             <td><?php echo $usuario['mail']?></td>
-                            <td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
+                            <td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-search"> </i></a> <a href="javascript:;" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
                         </tr>
 
                     <?php } ?>

@@ -10,7 +10,7 @@ class User
 
         $query = '
 			SELECT * FROM
-				users
+				usuarios
 			WHERE
 				user = "' . $mysqli->real_escape_string($myUser) . '"
 			AND
@@ -25,6 +25,7 @@ class User
         if(isset($user['user']) && $user['user'] == $myUser){
             session_start();
             $_SESSION['usuario'] = $user['id'];
+            $_SESSION['permisos'] = $this->getPermisos($user['categoria']);
             $result->free();
             $mysqli->close();
             header("Location: index.php");
@@ -47,13 +48,13 @@ class User
                 usuarios.id as id,
                 usuarios.nombre as nombre,
                 usuarios.telefono as telefono,
-                categoria.nombre as categoria,
+                categorias.nombre as categoria,
                 usuarios.mail as mail
             FROM
                 usuarios,
-                categoria
+                categorias
             where
-                usuarios.categoria = categoria.id
+                usuarios.categoria = categorias.id
 		';
         $result = $mysqli->query($query);
         if($result->num_rows > 0){
@@ -66,6 +67,192 @@ class User
         }else{
             return false;
         }
+    }
+
+    /********************************************************
+    Este metodo inserta un Usuarios
+     ********************************************************/
+    public function registratUsuario($usuario)
+    {
+
+        $mysqli = DataBase::connex();
+        $query = '
+			INSERT INTO usuarios (id, codigo, categoria, nombre, domicilio, localidad, telefono, mail, user, pass) VALUES
+			(NULL, "'.strtoupper($usuario['codigo']).'", '.$usuario['categoria'].', "'.strtoupper($usuario['razon_social']).'", "'.strtoupper($usuario['domicilio']).'", "'.strtoupper($usuario['localidad']).'", "'.$usuario['telefono'].'", "'.$usuario['email'].'", "'.$usuario['usuario'].'", "'.md5($usuario['pass']).'");
+		';
+
+        $result = $mysqli->query($query);
+        $mysqli->close();
+        return $result;
+    }
+
+    /********************************************************
+       Este metodo elimina un Usuario especifico
+     ********************************************************/
+    public function deleteUsuario($id){
+        $mysqli = DataBase::connex();
+        $query = '
+			DELETE FROM
+				usuarios
+			WHERE
+				usuarios.id = ' . $id . '
+			LIMIT
+				1
+		';
+        $mysqli->query($query);
+        $mysqli->close();
+    }
+
+    /********************************************************
+    Este metodo devuelve todas las Categoria de Usuarios
+     ********************************************************/
+    public function getCategorias()
+    {
+
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                *
+            FROM
+                categorias
+		';
+        $result = $mysqli->query($query);
+        if($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()){
+                $categorias[] = $row;
+            }
+            $result->free();
+            $mysqli->close();
+            return $categorias;
+        }else{
+            return false;
+        }
+    }
+
+    /********************************************************
+    Este metodo agrega Categoria
+     ********************************************************/
+    public function agregarCategorias($categoria)
+    {
+
+        $mysqli = DataBase::connex();
+        $query = '
+			INSERT INTO categorias (id, nombre) VALUES
+			(NULL, "'.$categoria.'");
+		';
+
+        $result = $mysqli->query($query);
+        $mysqli->close();
+        return $result;
+    }
+
+    /********************************************************
+    Este metodo devuelve todas las Seccion
+     ********************************************************/
+    public function getSeccion()
+    {
+
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                *
+            FROM
+                permisos
+		';
+        $result = $mysqli->query($query);
+        if($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()){
+                $categorias[] = $row;
+            }
+            $result->free();
+            $mysqli->close();
+            return $categorias;
+        }else{
+            return false;
+        }
+    }
+
+    /********************************************************
+    Este metodo agrega Seccion
+     ********************************************************/
+    public function agregarSeccion($permisos)
+    {
+
+        $mysqli = DataBase::connex();
+        $query = '
+			INSERT INTO permisos (id, nombre) VALUES
+			(NULL, "'.$permisos.'");
+		';
+
+        $result = $mysqli->query($query);
+        $mysqli->close();
+        return $result;
+    }
+
+    /********************************************************
+    Este metodo devuelve todas las Seccion
+     ********************************************************/
+    public function getPermisos($categoria)
+    {
+
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                *
+            FROM
+                categoria_permiso
+            WHERE
+              categoria_id = "'.$categoria.'"
+		';
+
+        $result = $mysqli->query($query);
+        if($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()){
+                $permisos[] = $row;
+            }
+            $result->free();
+            $mysqli->close();
+            return $permisos;
+        }else{
+            return false;
+        }
+    }
+
+    /********************************************************
+    Este metodo agrega Seccion
+     ********************************************************/
+    public function setPermisos($categoria, $permisos)
+    {
+
+        $mysqli = DataBase::connex();
+        $query = '
+          DELETE FROM
+            categoria_permiso
+          WHERE
+            categoria_id = '. $categoria;
+
+        $result = $mysqli->query($query);
+        if(!$result){
+            $mysqli->close();
+            return $result;
+        }
+
+        foreach($permisos as $permiso){
+            $query = '
+                INSERT INTO categoria_permiso (id, categoria_id, permiso_id) VALUES
+                (NULL, "'.$categoria.'", "'.$permiso.'");
+            ';
+
+            $result = $mysqli->query($query);
+            if(!$result){
+                $mysqli->close();
+                return $result;
+            }
+        }
+
+        $mysqli->close();
+        header("Location: usuario-categoria.php?categoria=".$categoria);
+
     }
 
     /*Las dejo por si me sirve alguna*/
@@ -330,21 +517,6 @@ class User
         }
         return $rows;
     }
-    /********************************************************
-    Este metodo elimina un Usuario especifico
-     ********************************************************/
-    public function deleteUsuario($id){
-        $mysqli = DataBase::connex();
-        $query = '
-			DELETE FROM
-				registro
-			WHERE
-				registro.id = '.$id.'
-			LIMIT
-				1
-		';
-        $mysqli->query($query);
-        $mysqli->close();
-    }
+
 }
 ?>
