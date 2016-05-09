@@ -339,7 +339,7 @@ class User
         }
 
         $mysqli->close();
-        header("Location: usuario-categoria.php?categoria=".$categoria);
+        header("Location: usuario-permisos.php?categoria=".$categoria);
 
     }
 
