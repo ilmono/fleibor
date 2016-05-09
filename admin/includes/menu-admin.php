@@ -23,7 +23,9 @@
                     <ul class="dropdown-menu">
                         <li><a href="usuario-lista.php">Listado de Usuarios</a></li>
                         <li><a href="usuario-crear.php">Agregar Usuario</a></li>
-                        <li><a href="usuario-categoria.php">Agregar Tipo de Usuario</a></li>
+                        <li><a href="usuario-categoria.php">Agregar Categoria</a></li>
+                        <li><a href="usuario-seccion.php">Agregar Seccion</a></li>
+                        <li><a href="usuario-permisos.php">Asignar Permisos</a></li>
                     </ul>
                 </li>
 

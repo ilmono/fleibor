@@ -2,8 +2,6 @@
 Bootstrap Admin Template by EGrappler.com
 ------------------------------------------------------------------*/
 
-
-
 /*------------------------------------------------------------------
 [1. Global]
 */
@@ -1370,3 +1368,9 @@ Custom
 	border-radius: 50%;
 }
 
+.mfp-content{
+	width: 500px;
+	background-color: #fff;
+	margin: 25px;
+	padding: 25px;
+}

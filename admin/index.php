@@ -10,17 +10,11 @@ if(!isset($_SESSION['usuario'])){
         <meta charset="utf-8">
         <title>Admin - Fleibor Website</title>
         <meta name="Fleibor Website" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/font-awesome.css" rel="stylesheet">
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet" type="text/css">
-        <link href="css/pages/signin.css" rel="stylesheet" type="text/css">
+        <?php include("includes/style.php"); ?>
     </head>
     <body>
         <?php include("includes/header.php"); ?>
         <?php include("includes/menu-admin.php"); ?>
-
         <!-- /subnavbar -->
         <div class="main">
             <div class="container">
@@ -48,12 +42,6 @@ if(!isset($_SESSION['usuario'])){
                 </div>
             </div>
         </div>
-
-        <script src="js/jquery-1.7.2.min.js"></script>
-        <script src="js/excanvas.min.js"></script>
-        <script src="js/chart.min.js" type="text/javascript"></script>
-        <script src="js/bootstrap.js"></script>
-        <script language="javascript" type="text/javascript" src="js/full-calendar/fullcalendar.min.js"></script>
-        <script src="js/base.js"></script>
+        <?php include("includes/script.php"); ?>
     </body>
 </html>

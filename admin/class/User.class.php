@@ -53,8 +53,10 @@ class User
             FROM
                 usuarios,
                 categorias
-            where
+            WHERE
                 usuarios.categoria = categorias.id
+            ORDER BY
+              nombre ASC
 		';
         $result = $mysqli->query($query);
         if($result->num_rows > 0){
@@ -70,6 +72,29 @@ class User
     }
 
     /********************************************************
+    Este metodo devuelve un Usuario de la base de datos
+     ********************************************************/
+    public function getUsuario($id)
+    {
+
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                *
+            FROM
+                usuarios
+            WHERE
+              usuarios.id = ' . $mysqli->real_escape_string($id)
+		;
+        $result = $mysqli->query($query);
+        if($result->num_rows == 1){
+            return $result->fetch_assoc();
+        }else{
+            header("Location: usuario-lista.php");
+        }
+    }
+
+    /********************************************************
     Este metodo inserta un Usuarios
      ********************************************************/
     public function registratUsuario($usuario)
@@ -78,9 +103,36 @@ class User
         $mysqli = DataBase::connex();
         $query = '
 			INSERT INTO usuarios (id, codigo, categoria, nombre, domicilio, localidad, telefono, mail, user, pass) VALUES
-			(NULL, "'.strtoupper($usuario['codigo']).'", '.$usuario['categoria'].', "'.strtoupper($usuario['razon_social']).'", "'.strtoupper($usuario['domicilio']).'", "'.strtoupper($usuario['localidad']).'", "'.$usuario['telefono'].'", "'.$usuario['email'].'", "'.$usuario['usuario'].'", "'.md5($usuario['pass']).'");
+			(NULL, "'.strtoupper($mysqli->real_escape_string($usuario['codigo'])).'", '.$mysqli->real_escape_string($usuario['categoria']).', "'.$mysqli->real_escape_string(strtoupper($usuario['razon_social'])).'", "'.strtoupper($mysqli->real_escape_string($usuario['domicilio'])).'", "'.strtoupper($mysqli->real_escape_string($usuario['localidad'])).'", "'.$mysqli->real_escape_string($usuario['telefono']).'", "'.$mysqli->real_escape_string($usuario['email']).'", "'.$mysqli->real_escape_string($usuario['usuario']).'", "'.md5($usuario['pass']).'");
 		';
 
+        $result = $mysqli->query($query);
+        $mysqli->close();
+        return $result;
+    }
+
+    /********************************************************
+    Este metodo modifica un Usuarios
+     ********************************************************/
+    public function modificarUsuario($usuario)
+    {
+
+        $mysqli = DataBase::connex();
+        $query = '
+			UPDATE
+			  usuarios
+			SET
+                codigo = "'.strtoupper($mysqli->real_escape_string($usuario['codigo'])).'",
+                categoria = '.$mysqli->real_escape_string($usuario['categoria']).',
+                nombre = "'.$mysqli->real_escape_string(strtoupper($usuario['razon_social'])).'",
+                domicilio = "'.strtoupper($mysqli->real_escape_string($usuario['domicilio'])).'",
+                localidad = "'.strtoupper($mysqli->real_escape_string($usuario['localidad'])).'",
+                telefono = "'.$mysqli->real_escape_string($usuario['telefono']).'",
+                mail = "'.$mysqli->real_escape_string($usuario['email']).'",
+                user = "'.$mysqli->real_escape_string($usuario['usuario']).'"
+			 WHERE
+			    id = '.$usuario['id'].'
+		';
         $result = $mysqli->query($query);
         $mysqli->close();
         return $result;
@@ -95,12 +147,13 @@ class User
 			DELETE FROM
 				usuarios
 			WHERE
-				usuarios.id = ' . $id . '
+				usuarios.id = ' . $mysqli->real_escape_string($id) . '
 			LIMIT
 				1
 		';
-        $mysqli->query($query);
+        $result = $mysqli->query($query);
         $mysqli->close();
+        return $result;
     }
 
     /********************************************************
@@ -138,9 +191,27 @@ class User
         $mysqli = DataBase::connex();
         $query = '
 			INSERT INTO categorias (id, nombre) VALUES
-			(NULL, "'.$categoria.'");
+			(NULL, "'.$mysqli->real_escape_string($categoria).'");
 		';
 
+        $result = $mysqli->query($query);
+        $mysqli->close();
+        return $result;
+    }
+
+    /********************************************************
+    Este metodo elimina una Categoria especifica
+     ********************************************************/
+    public function deleteCategoria($id){
+        $mysqli = DataBase::connex();
+        $query = '
+			DELETE FROM
+				categorias
+			WHERE
+				categorias.id = ' . $mysqli->real_escape_string($id) . '
+			LIMIT
+				1
+		';
         $result = $mysqli->query($query);
         $mysqli->close();
         return $result;
@@ -181,7 +252,7 @@ class User
         $mysqli = DataBase::connex();
         $query = '
 			INSERT INTO permisos (id, nombre) VALUES
-			(NULL, "'.$permisos.'");
+			(NULL, "'.$mysqli->real_escape_string($permisos).'");
 		';
 
         $result = $mysqli->query($query);
@@ -190,7 +261,24 @@ class User
     }
 
     /********************************************************
-    Este metodo devuelve todas las Seccion
+    Este metodo elimina una Seccion especifica
+     ********************************************************/
+    public function deleteSeccion($id){
+        $mysqli = DataBase::connex();
+        $query = '
+			DELETE FROM
+				permisos
+			WHERE
+				permisos.id = ' . $mysqli->real_escape_string($id) . '
+			LIMIT
+				1
+		';
+        $result = $mysqli->query($query);
+        $mysqli->close();
+        return $result;
+    }
+    /********************************************************
+    Este metodo devuelve todos los Permisos
      ********************************************************/
     public function getPermisos($categoria)
     {
@@ -202,7 +290,7 @@ class User
             FROM
                 categoria_permiso
             WHERE
-              categoria_id = "'.$categoria.'"
+              categoria_id = "'.$mysqli->real_escape_string($categoria).'"
 		';
 
         $result = $mysqli->query($query);
@@ -229,7 +317,7 @@ class User
           DELETE FROM
             categoria_permiso
           WHERE
-            categoria_id = '. $categoria;
+            categoria_id = '. $mysqli->real_escape_string($categoria);
 
         $result = $mysqli->query($query);
         if(!$result){
@@ -240,7 +328,7 @@ class User
         foreach($permisos as $permiso){
             $query = '
                 INSERT INTO categoria_permiso (id, categoria_id, permiso_id) VALUES
-                (NULL, "'.$categoria.'", "'.$permiso.'");
+                (NULL, "'.$mysqli->real_escape_string($categoria).'", "'.$mysqli->real_escape_string($permiso).'");
             ';
 
             $result = $mysqli->query($query);

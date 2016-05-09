@@ -3,19 +3,20 @@
     if(!isset($_SESSION['usuario'])){
         header("Location: login.php");
     }
+
     include 'includes.php';
     $user = new User();
-    if(isset($_POST["nueva-categoria"])){
-        $user->agregarCategorias($_POST["nueva-categoria"]);
+    if(isset($_POST["nueva-seccion"])){
+        $user->agregarSeccion($_POST["nueva-seccion"]);
     }
     if(isset($_POST['id'])){
-        if($user->deleteCategoria($_POST['id'])){
-            header("Location: usuario-categoria.php");
+        if($user->deleteSeccion($_POST['id'])){
+            header("Location: usuario-seccion.php");
         }
     }
-    $categorias = $user->getCategorias();
-?>
+    $secciones = $user->getSeccion();
 
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,15 +35,15 @@
         <!-- /widget -->
         <div class="widget widget-table action-table">
             <div class="widget-header"> <i class="icon-group"></i>
-                <h3>Agregar una Categoria</h3>
+                <h3>Agregar una Seccion</h3>
             </div>
             <!-- /widget-header -->
             <div class="widget-content" style="padding-top: 15px;">
                 <form id="edit-profile" class="form-horizontal" method="POST">
                     <div class="control-group">
-                        <label class="control-label" for="nueva-categoria">Nombre</label>
+                        <label class="control-label" for="nueva-seccion">Nombre</label>
                         <div class="controls">
-                            <input type="text" class="span6" id="nueva-categoria" name="nueva-categoria">
+                            <input type="text" class="span6" id="nueva-seccion" name="nueva-seccion">
                         </div>
                     </div>
                     <div class="form-actions">
@@ -54,13 +55,13 @@
         </div>
         <div class="widget widget-table action-table">
             <div class="widget-header"> <i class="icon-th-list"></i>
-                <h3>Lista de Categorias</h3>
+                <h3>Lista de Secciones</h3>
             </div>
             <!-- /widget-header -->
             <div class="widget-content">
                 <div>
                     <div id="test-modal" class="mfp-hide white-popup-block">
-                        <p>Esta seguro que quiere borrar la categoria <span id="modal-text"></span></p>
+                        <p>Esta seguro que quiere borrar la seccion <span id="modal-text"></span></p>
                         <p>
                         <form method="POST" style="display: inline;">
                             <input type="hidden" name="id" id="usr-id-del" value="">
@@ -78,11 +79,11 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php if(!empty($categorias)){foreach($categorias as $categoria){ ?>
+                    <?php if(!empty($secciones)){foreach($secciones as $seccion){ ?>
                         <tr>
-                            <td id="nombre-<?php echo $categoria['id']?>"><?php echo $categoria['nombre']?></td>
+                            <td id="nombre-<?php echo $seccion['id']?>"><?php echo $seccion['nombre']?></td>
                             <td class="td-actions">
-                                <a id="<?php echo $categoria['id']?>" href="#test-modal" class="btn btn-danger btn-small borrar-usuario"><i class="btn-icon-only icon-remove"> </i></a>
+                                <a id="<?php echo $seccion['id']?>" href="#test-modal" class="btn btn-danger btn-small borrar-usuario"><i class="btn-icon-only icon-remove"> </i></a>
                             </td>
                         </tr>
 
