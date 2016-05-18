@@ -14,8 +14,11 @@
                     <ul class="dropdown-menu">
                         <li><a href="producto-lista.php">Listado de Productos</a></li>
                         <li><a href="#">Agregar Producto</a></li>
-                        <li><a href="#">Agregar Categoria</a></li>
-                        <li><a href="#">Agregar Envase</a></li>
+                        <li><a href="producto-color.php">Colores</a></li>
+                        <li><a href="producto-familias.php">Familias</a></li>
+                        <li><a href="producto-envases.php">Envases</a></li>
+                        <li><a href="producto-medida.php">Medidas</a></li>
+                        <li><a href="producto-unidades.php">Unidades</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

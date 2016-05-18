@@ -7,8 +7,8 @@ include 'includes.php';
 $user = new User();
 $listadoUsuarios = $user->getUsuarios();
 if(isset($_POST['id'])){
-    if($user->deleteSeccion($_POST['id'])){
-        header("Location: usuario-seccion.php");
+    if($user->deleteUsuario($_POST['id'])){
+        header("Location: usuario-lista.php");
     }
 }
 ?>
