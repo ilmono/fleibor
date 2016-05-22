@@ -5,6 +5,228 @@ include_once 'Database.class.php';
 class Producto{
 
     /********************************************************
+    Este metodo devuelve todos los Productos
+     ********************************************************/
+    public function getProductos(){
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                *
+            FROM
+                productos
+		';
+        $result = $mysqli->query($query);
+        if($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()){
+                $productos[] = $row;
+            }
+        }else{
+            return false;
+        }
+
+        $tmp = $this->getFamilias();
+        $familias = array();
+        foreach($tmp as $familia){
+            $familias[$familia['id']] = $familia['nombre'];
+        }
+
+        $productosPorFamilia = array();
+        foreach($productos as $producto){
+            $productosPorFamilia[$familias[$producto['familia']]][] = $producto;
+        }
+
+        $result->free();
+        $mysqli->close();
+        return $productosPorFamilia;
+
+    }
+
+    /********************************************************
+    Este metodo devuelve un Producto
+     ********************************************************/
+    public function getProducto($id){
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                *
+            FROM
+                productos
+            WHERE
+              id = '.$id.'
+		';
+        $result = $mysqli->query($query);
+        $mysqli->close();
+        if($result->num_rows == 1){
+            return $result->fetch_assoc();
+        }else{
+            header("Location: producto-lista.php");
+        }
+    }
+
+    /********************************************************
+    Este metodo elimina un Producto
+     ********************************************************/
+    public function deleteProducto($id){
+        $mysqli = DataBase::connex();
+
+        //Borro el producto
+        $query = '
+			DELETE FROM
+				productos
+			WHERE
+				productos.id = ' . $mysqli->real_escape_string($id) . '
+			LIMIT
+				1
+		';
+        $result = $mysqli->query($query);
+        $mysqli->close();
+        $this->borrarRelacionados($id);
+        return $result;
+    }
+
+    private function borrarRelacionados($id){
+        $mysqli = DataBase::connex();
+
+        //Borro los colores relacionados
+        $query = '
+			DELETE FROM
+				producto_colores
+			WHERE
+				producto_colores.id_producto = ' . $mysqli->real_escape_string($id) . '
+		';
+        $mysqli->query($query);
+
+        //Borro los envases relacionados
+        $query = '
+			DELETE FROM
+				producto_envases
+			WHERE
+				producto_envases.id_producto = ' . $mysqli->real_escape_string($id) . '
+		';
+        $mysqli->query($query);
+
+        //Borro las medidas relacionadas
+        $query = '
+			DELETE FROM
+				producto_medidas
+			WHERE
+				producto_medidas.id_producto = ' . $mysqli->real_escape_string($id) . '
+		';
+        $mysqli->query($query);
+
+        //Borro las medidas relacionadas
+        $query = '
+			DELETE FROM
+				producto_unidades
+			WHERE
+				producto_unidades.id_producto = ' . $mysqli->real_escape_string($id) . '
+		';
+
+        $mysqli->query($query);
+        $mysqli->close();
+    }
+
+    /********************************************************
+    Este metodo agrega un Producto
+     ********************************************************/
+    public function agregarProducto($producto){
+         $mysqli = DataBase::connex();
+
+         $query = '
+			INSERT INTO productos (id, familia, nombre, descripcion, subtitulo)
+            VALUES (NULL, ' . $producto['familia'] . ', "' . $producto['nombre'] . '", "' . $producto['descripcion'] . '", "' . $producto['subtitulo'] . '");
+		';
+        $result = $mysqli->query($query);
+        $id_producto = $mysqli->insert_id;
+        $this->setTablasRelacionales($id_producto, $producto['color'], 'producto_colores');
+        $this->setTablasRelacionales($id_producto, $producto['envase'], 'producto_envases');
+        $this->setTablasRelacionales($id_producto, $producto['medida'], 'producto_medidas');
+        $this->setTablasRelacionales($id_producto, $producto['unidad'], 'producto_unidades');
+        $mysqli->close();
+        return $result;
+    }
+
+    /********************************************************
+    Este metodo actualiza un Producto
+     ********************************************************/
+    public function updateProducto($producto){
+        $mysqli = DataBase::connex();
+
+        $query = '
+            UPDATE
+              productos
+            SET
+              familia = "' . $producto['familia'] . '",
+              nombre = "' . $producto['nombre'] . '",
+              descripcion = "' . $producto['descripcion'] . '",
+              subtitulo = "' . $producto['subtitulo'] . '"
+             WHERE
+              id = ' . $producto['id'] . ';
+		';
+
+        $result = $mysqli->query($query);
+        $id_producto = $producto['id'];
+        $this->borrarRelacionados($id_producto);
+        $this->setTablasRelacionales($id_producto, $producto['color'], 'producto_colores');
+        $this->setTablasRelacionales($id_producto, $producto['envase'], 'producto_envases');
+        $this->setTablasRelacionales($id_producto, $producto['medida'], 'producto_medidas');
+        $this->setTablasRelacionales($id_producto, $producto['unidad'], 'producto_unidades');
+        $mysqli->close();
+        return $result;
+    }
+
+
+    /********************************************************
+    Este metodo devuelve todos las Unidades
+     ********************************************************/
+    public function getRelaciones($id_producto, $tabla){
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                *
+            FROM
+                ' . $tabla . '
+            WHERE
+                id_producto = ' . $id_producto . '
+		';
+        $result = $mysqli->query($query);
+        if($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()){
+                $items[] = $row;
+            }
+            $result->free();
+            $mysqli->close();
+
+            return $items;
+        }else{
+            return false;
+        }
+    }
+
+    /********************************************************
+    Este metodo setea todas las tablas relacionales de productos
+     ********************************************************/
+    private function setTablasRelacionales($id_producto, $array_ids, $tabla){
+        $mysqli = DataBase::connex();
+
+        foreach($array_ids as $id){
+            $query = '
+                INSERT INTO ' . $tabla . '  VALUES
+                (NULL, "'.$mysqli->real_escape_string($id_producto).'", "'.$mysqli->real_escape_string($id).'");
+            ';
+
+            $result = $mysqli->query($query);
+            if(!$result){
+                $mysqli->close();
+                return $result;
+            }
+        }
+
+        $mysqli->close();
+        return $result;
+    }
+
+    /********************************************************
     Este metodo devuelve todos las Familias
      ********************************************************/
     public function getFamilias(){
@@ -89,7 +311,6 @@ class Producto{
 			INSERT INTO colores (id, nombre, codigo) VALUES
 			(NULL, "'.$mysqli->real_escape_string($color["nombre"]).'", "'.$mysqli->real_escape_string($color["codigo"]).'");
 		';
-
         $result = $mysqli->query($query);
         $mysqli->close();
         return $result;
@@ -147,6 +368,8 @@ class Producto{
         $mysqli->close();
         return $result;
     }
+
+
     /********************************************************
     Este metodo elimina una Medida
      ********************************************************/
@@ -187,6 +410,7 @@ class Producto{
             return false;
         }
     }
+
     /********************************************************
     Este metodo agrega una Unidad
      ********************************************************/

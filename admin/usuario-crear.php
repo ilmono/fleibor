@@ -98,7 +98,7 @@ if(isset($_POST['codigo'])){
                         </div>
                     </div>
                     <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
                     <a href="usuario-lista.php" class="btn">Cancel</a>
                     </div> <!-- /form-actions -->
                 </form>

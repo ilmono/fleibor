@@ -13,7 +13,7 @@
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-large icon-shopping-cart"></i><span>Productos</span> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="producto-lista.php">Listado de Productos</a></li>
-                        <li><a href="#">Agregar Producto</a></li>
+                        <li><a href="producto-crear.php">Agregar Producto</a></li>
                         <li><a href="producto-color.php">Colores</a></li>
                         <li><a href="producto-familias.php">Familias</a></li>
                         <li><a href="producto-envases.php">Envases</a></li>
