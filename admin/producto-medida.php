@@ -52,63 +52,6 @@
             <!-- /widget-content -->
         </div>
         <div class="widget widget-table action-table">
-            <div class="widget-header"> <i class="icon-group"></i>
-                <h3>Asignar Unidades</h3>
-            </div>
-            <!-- /widget-header -->
-            <div class="widget-content" style="padding-top: 15px;">
-                <form id="edit-profile" class="form-horizontal" method="GET">
-                    <div class="control-group">
-                        <label class="control-label" for="lastname">Medida</label>
-                        <div class="controls">
-                            <select class='form-control span6' name="unidad">
-                                <option value=''>Seleccionar</option>
-                                <?php
-                                foreach($medidas as $medida){
-                                    $slc = '';
-                                    if(isset($_GET["unidad"]) && $medida['id'] == $_GET["unidad"]){
-                                        $slc = 'selected';
-                                    }
-                                    echo '<option value="' . $medida['id'] . '" ' . $slc . '>' . ucfirst($medida['cantidad']) . '</option>';
-                                }
-                                ?>
-                            </select>
-                            <button type="submit" class="btn btn-primary">Ver</button>
-                        </div>
-                    </div>
-                </form>
-                <?php if(isset($_GET["unidad"])){ ?>
-                    <form id="edit-profile" class="form-horizontal" method="POST">
-                        <input type="hidden" name="categoria" value="<?php echo $_GET["categoria"]; ?>">
-                        <div class="control-group">
-                            <label class="control-label" for="lastname">Categoria</label>
-                            <div class="controls">
-                                <?php
-                                $unidades = $product->getUnidades();
-                                foreach($unidades as $unidad){
-                                    $ckd = '';
-                                    /*if($permisos) {
-                                        foreach ($permisos as $permiso) {
-                                            if ($seccion["id"] == $permiso['permiso_id']) {
-                                                $ckd = 'checked';
-                                            }
-                                        }
-                                    }*/
-                                    echo '<input type="checkbox" name="seccion[]" value="'.$unidad["id"].'"  ' . $ckd . '> ' . $unidad["cantidad"] . ' <br>';
-                                }
-                                ?>
-                            </div>
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-primary">Aplicar</button>
-                            </div>
-                        </div>
-                    </form>
-                <?php } ?>
-            </div>
-            <!-- /widget-content -->
-        </div>
-
-        <div class="widget widget-table action-table">
             <div class="widget-header"> <i class="icon-th-list"></i>
                 <h3>Lista de Medidas</h3>
             </div>
