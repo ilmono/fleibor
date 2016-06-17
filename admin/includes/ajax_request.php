@@ -19,6 +19,10 @@
             $product = new Producto();
             $html = $product->getCheckUnidades($_GET["medida"]);
             break;
+        case 'getMedidasByEnvase':
+            $product = new Producto();
+            $html = $product->renderOptionsProductByEnvase($_GET["envase"]);
+            break;
     }
     echo $html;
 

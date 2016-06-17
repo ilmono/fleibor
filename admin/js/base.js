@@ -24,6 +24,17 @@ $(function () {
 				$('#div-envase-medidas').html(result);
 			}});
 		});
+		$('#select-medida-unidades').change(function(event){
+			$.ajax({url: "includes/ajax_request.php?action=getSelectMedidaUnidades&medida="+event.target.value, success: function(result){
+				$('#div-medida-unidades').html(result);
+			}});
+		});
+		$('#select-envase-producto').change(function(event){
+			$.ajax({url: "includes/ajax_request.php?action=getMedidasByEnvase&envase="+event.target.value, success: function(result){
+				console.log(result);
+				$('#div-envase-producto').html(result);
+			}});
+		});
 	});
 
 

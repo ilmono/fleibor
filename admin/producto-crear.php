@@ -9,7 +9,6 @@
         $product->agregarProducto($_POST);
         header("Location: producto-lista.php");
     }
-    $familias = $product->getFamilias();
     $colores = $product->getColores();
     $envases = $product->getEnvases();
     $medidas = $product->getMedidas();
@@ -51,22 +50,9 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="firstname">Descripcion</label>
+                        <label class="control-label" for="firstname">Imagen</label>
                         <div class="controls">
                             <input type="text" class="span6" id="descripcion" name="descripcion">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="lastname">Familia</label>
-                        <div class="controls">
-                            <select class='form-control span6' name="familia">
-                                <option value=''>Seleccionar</option>
-                                <?php
-                                    foreach($familias as $familia){
-                                        echo '<option value="' . $familia['id'] . '">' . ucfirst($familia['nombre']) . '</option>';
-                                    }
-                                ?>
-                            </select>
                         </div>
                     </div>
                     <div class="control-group">
@@ -82,31 +68,20 @@
                     <div class="control-group">
                         <label class="control-label" for="lastname">Envases</label>
                         <div class="controls">
-                            <?php
-                            foreach($envases as $envase){
-                                echo '<input type="checkbox" name="envase[]" value="'.$envase["id"].'"> ' . ucfirst($envase["nombre"]) . ' <br>';
-                            }
-                            ?>
+                            <select id="select-envase-producto" class='form-control span6' name="envase">
+                                <option value=''>Seleccionar</option>
+                                <?php
+                                foreach($envases as $envase){
+                                    echo '<option value="' . $envase['id'] . '">' . ucfirst($envase['nombre']) . '</option>';
+                                }
+                                ?>
+                            </select>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="lastname">Medidas</label>
                         <div class="controls">
-                            <?php
-                            foreach($medidas as $medida){
-                                echo '<input type="checkbox" name="medida[]" value="'.$medida["id"].'"> ' . ucfirst($medida["cantidad"]) . ' <br>';
-                            }
-                            ?>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="lastname">Cajas</label>
-                        <div class="controls">
-                            <?php
-                            foreach($unidades as $unidad){
-                                echo '<input type="checkbox" name="unidad[]" value="'.$unidad["id"].'"> ' . ucfirst($unidad["cantidad"]) . ' <br>';
-                            }
-                            ?>
+                            <div id="div-envase-producto"></div>
                         </div>
                     </div>
                     <div class="form-actions">

@@ -182,7 +182,6 @@ class Producto{
                 INSERT INTO ' . $tabla . '  VALUES
                 (NULL, "'.$mysqli->real_escape_string($id_producto).'", "'.$mysqli->real_escape_string($id).'");
             ';
-
             $result = $mysqli->query($query);
             if(!$result){
                 $mysqli->close();
@@ -356,24 +355,24 @@ class Producto{
         return $result;
     }
 
-    public function getCheckMedidas($envase){
+    public function getCheckMedidas($unidad){
         $medidas = $this->getMedidas();
-        $medidasElegidas = $this->getRelaciones($envase, 'envase_medidas', 'id_envase');
+        $medidasElegidas = $this->getRelaciones($unidad, 'envase_medidas', 'id_envase');
         $html = '
                 <div class="control-group">
                     <label class="control-label" for="lastname">Medidas</label>
                     <div class="controls">';
-                        foreach($medidas as $medida){
-                            $ckd = '';
-                            if($medidasElegidas) {
-                                foreach ($medidasElegidas as $medidaElegida) {
-                                    if ($medida["id"] == $medidaElegida['id_medida']) {
-                                        $ckd = 'checked';
-                                    }
-                                }
-                            }
-                            $html .= '<input ' . $ckd . ' type="checkbox" name="medida[]" value="'.$medida["id"].'"> ' . ucfirst($medida["cantidad"]) . ' <br>';
-                        }
+        foreach($medidas as $medida){
+            $ckd = '';
+            if($medidasElegidas) {
+                foreach ($medidasElegidas as $medidaElegida) {
+                    if ($medida["id"] == $medidaElegida['id_medida']) {
+                        $ckd = 'checked';
+                    }
+                }
+            }
+            $html .= '<input ' . $ckd . ' type="checkbox" name="medida[]" value="'.$medida["id"].'"> ' . ucfirst($medida["cantidad"]) . ' <br>';
+        }
         $html .=    '</div>
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary">Aplicar</button>
@@ -381,6 +380,37 @@ class Producto{
                 </div>';
 
         return $html;
+    }
+
+    public function getMedidasByEnvase($envase){
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT 
+			  * 
+			FROM
+				envase_medidas
+			INNER JOIN
+			    medidas
+			ON 
+			    envase_medidas.id_medida = medidas.id
+			WHERE
+				envase_medidas.id_envase = ' . $mysqli->real_escape_string($envase) . '
+		';
+
+        $result = $mysqli->query($query);
+        if($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()){
+                $medidas[] = $row;
+            }
+            foreach ($medidas as $key => $medida) {
+                $medidas[$key]['unidades'] = $this->getUnidadesByMedida($medida['id_medida']);
+            }
+            $result->free();
+            $mysqli->close();
+            return $medidas;
+        }else{
+            return false;
+        }
     }
 
     /********************************************************
@@ -438,23 +468,23 @@ class Producto{
         return $result;
     }
 
-    public function getCheckMedidas($unidad){
-        $medidas = $this->getMedidas();
-        $medidasElegidas = $this->getRelaciones($unidad, 'medida_unidades', 'id_medida');
+    public function getCheckUnidades($medida){
+        $unidades = $this->getUnidades();
+        $unidadesElegidas = $this->getRelaciones($medida, 'medida_unidades', 'id_medida');
         $html = '
                 <div class="control-group">
                     <label class="control-label" for="lastname">Medidas</label>
                     <div class="controls">';
-        foreach($medidas as $medida){
+        foreach($unidades as $unidad){
             $ckd = '';
-            if($medidasElegidas) {
-                foreach ($medidasElegidas as $medidaElegida) {
-                    if ($medida["id"] == $medidaElegida['id_medida']) {
+            if($unidadesElegidas) {
+                foreach ($unidadesElegidas as $unidadElegida) {
+                    if ($unidad["id"] == $unidadElegida['id_unidad']) {
                         $ckd = 'checked';
                     }
                 }
             }
-            $html .= '<input ' . $ckd . ' type="checkbox" name="medida[]" value="'.$medida["id"].'"> ' . ucfirst($medida["cantidad"]) . ' <br>';
+            $html .= '<input ' . $ckd . ' type="checkbox" name="unidad[]" value="'.$unidad["id"].'"> ' . ucfirst($unidad["cantidad"]) . ' <br>';
         }
         $html .=    '</div>
                     <div class="form-actions">
@@ -463,6 +493,34 @@ class Producto{
                 </div>';
 
         return $html;
+    }
+
+    public function getUnidadesByMedida($medida){
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT 
+			  * 
+			FROM
+				medida_unidades
+			INNER JOIN
+			    unidades
+			ON 
+			    medida_unidades.id_unidad = unidades.id
+			WHERE
+				medida_unidades.id_medida = ' . $mysqli->real_escape_string($medida) . '
+		';
+
+        $result = $mysqli->query($query);
+        if($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()){
+                $unidades[] = $row;
+            }
+            $result->free();
+            $mysqli->close();
+            return $unidades;
+        }else{
+            return false;
+        }
     }
 
     /********************************************************
@@ -517,5 +575,21 @@ class Producto{
         $result = $mysqli->query($query);
         $mysqli->close();
         return $result;
+    }
+    
+    public function renderOptionsProductByEnvase($envase){
+        $result = $this->getMedidasByEnvase($envase);
+        $html = '<div>';
+        foreach ($result as $medida){
+            $html .= '<input type="checkbox" name="opciones['.$medida["id"].'][]" value="'.$medida["id"].'"> ' . ucfirst($medida["cantidad"]) . ' <br>';
+            $html .= '<div>';
+            if(!empty($medida['unidades'])){
+                foreach ($medida['unidades'] as $unidad){
+                    $html .= '<input type="checkbox" name="opciones['.$medida["id"].'][]" value="'.$unidad["id"].'"> ' . ucfirst($unidad["cantidad"]) . ' ';
+                }
+            }
+            $html .= '</div>';
+        }
+        return $html;
     }
 }
