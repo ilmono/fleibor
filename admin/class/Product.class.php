@@ -84,44 +84,15 @@ class Producto{
         return $result;
     }
 
-    private function borrarRelacionados($id){
+    public function borrarRelacion($id, $tabla, $id_name){
         $mysqli = DataBase::connex();
 
-        //Borro los colores relacionados
         $query = '
 			DELETE FROM
-				producto_colores
+				' . $tabla . '
 			WHERE
-				producto_colores.id_producto = ' . $mysqli->real_escape_string($id) . '
+				' . $id_name . ' = ' . $mysqli->real_escape_string($id) . '
 		';
-        $mysqli->query($query);
-
-        //Borro los envases relacionados
-        $query = '
-			DELETE FROM
-				producto_envases
-			WHERE
-				producto_envases.id_producto = ' . $mysqli->real_escape_string($id) . '
-		';
-        $mysqli->query($query);
-
-        //Borro las medidas relacionadas
-        $query = '
-			DELETE FROM
-				producto_medidas
-			WHERE
-				producto_medidas.id_producto = ' . $mysqli->real_escape_string($id) . '
-		';
-        $mysqli->query($query);
-
-        //Borro las medidas relacionadas
-        $query = '
-			DELETE FROM
-				producto_unidades
-			WHERE
-				producto_unidades.id_producto = ' . $mysqli->real_escape_string($id) . '
-		';
-
         $mysqli->query($query);
         $mysqli->close();
     }
@@ -166,11 +137,8 @@ class Producto{
 
         $result = $mysqli->query($query);
         $id_producto = $producto['id'];
-        $this->borrarRelacionados($id_producto);
+        $this->borrarRelacion($id_producto,'producto_colores','id_producto');
         $this->setTablasRelacionales($id_producto, $producto['color'], 'producto_colores');
-        $this->setTablasRelacionales($id_producto, $producto['envase'], 'producto_envases');
-        $this->setTablasRelacionales($id_producto, $producto['medida'], 'producto_medidas');
-        $this->setTablasRelacionales($id_producto, $producto['unidad'], 'producto_unidades');
         $mysqli->close();
         return $result;
     }
@@ -179,7 +147,7 @@ class Producto{
     /********************************************************
     Este metodo devuelve todos las Unidades
      ********************************************************/
-    public function getRelaciones($id_producto, $tabla){
+    public function getRelaciones($id_producto, $tabla, $id){
         $mysqli = DataBase::connex();
         $query = '
 			SELECT
@@ -187,10 +155,11 @@ class Producto{
             FROM
                 ' . $tabla . '
             WHERE
-                id_producto = ' . $id_producto . '
+                ' . $id . ' = ' . $id_producto . '
 		';
         $result = $mysqli->query($query);
-        if($result->num_rows > 0){
+
+        if($result !== false && $result->num_rows > 0){
             while ($row = $result->fetch_assoc()){
                 $items[] = $row;
             }
@@ -206,9 +175,8 @@ class Producto{
     /********************************************************
     Este metodo setea todas las tablas relacionales de productos
      ********************************************************/
-    private function setTablasRelacionales($id_producto, $array_ids, $tabla){
+    public function setTablasRelacionales($id_producto, $array_ids, $tabla){
         $mysqli = DataBase::connex();
-
         foreach($array_ids as $id){
             $query = '
                 INSERT INTO ' . $tabla . '  VALUES
@@ -387,6 +355,34 @@ class Producto{
         $mysqli->close();
         return $result;
     }
+
+    public function getCheckMedidas($envase){
+        $medidas = $this->getMedidas();
+        $medidasElegidas = $this->getRelaciones($envase, 'envase_medidas', 'id_envase');
+        $html = '
+                <div class="control-group">
+                    <label class="control-label" for="lastname">Medidas</label>
+                    <div class="controls">';
+                        foreach($medidas as $medida){
+                            $ckd = '';
+                            if($medidasElegidas) {
+                                foreach ($medidasElegidas as $medidaElegida) {
+                                    if ($medida["id"] == $medidaElegida['id_medida']) {
+                                        $ckd = 'checked';
+                                    }
+                                }
+                            }
+                            $html .= '<input ' . $ckd . ' type="checkbox" name="medida[]" value="'.$medida["id"].'"> ' . ucfirst($medida["cantidad"]) . ' <br>';
+                        }
+        $html .=    '</div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Aplicar</button>
+                    </div>
+                </div>';
+
+        return $html;
+    }
+
     /********************************************************
     Este metodo devuelve todos las Unidades
      ********************************************************/
@@ -441,6 +437,34 @@ class Producto{
         $mysqli->close();
         return $result;
     }
+
+    public function getCheckMedidas($unidad){
+        $medidas = $this->getMedidas();
+        $medidasElegidas = $this->getRelaciones($unidad, 'medida_unidades', 'id_medida');
+        $html = '
+                <div class="control-group">
+                    <label class="control-label" for="lastname">Medidas</label>
+                    <div class="controls">';
+        foreach($medidas as $medida){
+            $ckd = '';
+            if($medidasElegidas) {
+                foreach ($medidasElegidas as $medidaElegida) {
+                    if ($medida["id"] == $medidaElegida['id_medida']) {
+                        $ckd = 'checked';
+                    }
+                }
+            }
+            $html .= '<input ' . $ckd . ' type="checkbox" name="medida[]" value="'.$medida["id"].'"> ' . ucfirst($medida["cantidad"]) . ' <br>';
+        }
+        $html .=    '</div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Aplicar</button>
+                    </div>
+                </div>';
+
+        return $html;
+    }
+
     /********************************************************
     Este metodo devuelve todos laos Envases
      ********************************************************/

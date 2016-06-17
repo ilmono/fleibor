@@ -13,7 +13,6 @@
         header("Location: producto-lista.php");
     }
     $myProduct = $product->getProducto($_GET['producto']);
-    $familias = $product->getFamilias();
     $colores = $product->getColores();
     $envases = $product->getEnvases();
     $medidas = $product->getMedidas();
@@ -57,26 +56,9 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="firstname">Descripcion</label>
+                        <label class="control-label" for="firstname">Imagen</label>
                         <div class="controls">
-                            <input type="text" class="span6" id="descripcion" name="descripcion" value="<?php echo $myProduct['descripcion'];?>">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="lastname">Familia</label>
-                        <div class="controls">
-                            <select class='form-control span6' name="familia">
-                                <option value=''>Seleccionar</option>
-                                <?php
-                                    foreach($familias as $familia){
-                                        $slc = '';
-                                        if(isset($myProduct["familia"]) && $familia['id'] == $myProduct["familia"]){
-                                            $slc = 'selected';
-                                        }
-                                        echo '<option value="' . $familia['id'] . '" ' . $slc . '>' . ucfirst($familia['nombre']) . '</option>';
-                                    }
-                                ?>
-                            </select>
+                            <input type="text" class="span6" id="descripcion" name="descripcion" value="<?php echo $myProduct['img'];?>">
                         </div>
                     </div>
                     <div class="control-group">
@@ -102,26 +84,24 @@
                     <div class="control-group">
                         <label class="control-label" for="lastname">Envases</label>
                         <div class="controls">
-                            <?php
-                            foreach($envases as $envase){
-                                $ckd = '';
-                                $envasesElegidos = $product->getRelaciones($_GET['producto'], 'producto_envases');
-                                if($envasesElegidos) {
-                                    foreach ($envasesElegidos as $envaseElegido) {
-                                        if ($envase["id"] == $envaseElegido['id_envase']) {
-                                            $ckd = 'checked';
+                            <select class='form-control span6' name="envase">
+                                <option value=''>Seleccionar</option>
+                                <?php
+                                    foreach($envases as $envase){
+                                        $slc = '';
+                                        if(isset($myProduct["envase"]) && $color['id'] == $myProduct["envase"]){
+                                            $slc = 'selected';
                                         }
+                                        echo '<option value="' . $envase['id'] . '" ' . $slc . '>' . ucfirst($envase['nombre']) . '</option>';
                                     }
-                                }
-                                echo '<input ' . $ckd . ' type="checkbox" name="envase[]" value="'.$envase["id"].'"> ' . ucfirst($envase["nombre"]) . ' <br>';
-                            }
-                            ?>
+                                ?>
+                            </select>
                         </div>
                     </div>
-                    <div class="control-group">
+                    <!--div class="control-group">
                         <label class="control-label" for="lastname">Medidas</label>
                         <div class="controls">
-                            <?php
+                            <?php/*
                             foreach($medidas as $medida){
                                 $ckd = '';
                                 $medidasElegidas = $product->getRelaciones($_GET['producto'], 'producto_medidas');
@@ -134,13 +114,13 @@
                                 }
                                 echo '<input ' . $ckd . ' type="checkbox" name="medida[]" value="'.$medida["id"].'"> ' . ucfirst($medida["cantidad"]) . ' <br>';
                             }
-                            ?>
+                            */?>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="lastname">Cajas</label>
                         <div class="controls">
-                            <?php
+                            <?php/*
                             foreach($unidades as $unidad){
                                 $ckd = '';
                                 $unidadesElegidas = $product->getRelaciones($_GET['producto'], 'producto_unidades');
@@ -153,9 +133,9 @@
                                 }
                                 echo '<input ' . $ckd . ' type="checkbox" name="unidad[]" value="'.$unidad["id"].'"> ' . ucfirst($unidad["cantidad"]) . ' <br>';
                             }
-                            ?>
+                            */?>
                         </div>
-                    </div>
+                    </div-->
                     <div class="form-actions">
                     <button type="submit" class="btn btn-primary">Guardar</button>
                     <a href="producto-lista.php" class="btn">Cancel</a>

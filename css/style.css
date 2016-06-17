@@ -283,5 +283,8 @@ margin-top: 44px;
 .featurette{
 	margin-top: 50px;
 }
+.input-error{
+	border-color: red;
+}
 
 

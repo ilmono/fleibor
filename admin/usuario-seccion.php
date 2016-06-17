@@ -6,8 +6,18 @@
 
     include 'includes.php';
     $user = new User();
+    $errors = array ();
     if(isset($_POST["nueva-seccion"])){
-        $user->agregarSeccion($_POST["nueva-seccion"]);
+        $validate = new Validator();
+        foreach($_POST as $key => $valor){
+            if($validate->returnValidate($valor, $key)){
+                $errors[$key] = true;
+            }
+        }
+
+        if(empty($errors)) {
+            $user->agregarSeccion($_POST["nueva-seccion"]);
+        }
     }
     if(isset($_POST['id'])){
         if($user->deleteSeccion($_POST['id'])){
@@ -32,6 +42,12 @@
 <!-- /subnavbar -->
 <div class="main">
     <div class="container">
+        <?php if(!empty($errors)){ ?>
+            <div class="alert alert-error">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Error:</strong> Este campo solo permite letras.
+            </div>
+        <?php } ?>
         <!-- /widget -->
         <div class="widget widget-table action-table">
             <div class="widget-header"> <i class="icon-group"></i>
@@ -43,7 +59,7 @@
                     <div class="control-group">
                         <label class="control-label" for="nueva-seccion">Nombre</label>
                         <div class="controls">
-                            <input type="text" class="span6" id="nueva-seccion" name="nueva-seccion">
+                            <input <?php if(isset($errors["nueva-seccion"])){ echo 'style="border-color: red;"'; }?> type="text" class="span6" id="nueva-seccion" name="nueva-seccion" value="<?php if(!empty($errors) & isset($_POST["nueva-seccion"])){ echo $_POST["nueva-seccion"]; }?>">
                         </div>
                     </div>
                     <div class="form-actions">

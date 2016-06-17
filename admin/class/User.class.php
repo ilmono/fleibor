@@ -343,6 +343,37 @@ class User
 
     }
 
+    public function selectPermisos($categoria){
+        $permisos = $this->getPermisos($categoria);
+        $secciones = $this->getSeccion();
+        $html = '
+                <form id="edit-profile" class="form-horizontal" method="POST">
+                    <input type="hidden" name="categoria" value="' . $categoria . '">
+                    <div class="control-group">
+                        <label class="control-label" for="lastname">Categoria</label>
+                        <div class="controls">';
+        foreach($secciones as $seccion){
+            $ckd = '';
+            if($permisos) {
+                foreach ($permisos as $permiso) {
+                    if ($seccion["id"] == $permiso['permiso_id']) {
+                        $ckd = 'checked';
+                    }
+                }
+            }
+            $html .= '<input type="checkbox" name="seccion[]" value="'.$seccion["id"].'"  ' . $ckd . '> ' . $seccion["nombre"] . ' <br>';
+        }
+        $html .=    '</div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Aplicar</button>
+                        </div>
+                     </div>
+                </form>';
+        return $html;
+    }
+
+
+
     /*Las dejo por si me sirve alguna*/
     public function verificar_mail_repetido($mail, $id) {
 

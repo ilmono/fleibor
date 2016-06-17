@@ -1374,3 +1374,11 @@ Custom
 	margin: 25px;
 	padding: 25px;
 }
+
+.tab-pane{
+    margin: 0 50px 25px 50px;
+}
+.tab-pane-div{
+	margin-bottom: 20px;
+	padding: 15px !important;
+}

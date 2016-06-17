@@ -32,8 +32,8 @@
     <div class="container">
         <!-- /widget -->
         <div class="widget widget-table action-table">
-            <div class="widget-header"> <i class="icon-group"></i>
-                <h3>Agregar una Unidad</h3>
+            <div class="widget-header"> <i class="icon-th-large"></i>
+                <h3>Agregar un Empaque</h3>
             </div>
             <!-- /widget-header -->
             <div class="widget-content" style="padding-top: 15px;">
@@ -53,7 +53,7 @@
         </div>
         <div class="widget widget-table action-table">
             <div class="widget-header"> <i class="icon-th-list"></i>
-                <h3>Lista de Unidades</h3>
+                <h3>Lista de Empaques</h3>
             </div>
             <!-- /widget-header -->
             <div class="widget-content">

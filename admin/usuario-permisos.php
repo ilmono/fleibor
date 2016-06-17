@@ -40,7 +40,7 @@
                     <div class="control-group">
                         <label class="control-label" for="lastname">Categoria</label>
                         <div class="controls">
-                            <select class='form-control span6' name="categoria">
+                            <select id="select-permiso-usuario" class='form-control span6' name="categoria">
                                 <option value=''>Seleccionar</option>
                                 <?php
                                 $categorias = $user->getCategorias();
@@ -53,37 +53,14 @@
                                 }
                                 ?>
                             </select>
-                            <button type="submit" class="btn btn-primary">Ver</button>
                         </div>
                     </div>
                 </form>
-                <?php if(isset($_GET["categoria"])){ ?>
-                    <form id="edit-profile" class="form-horizontal" method="POST">
-                        <input type="hidden" name="categoria" value="<?php echo $_GET["categoria"]; ?>">
-                        <div class="control-group">
-                            <label class="control-label" for="lastname">Categoria</label>
-                            <div class="controls">
-                                <?php
-                                    $secciones = $user->getSeccion();
-                                    foreach($secciones as $seccion){
-                                        $ckd = '';
-                                        if($permisos) {
-                                            foreach ($permisos as $permiso) {
-                                                if ($seccion["id"] == $permiso['permiso_id']) {
-                                                    $ckd = 'checked';
-                                                }
-                                            }
-                                        }
-                                        echo '<input type="checkbox" name="seccion[]" value="'.$seccion["id"].'"  ' . $ckd . '> ' . $seccion["nombre"] . ' <br>';
-                                    }
-                                ?>
-                            </div>
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-primary">Aplicar</button>
-                            </div>
-                        </div>
-                    </form>
-                <?php } ?>
+                <div id="div-permiso-usuario">
+                    <?php if(isset($_GET["categoria"])){
+                        echo $user->selectPermisos($_GET["categoria"]);
+                    }?>
+                </div>
             </div>
             <!-- /widget-content -->
         </div>
