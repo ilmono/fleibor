@@ -1382,3 +1382,9 @@ Custom
 	margin-bottom: 20px;
 	padding: 15px !important;
 }
+.contenedor-unidades{
+	display: none;
+}
+.list-product-item{
+	padding: 0 30px;
+}

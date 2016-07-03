@@ -13,7 +13,6 @@
             header("Location: producto-color.php");
         }
     }
-    $familias = $product->getFamilias();
 ?>
 <!DOCTYPE html>
 <html lang="es">

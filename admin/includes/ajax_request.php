@@ -21,7 +21,7 @@
             break;
         case 'getMedidasByEnvase':
             $product = new Producto();
-            $html = $product->renderOptionsProductByEnvase($_GET["envase"]);
+            $html = $product->renderOptionsProductByEnvase($_GET["envase"], 0);
             break;
     }
     echo $html;

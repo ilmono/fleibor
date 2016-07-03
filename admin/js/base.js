@@ -35,6 +35,17 @@ $(function () {
 				$('#div-envase-producto').html(result);
 			}});
 		});
+		$(".btn-medidas").live('click', function() {
+			var id = $(this).attr("id");
+			if($(this).find("span").hasClass('icon-chevron-down')){
+				$(this).find("span").removeClass('icon-chevron-down');
+				$(this).find("span").addClass('icon-chevron-up');
+			}else{
+				$(this).find("span").removeClass('icon-chevron-up');
+				$(this).find("span").addClass('icon-chevron-down');
+			}
+			$("#medida-" + id).toggle(function(){});
+		});
 	});
 
 

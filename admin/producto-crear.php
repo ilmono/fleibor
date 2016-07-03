@@ -6,7 +6,7 @@
     include 'includes.php';
     $product = new Producto();
     if(isset($_POST['nombre'])){
-        $product->agregarProducto($_POST);
+        $product->agregarProducto($_POST, $_FILES);
         header("Location: producto-lista.php");
     }
     $colores = $product->getColores();
@@ -36,7 +36,7 @@
             </div>
             <!-- /widget-header -->
             <div class="widget-content" style="padding-top: 15px;">
-                <form id="edit-profile" class="form-horizontal" method="POST">
+                <form id="edit-profile" class="form-horizontal" method="POST" enctype="multipart/form-data">
                     <div class="control-group">
                         <label class="control-label" for="firstname">Nombre</label>
                         <div class="controls">
@@ -52,7 +52,7 @@
                     <div class="control-group">
                         <label class="control-label" for="firstname">Imagen</label>
                         <div class="controls">
-                            <input type="text" class="span6" id="descripcion" name="descripcion">
+                            <input type="file" class="span6" id="image" name="image">
                         </div>
                     </div>
                     <div class="control-group">

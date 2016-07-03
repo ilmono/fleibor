@@ -54,17 +54,14 @@ if(isset($_POST['id'])){
                     </thead>
                     <tbody>
                     <?php if(is_array($listadoProducto)){ ?>
-                        <?php foreach($listadoProducto as $nombre => $familias){ ?>
-                            <tr><td class="widget-header" colspan="2"><h2><?php echo $nombre?></h2></td></tr>
-                                <?php foreach($familias as $producto){ ?>
-                                    <tr>
-                                        <td id="nombre-<?php echo $producto['id']?>"><?php echo $producto['nombre']?></td>
-                                        <td class="td-actions">
-                                            <a href="producto-ver.php?producto=<?php echo $producto['id']?>" class="btn btn-small btn-success"><i class="btn-icon-only icon-search"> </i></a>
-                                            <a id="<?php echo $producto['id']?>" href="#test-modal" class="btn btn-danger btn-small borrar-usuario"><i class="btn-icon-only icon-remove"> </i></a>
-                                        </td>
-                                    </tr>
-                                <?php } ?>
+                        <?php foreach($listadoProducto as $producto){ ?>
+                            <tr>
+                                <td id="nombre-<?php echo $producto['id']?>"><?php echo $producto['nombre']?></td>
+                                <td class="td-actions">
+                                    <a href="producto-ver.php?producto=<?php echo $producto['id']?>" class="btn btn-small btn-success"><i class="btn-icon-only icon-pencil"> </i></a>
+                                    <a id="<?php echo $producto['id']?>" href="#test-modal" class="btn btn-danger btn-small borrar-usuario"><i class="btn-icon-only icon-remove"> </i></a>
+                                </td>
+                            </tr>
                         <?php } ?>
                     <?php } ?>
                     </tbody>

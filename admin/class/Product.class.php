@@ -14,6 +14,9 @@ class Producto{
                 *
             FROM
                 productos
+            ORDER BY
+                nombre
+            ASC
 		';
         $result = $mysqli->query($query);
         if($result->num_rows > 0){
@@ -24,20 +27,9 @@ class Producto{
             return false;
         }
 
-        $tmp = $this->getFamilias();
-        $familias = array();
-        foreach($tmp as $familia){
-            $familias[$familia['id']] = $familia['nombre'];
-        }
-
-        $productosPorFamilia = array();
-        foreach($productos as $producto){
-            $productosPorFamilia[$familias[$producto['familia']]][] = $producto;
-        }
-
         $result->free();
         $mysqli->close();
-        return $productosPorFamilia;
+        return $productos;
 
     }
 
@@ -68,8 +60,11 @@ class Producto{
      ********************************************************/
     public function deleteProducto($id){
         $mysqli = DataBase::connex();
-
-        //Borro el producto
+        $queryValue = 'SELECT id_values FROM productos WHERE id = ' . $mysqli->real_escape_string($id);
+        $result = $mysqli->query($queryValue);
+        if($result->num_rows == 1){
+            $idValue = $result->fetch_assoc();
+        }
         $query = '
 			DELETE FROM
 				productos
@@ -80,7 +75,8 @@ class Producto{
 		';
         $result = $mysqli->query($query);
         $mysqli->close();
-        $this->borrarRelacionados($id);
+        $this->borrarRelacion($id, 'producto_colores', 'id_producto');
+        $this->borrarRelacion($idValue["id_values"], 'values', 'id');
         return $result;
     }
 
@@ -89,9 +85,9 @@ class Producto{
 
         $query = '
 			DELETE FROM
-				' . $tabla . '
+				`' . $tabla . '`
 			WHERE
-				' . $id_name . ' = ' . $mysqli->real_escape_string($id) . '
+				`' . $id_name . '` = ' . $mysqli->real_escape_string($id) . '
 		';
         $mysqli->query($query);
         $mysqli->close();
@@ -100,19 +96,17 @@ class Producto{
     /********************************************************
     Este metodo agrega un Producto
      ********************************************************/
-    public function agregarProducto($producto){
-         $mysqli = DataBase::connex();
-
-         $query = '
-			INSERT INTO productos (id, familia, nombre, descripcion, subtitulo)
-            VALUES (NULL, ' . $producto['familia'] . ', "' . $producto['nombre'] . '", "' . $producto['descripcion'] . '", "' . $producto['subtitulo'] . '");
+    public function agregarProducto($producto, $imagen){
+        $mysqli = DataBase::connex();
+        $pathIgame = $this->uploadImage($imagen);
+        $query = '
+			INSERT INTO productos (id, envase, nombre, img, subtitulo)
+            VALUES (NULL, ' . $producto['envase'] . ', "' . $producto['nombre'] . '", "' . $pathIgame["image"] . '", "' . $producto['subtitulo'] . '");
 		';
-        $result = $mysqli->query($query);
+        $mysqli->query($query);
         $id_producto = $mysqli->insert_id;
+        $this->agregarValues($id_producto, "envase", $producto["opciones"]);
         $this->setTablasRelacionales($id_producto, $producto['color'], 'producto_colores');
-        $this->setTablasRelacionales($id_producto, $producto['envase'], 'producto_envases');
-        $this->setTablasRelacionales($id_producto, $producto['medida'], 'producto_medidas');
-        $this->setTablasRelacionales($id_producto, $producto['unidad'], 'producto_unidades');
         $mysqli->close();
         return $result;
     }
@@ -121,15 +115,15 @@ class Producto{
     Este metodo actualiza un Producto
      ********************************************************/
     public function updateProducto($producto){
-        $mysqli = DataBase::connex();
 
+        $mysqli = DataBase::connex();
         $query = '
             UPDATE
               productos
             SET
-              familia = "' . $producto['familia'] . '",
+              envase = "' . $producto['envase'] . '",
               nombre = "' . $producto['nombre'] . '",
-              descripcion = "' . $producto['descripcion'] . '",
+              img = "' . $producto['img'] . '",
               subtitulo = "' . $producto['subtitulo'] . '"
              WHERE
               id = ' . $producto['id'] . ';
@@ -139,6 +133,8 @@ class Producto{
         $id_producto = $producto['id'];
         $this->borrarRelacion($id_producto,'producto_colores','id_producto');
         $this->setTablasRelacionales($id_producto, $producto['color'], 'producto_colores');
+        $values = $this->getValues($producto['id']);
+        $this->updateValues($values['id'], "envase", $producto["opciones"]);
         $mysqli->close();
         return $result;
     }
@@ -191,6 +187,51 @@ class Producto{
 
         $mysqli->close();
         return $result;
+    }
+
+    public function getValues($id_producto){
+        $mysqli = DataBase::connex();
+        $query = '
+            SELECT
+                *
+            FROM
+                `values`
+            WHERE
+                id_producto = '. $id_producto .'
+        ';
+        $result = $mysqli->query($query);
+        $mysqli->close();
+        if($result->num_rows == 1){
+            return $result->fetch_assoc();
+        }else{
+            return array();
+        }
+
+    }
+
+    public function agregarValues($id_producto, $type, $options){
+        $mysqli = DataBase::connex();
+        $queryValues = '
+			INSERT INTO `values` (`id`, `id_producto`, `type`, `values`)
+            VALUES (NULL, ' . $id_producto . ', "' . $mysqli->real_escape_string(json_encode($type)) . '", "' . $mysqli->real_escape_string(json_encode($options)) . '");
+		';
+        $mysqli->query($queryValues);
+        $mysqli->close();
+    }
+
+    public function updateValues($id, $type, $options){
+        $mysqli = DataBase::connex();
+        $query = '
+            UPDATE
+              `values`
+            SET
+              `type` = "' .$mysqli->real_escape_string($type) . '",
+              `values` = "' . $mysqli->real_escape_string(json_encode($options)) . '"
+             WHERE
+              id = ' . $id . ';
+		';
+        $mysqli->query($query);
+        $mysqli->close();
     }
 
     /********************************************************
@@ -256,6 +297,9 @@ class Producto{
                 *
             FROM
                 colores
+            ORDER BY
+              nombre
+            ASC
 		';
         $result = $mysqli->query($query);
         if($result->num_rows > 0){
@@ -398,7 +442,7 @@ class Producto{
 		';
 
         $result = $mysqli->query($query);
-        if($result->num_rows > 0){
+        if(!empty($result) && $result->num_rows > 0){
             while ($row = $result->fetch_assoc()){
                 $medidas[] = $row;
             }
@@ -423,6 +467,9 @@ class Producto{
                 *
             FROM
                 unidades
+            ORDER BY
+			    cantidad
+			ASC
 		';
         $result = $mysqli->query($query);
         if($result->num_rows > 0){
@@ -577,19 +624,82 @@ class Producto{
         return $result;
     }
     
-    public function renderOptionsProductByEnvase($envase){
-        $result = $this->getMedidasByEnvase($envase);
-        $html = '<div>';
-        foreach ($result as $medida){
-            $html .= '<input type="checkbox" name="opciones['.$medida["id"].'][]" value="'.$medida["id"].'"> ' . ucfirst($medida["cantidad"]) . ' <br>';
-            $html .= '<div>';
-            if(!empty($medida['unidades'])){
-                foreach ($medida['unidades'] as $unidad){
-                    $html .= '<input type="checkbox" name="opciones['.$medida["id"].'][]" value="'.$unidad["id"].'"> ' . ucfirst($unidad["cantidad"]) . ' ';
-                }
-            }
-            $html .= '</div>';
+    public function renderOptionsProductByEnvase($envase, $id_producto){
+        $medidas = $this->getMedidasByEnvase($envase);
+        $selecteds = $this->getValues($id_producto);
+        if(isset($selecteds["values"])){
+            $values = json_decode($selecteds["values"],true);
+        }else{
+            $values = array();
         }
+
+        $html = '<div>';
+        if(!empty($medidas)){
+            foreach ($medidas as $medida){
+                $html .= '<div id="'.$medida["id"].'" class="btn-medidas"> <span class="icon-chevron-down"> </span>' . ucfirst($medida["cantidad"]) . ' </div>';
+                $html .= '<div class="contenedor-unidades" id="medida-'.$medida["id"].'">';
+                if(!empty($medida['unidades'])){
+                    foreach ($medida['unidades'] as $unidad){
+                        $chk = '';
+                        if(isset($values[$medida["id"]])){
+                            foreach($values[$medida["id"]] as $value){
+                                if($unidad["id"] === $value){
+                                    $chk = 'checked';
+                                }
+                            }
+                        }
+                        $html .= '<input '. $chk .' type="checkbox" name="opciones['.$medida["id"].'][]" value="'.$unidad["id"].'"> ' . ucfirst($unidad["cantidad"]) . ' ';
+                    }
+                }
+                $html .= '</div>';
+            }
+        }else{
+            $html .= '<br /><br />';
+        }
+        $html .= '</div>';
         return $html;
+    }
+
+    /********************************************************
+    Este metodo genera las imagenes de los productos
+     ********************************************************/
+    private function uploadImage($images){
+        foreach ($images as $type => $image) {
+            $foto = $image['tmp_name'] ;
+            $nombre_original = $image['name'];
+            $explode_name_image = explode( '.' , $nombre_original );
+            $extension = array_pop( $explode_name_image);
+
+            switch( $extension ) {
+                case 'image/pjpg':
+                case 'image/pjpeg':
+                case 'jpg':
+                case 'jpeg':
+                case 'JPG':
+                case 'JPEG':
+                    $original = imagecreatefromjpeg( $foto );
+                    break;
+                case 'gif':
+                    $original = imagecreatefromgif( $foto );
+                    break;
+                case 'png':
+                    $original = imagecreatefrompng( $foto );
+                    break;
+                default:
+                    return false;
+                    break;
+            }
+
+            $uploaddir = 'upload_images/';
+            $name = md5($image['name'] . date("YmdHms")) . '.jpg';
+            $uploadfile = $uploaddir . basename($name);
+
+            if (move_uploaded_file($foto, $uploadfile)) {
+                $pathIgame[$type] = $uploaddir . $name;
+            } else {
+                return false;
+            }
+        }
+        return $pathIgame;
     }
 }
