@@ -6,7 +6,7 @@
     include 'includes.php';
     $product = new Producto();
     if(isset($_POST['nombre'])){
-        $product->updateProducto($_POST);
+        $product->updateProducto($_POST, $_FILES);
         header("Location: producto-lista.php");
     }
     if(!isset($_GET['producto'])){
@@ -14,6 +14,7 @@
     }
     $myProduct = $product->getProducto($_GET['producto']);
     $colores = $product->getColores();
+    $gustos = $product->getGustos();
     $envases = $product->getEnvases();
     $medidas = $product->getMedidas();
     $unidades = $product->getUnidades();
@@ -41,7 +42,7 @@
             </div>
             <!-- /widget-header -->
             <div class="widget-content" style="padding-top: 15px;">
-                <form id="edit-profile" class="form-horizontal" method="POST">
+                <form id="edit-profile" class="form-horizontal" method="POST" enctype="multipart/form-data">
                     <div class="control-group">
                         <input type="hidden" value="<?php echo $myProduct['id'];?>" name="id">
                         <label class="control-label" for="firstname">Nombre</label>
@@ -59,15 +60,26 @@
                         <label class="control-label" for="firstname">Imagen</label>
                         <div class="controls">
                             <input type="file" class="span6" id="image" name="image">
+                            <input type="hidden" name="img" value="<?php echo $myProduct['img'];?>">
                         </div>
                     </div>
                     <div class="control-group">
+                        <label class="control-label" for="lastname">Tipo</label>
+                        <div class="controls">
+                            <select id="select-tipo-producto" class='form-control span6' name="tipo">
+                                <option <?php if($myProduct['tipo'] == 'color'){ echo 'selected';} ?> value='color'>Colores</option>
+                                <option <?php if($myProduct['tipo'] == 'gusto'){ echo 'selected';} ?> value='gusto'>Gustos</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div  id="listado-colores" class="control-group <?php if($myProduct['tipo'] == 'gusto'){ echo 'ocultar';} ?>">
                         <label class="control-label" for="lastname">Colores</label>
                         <div class="controls">
                             <?php
+                            $coloresElegidos = $product->getRelaciones($_GET['producto'], 'producto_colores', 'id_producto');
+
                             foreach($colores as $color){
                                 $ckd = '';
-                                $coloresElegidos = $product->getRelaciones($_GET['producto'], 'producto_colores', 'id_producto');
                                 if($coloresElegidos) {
                                     foreach ($coloresElegidos as $colorElegido) {
                                         if ($color["id"] == $colorElegido['id_color']) {
@@ -78,7 +90,25 @@
                                 echo '<input ' . $ckd . ' type="checkbox" name="color[]" value="'.$color["id"].'"> ' . ucfirst($color["nombre"]) . ' <br>';
                             }
                             ?>
-
+                        </div>
+                    </div>
+                    <div id="listado-gustos" class="control-group <?php if($myProduct['tipo'] == 'color'){ echo 'ocultar';} ?>">
+                        <label class="control-label" for="lastname">Gustos</label>
+                        <div class="controls">
+                            <?php
+                            $gustosElegidos = $product->getRelaciones($_GET['producto'], 'producto_gustos', 'id_producto');
+                            foreach($gustos as $gusto){
+                                $ckd = '';
+                                if($gustosElegidos) {
+                                    foreach ($gustosElegidos as $gustoElegido) {
+                                        if ($gusto["id"] == $gustoElegido['id_gusto']) {
+                                            $ckd = 'checked';
+                                        }
+                                    }
+                                }
+                                echo '<input ' . $ckd . ' type="checkbox" name="gusto[]" value="'.$gusto["id"].'"> ' . ucfirst($gusto["nombre"]) . ' <br>';
+                            }
+                            ?>
                         </div>
                     </div>
                     <div class="control-group">

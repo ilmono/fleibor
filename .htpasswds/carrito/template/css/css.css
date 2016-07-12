@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+.clearfix:after {
+    content: "."; 
+    display:block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+.clearfix {display: block;margin:0px 0px 0px 0px;padding: 0px 0px 0px 0px;   }
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;margin:0px 0px 0px 0px;padding: 0px 0px 0px 0px;   }
+.clearfix {display: block;margin:0px 0px 0px 0px;padding: 0px 0px 0px 0px;   }
+/* End hide from IE-mac */
+html {overflow-y: scroll; height: 100%;}
+
+body {margin: 0px 0px 0px 0px;font-family: Verdana, Arial, Helvetica, sans-serif; color:#FFF;background: url(../img/clouds_background.jpg );}
+a:link { font-size:12px;color: #1b3717 ; font-weight:normal; text-decoration: none;}
+a:active { font-size:12px;color: #1b3717;font-weight:normal; text-decoration: none; }
+a:visited { font-size:12px;color:#1b3717;font-weight:normal; text-decoration: none; }
+a:hover { font-size:12px;color: #33502f;font-weight:normal; text-decoration: none;}
+strong {color:#182c14;font-weight:bold;}
+
+h1 {color: #333;font-weight:bold; font-size:20px;margin:10px 0px 10px 0px;padding:0px 0px 0px 5px; text-align:left;  width:99%}
+
+
+/* HEADER */
+.Header {position:relative;width:980px; height:133px; margin: 0px auto 0px auto; padding:0px 0px 0px 0px; background: #eef0ed}
+
+.Header h1 {color: #333;font-weight:bold; font-size:25px;margin:10px 0px 10px 0px;padding:0px 0px 0px 5px; text-align:left;  width:99%}
+
+.Menu{ clear:both;position:relative;width:980px; height:33px; margin: 0px auto 0px auto; padding:0px 0px 0px 0px; font-size:11px; color:#0a2504; text-align:right; word-spacing:5px;}
+.Menu a{font-size:11px; color:#0a2504;}
+.Menu a:hover{font-size:11px; color:#458b39; }
+
+
+
+/*NAVIGATOR*/
+.Navigator {position:relative;width:980px; height:40px; margin: 0px auto 0px auto; padding:0px 0px 0px 0px; background: url(../img/navi.jpg) repeat-x }
+.Navigator ul{position:relative;width:752px; height:40px;margin: 0px auto 0px auto; padding:0px 0px 0px 0px; }
+.Navigator li{position:relative;width:150px; height:31px;margin:5px 0px 0px 0px; padding:0px 0px 0px 0px;list-style:none; float:left; background:url(../img/surco.jpg) no-repeat}
+.Navigator li.a{ width:2px;height:31px; margin:5px 0px 0px 0px; padding:0px 0px 0px 0px; background:url(../img/surco.jpg) no-repeat}
+.Navigator li p{margin:5px 0px 0px 0px; padding:0px 0px 0px 0px; text-align:center; font-size:14px}
+.Navigator li p a{color:#FFF;font-size:14px}
+.Navigator li p a:hover{color:#d5b877;font-size:14px}
+
+/*CONTAINER*/
+.CCenter {position:relative;width:980px;margin: 0px auto 0px auto; padding:0px 0px 10px 0px; background:#FFF}
+.CC {position:relative;width:980px;margin: 0px auto 0px auto; padding:0px 0px 0px 0px; background:#FFF}
+
+
+/*frz*/
+
+.CC .Gen{position:relative;width:980px;margin: 10px auto 0px auto; padding:0px 0px 0px 0px; background:#FFF}
+.CC .Gen tr{ color:#333; font-size:12px}
+
+.CC .Gen p{ color:#333; font-size:12px; padding:5px}
+
+.CC .Prod{position:relative;width:980px;margin: 10px auto 0px auto; padding:0px 0px 0px 0px; background:#FFF}
+.CC .Prod .LeftCont{ float:left;width:200px;margin: 0px 10px 0px 5px; min-height:450px; padding:0px 0px 0px 0px; background:#FFF; border:solid 1px #EFEFEF}
+.CC .Prod .MainCont{float:left; position:relative;width:720px;margin: 0px 0px 0px 0px; padding:0px 0px 0px 0px; background:#FFF; border:solid 1px #EFEFEF}
+
+.CC .Prod h2 {color: #333;font-weight:bold; font-size:14px;margin:10px 0px 10px 0px;padding:0px 0px 0px 5px; text-align:left;  width:99%}
+
+/*home products*/
+.CC .Prod .MainCont .MainCont2 { clear:both; position:relative;width:720px;margin: 10px 0px 0px 0px; padding:10px 0px 10px 0px; }
+.CC .Prod .MainCont .MainCont2 p{ padding:5px; margin:2px; font-size:11px; color:#333 }
+.CC .Prod .MainCont .MainCont2 ul{ clear:both; position:relative;width:720px;margin: 10px 0px 0px 0px; padding:0px 0px 0px 0px; }
+.CC .Prod .MainCont .MainCont2 li{ float:left; width:130px; height:200px; margin: 10px 0px 0px 0px; padding:0px 0px 0px 0px; border:solid 1px #EFEFEF}
+
+.cbox {width:167px; height:200px;margin:10px 0px 0px 42px;padding:5px 0px 0px 3px;font-size: 12px;color:#0b2906;font-weight: normal; background:#FFF; border:solid 1px #eae9e9}
+
+
+/*Cart*/
+table.carttable {
+	padding: 0;
+	margin: 0; 
+}
+table.carttable th {
+	background-color: #E6E6E6;
+	font-weight: bold;
+	text-align: center;
+	height:22px
+}
+table.carttable td {
+	background-color: #FFF;
+	border-bottom: 1px solid #EBEBEB;
+	font-size: 11px;  text-align:center;
+}
+table.carttable tr.rowhighlight td {
+	background-color: #EFF2F9;
+}
+
+
+
+
+
+
+/*FOOTER*/
+.Footer {position:relative;width:980px; height:125px;margin:0px auto 0px auto; padding:0px 0px 0px 0px; clear:both; background:#eef0ed;}
+.Footer .Log{position:relative;width:264px; height:125px;margin:0px 0px 0px 0px; padding:0px 0px 0px 0px;background: url(../img/footer_logo.jpg); float:left}
+.Footer .Text{position:relative;width:500px; height:80px;margin:20px 0px 0px 0px; padding:0px 0px 0px 0px;float:left}
+.Footer .Text p{margin:15px 0px 0px 0px; padding:0px 0px 0px 0px; text-align:center; font-size:12px; color:#1b3717}
+
+
+
+

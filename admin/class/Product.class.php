@@ -100,13 +100,17 @@ class Producto{
         $mysqli = DataBase::connex();
         $pathIgame = $this->uploadImage($imagen);
         $query = '
-			INSERT INTO productos (id, envase, nombre, img, subtitulo)
-            VALUES (NULL, ' . $producto['envase'] . ', "' . $producto['nombre'] . '", "' . $pathIgame["image"] . '", "' . $producto['subtitulo'] . '");
+			INSERT INTO productos (id, envase, nombre, tipo, img, subtitulo)
+            VALUES (NULL, ' . $producto['envase'] . ', "' . $producto['nombre'] . '", "' . $producto['tipo'] . '", "' . $pathIgame["image"] . '", "' . $producto['subtitulo'] . '");
 		';
         $mysqli->query($query);
         $id_producto = $mysqli->insert_id;
         $this->agregarValues($id_producto, "envase", $producto["opciones"]);
-        $this->setTablasRelacionales($id_producto, $producto['color'], 'producto_colores');
+        if($producto['tipo'] == 'color'){
+            $this->setTablasRelacionales($id_producto, $producto['color'], 'producto_colores');
+        }else{
+            $this->setTablasRelacionales($id_producto, $producto['gusto'], 'producto_gustos');
+        }
         $mysqli->close();
         return $result;
     }
@@ -114,25 +118,35 @@ class Producto{
     /********************************************************
     Este metodo actualiza un Producto
      ********************************************************/
-    public function updateProducto($producto){
+    public function updateProducto($producto, $imagen){
 
         $mysqli = DataBase::connex();
+        $pathIgame = $this->uploadImage($imagen);
+        if(!$pathIgame){
+            $pathIgame["image"] =  $producto['img'];
+        }
         $query = '
             UPDATE
               productos
             SET
               envase = "' . $producto['envase'] . '",
               nombre = "' . $producto['nombre'] . '",
-              img = "' . $producto['img'] . '",
+              tipo = "' . $producto['tipo'] . '",
+              img = "' . $pathIgame["image"] . '",
               subtitulo = "' . $producto['subtitulo'] . '"
              WHERE
               id = ' . $producto['id'] . ';
 		';
-
         $result = $mysqli->query($query);
         $id_producto = $producto['id'];
-        $this->borrarRelacion($id_producto,'producto_colores','id_producto');
-        $this->setTablasRelacionales($id_producto, $producto['color'], 'producto_colores');
+        if($producto['tipo'] == 'color'){
+            $this->borrarRelacion($id_producto,'producto_colores','id_producto');
+            $this->setTablasRelacionales($id_producto, $producto['color'], 'producto_colores');
+        }else{
+            $this->borrarRelacion($id_producto,'producto_gustos','id_producto');
+            $this->setTablasRelacionales($id_producto, $producto['gusto'], 'producto_gustos');
+        }
+
         $values = $this->getValues($producto['id']);
         $this->updateValues($values['id'], "envase", $producto["opciones"]);
         $mysqli->close();
@@ -235,51 +249,51 @@ class Producto{
     }
 
     /********************************************************
-    Este metodo devuelve todos las Familias
+    Este metodo devuelve todos los Gustos
      ********************************************************/
-    public function getFamilias(){
+    public function getGustos(){
         $mysqli = DataBase::connex();
         $query = '
 			SELECT
                 *
             FROM
-                familias
+                gustos
 		';
         $result = $mysqli->query($query);
         if($result->num_rows > 0){
             while ($row = $result->fetch_assoc()){
-                $medidas[] = $row;
+                $gustos[] = $row;
             }
             $result->free();
             $mysqli->close();
-            return $medidas;
+            return $gustos;
         }else{
             return false;
         }
     }
     /********************************************************
-    Este metodo agrega una Familia
+    Este metodo agrega un Gusto
      ********************************************************/
-    public function agregarFamilia($familia){
+    public function agregarGusto($gusto){
         $mysqli = DataBase::connex();
         $query = '
-			INSERT INTO familias (id, nombre) VALUES
-			(NULL, "'.$mysqli->real_escape_string($familia["nombre"]).'");
+			INSERT INTO gustos (id, nombre) VALUES
+			(NULL, "'.$mysqli->real_escape_string($gusto["nombre"]).'");
 		';
         $result = $mysqli->query($query);
         $mysqli->close();
         return $result;
     }
     /********************************************************
-    Este metodo elimina una Familia
+    Este metodo elimina un Gusto
      ********************************************************/
-    public function deletFamilia($id){
+    public function deleteGusto($id){
         $mysqli = DataBase::connex();
         $query = '
 			DELETE FROM
-				familias
+				gustos
 			WHERE
-				familias.id = ' . $mysqli->real_escape_string($id) . '
+				gustos.id = ' . $mysqli->real_escape_string($id) . '
 			LIMIT
 				1
 		';
@@ -287,6 +301,7 @@ class Producto{
         $mysqli->close();
         return $result;
     }
+
     /********************************************************
     Este metodo devuelve todos los Colores
      ********************************************************/
@@ -660,6 +675,55 @@ class Producto{
         return $html;
     }
 
+    public function renderOptionsMedidasPedidos($id_producto){
+        $medidas = $this->getMedidas();
+        $selecteds = $this->getValues($id_producto);
+        $select = '<select id="select-medida-pedido-' . $id_producto . '" class="select-medida-pedido form-control span2" name="medida">';
+        if(isset($selecteds["values"])){
+            $values = json_decode($selecteds["values"],true);
+        }else{
+            $values = array();
+        }
+        $firstMedida = '';
+        foreach($values as $myMedida => $paquetes){
+            foreach ($medidas as $medida){
+                if($myMedida == $medida["id"]){
+                    if($firstMedida == ''){
+                        $firstMedida = $medida["id"];
+                    }
+                    $select .= '<option value="' . $medida["id"] . '">' . ucfirst($medida["cantidad"]) . '</option>';
+                }
+            }
+        }
+        $select .= '</select>';
+        $res['medidas'] = $select;
+        $res['unidades'] = $this->renderOptionsUnidadesPedidos($id_producto, $firstMedida);
+        return $res;
+    }
+
+    public function renderOptionsUnidadesPedidos($id_producto, $id_medida){
+        $selecteds = $this->getValues($id_producto);
+        $packages = $this->getUnidades();
+        $select = '<select id="select-medida-pedido" class="form-control span2" name="medida">';
+        if(isset($selecteds["values"])){
+            $values = json_decode($selecteds["values"],true);
+        }else{
+            $values = array();
+        }
+        foreach($values as $medida => $paquetes){
+            foreach($paquetes as $paquete){
+                foreach ($packages as $package){
+                    if($medida == $id_medida && $paquete == $package["id"]){
+                        $select .= '<option value="' . $package["id"] . '">' . ucfirst($package["cantidad"]) . '</option>';
+                    }
+                }
+            }
+
+        }
+        $select .= '</select>';
+        return $select;
+    }
+
     /********************************************************
     Este metodo genera las imagenes de los productos
      ********************************************************/
@@ -693,6 +757,7 @@ class Producto{
             $uploaddir = 'upload_images/';
             $name = md5($image['name'] . date("YmdHms")) . '.jpg';
             $uploadfile = $uploaddir . basename($name);
+            $pathIgame = array();
 
             if (move_uploaded_file($foto, $uploadfile)) {
                 $pathIgame[$type] = $uploaddir . $name;

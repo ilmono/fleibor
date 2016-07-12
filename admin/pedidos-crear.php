@@ -41,8 +41,9 @@ $colores = $product->getColores();
                                 <!-- /widget-header -->
                                 <div class="widget-content" style="padding-top: 15px;">
                                     <div class="control-group">
-                                        <div class="span3" style="height: 100px ">
-                                        <p>Imagen del producto</p>
+                                        <div class="wraper-img">
+                                            <img class="img-producto-crear-pedido" src="<?php if(empty($producto['img'])){echo 'img/logoweb2.jpg'; }else{echo $producto['img'];}?>">
+
                                         </div>
                                         <div class="list-product-item">
                                             <h3><?php echo $producto['nombre']?></h3>
@@ -50,34 +51,56 @@ $colores = $product->getColores();
                                                 <h4><?php echo $producto['subtitulo']; ?></h4>
                                             <?php } ?>
                                             <p><b>Envase: </b> <?php echo $strEnvase; ?></p>
-                                            <?php if(!empty($coloresElegidos)){ ?>
-                                                <h4><?php echo $producto['subtitulo']; ?></h4>
-                                            <?php } ?>
-                                            <?php
+                                            <div>
+                                                <?php
                                                 $monbreColores = array();
                                                 $coloresElegidos = $product->getRelaciones($producto['id'], 'producto_colores', 'id_producto');
                                                 if(!empty($coloresElegidos)) {
                                                     foreach ($colores as $color) {
                                                         foreach ($coloresElegidos as $colorElegido)
                                                             if ($color['id'] === $colorElegido['id_color']) {
-                                                                $monbreColores[] = $color['codigo'];
+                                                                $monbreColores[] = $color;
                                                             }
                                                     }
-                                            ?>
-                                            <table>
-                                                <tr><td><b>Colores: </b></td>
-                                                    <?php
-                                                        foreach($monbreColores as $color){
-                                                            echo '<td style="background-color: ' . $color . '; width: 20px; height: 20px"></td>';
-                                                        }
-                                                    ?>
-                                                </tr>
-                                            </table>
-                                            <?php } ?>
+                                                }
+                                                ?>
+                                            </div>
+                                            <div id="container-product-<?php echo $producto['id']; ?>" class="ocultar">
+                                                <?php $infoProduct = $product->renderOptionsMedidasPedidos($producto['id']); ?>
+                                                    <table class="table table-hover">
+                                                        <thead>
+                                                            <tr style="text-align: center; font-weight: bold;">
+                                                                <?php if(!empty($coloresElegidos)) { ?><td colspan="2">Color</td><?php } ?>
+                                                                <td> Medida </td>
+                                                                <td> Empaque </td>
+                                                                <td> Cantidad </td>
+                                                            </tr>
+                                                        </thead>
+                                                        <?php
+                                                            if(!empty($coloresElegidos)) {
+                                                                foreach($monbreColores as $color){ ?>
+                                                                    <tr>
+                                                                        <td style="background-color: <?php echo $color['codigo']; ?>; width: 20px; height: 20px"></td>
+                                                                        <td> <?php echo $color['nombre']; ?> </td>
+                                                                        <td> <?php echo $infoProduct['medidas']; ?> </td>
+                                                                        <td id="empaque-pedido-<?php echo $producto['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
+                                                                        <td> <input type="number" class="span1" id="subtitulo" name="subtitulo" min="0" value=""> </td>
+                                                                    </tr>
+                                                                <?php }
+                                                           }else{ ?>
+                                                                <tr>
+                                                                <td> <?php echo $infoProduct['medidas']; ?> </td>
+                                                                <td id="empaque-pedido-<?php echo $producto['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
+                                                                <td> <input type="number" class="span1" id="subtitulo" name="subtitulo" min="0" value=""> </td>
+                                                                </tr>
+                                                           <?php } ?>
+                                                    </table>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-actions">
-                                        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                                        <button id="opciones-product-<?php echo $producto['id']; ?>" type="submit" class="btn btn-invert option-to-cart">Ver opciones</button>
+                                        <button id="product-<?php echo $producto['id']; ?>" type="submit" class="btn btn-primary add-to-cart ocultar">Agregar al carrito</button>
                                     </div> <!-- /form-actions -->
                                 </div>
                                 <!-- /widget-content -->

@@ -6,13 +6,14 @@
     include 'includes.php';
     $product = new Producto();
     if(isset($_POST['nombre'])){
-        $product->agregarFamilia($_POST);
+        $product->agregarGusto($_POST);
     }
     if(isset($_POST['id'])){
-        if($product->deleteFamilia($_POST['id'])){
+        if($product->deleteGusto($_POST['id'])){
             header("Location: producto-color.php");
         }
     }
+    $gustos = $product->getGustos();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -32,7 +33,7 @@
         <!-- /widget -->
         <div class="widget widget-table action-table">
             <div class="widget-header"> <i class="icon-group"></i>
-                <h3>Agregar una Familia</h3>
+                <h3>Agregar un Gusto</h3>
             </div>
             <!-- /widget-header -->
             <div class="widget-content" style="padding-top: 15px;">
@@ -52,13 +53,13 @@
         </div>
         <div class="widget widget-table action-table">
             <div class="widget-header"> <i class="icon-th-list"></i>
-                <h3>Lista de Familias</h3>
+                <h3>Lista de Gustos</h3>
             </div>
             <!-- /widget-header -->
             <div class="widget-content">
                 <div>
                     <div id="test-modal" class="mfp-hide white-popup-block">
-                        <p>Esta seguro que quiere borrar el color <span id="modal-text"></span></p>
+                        <p>Esta seguro que quiere borrar el Gusto <span id="modal-text"></span></p>
                         <p>
                         <form method="POST" style="display: inline;">
                             <input type="hidden" name="id" id="usr-id-del" value="">
@@ -76,11 +77,11 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php if(!empty($familias)){foreach($familias as $familia){ ?>
+                    <?php if(!empty($gustos)){foreach($gustos as $gusto){ ?>
                         <tr>
-                            <td id="nombre-<?php echo $familia['id']?>"><?php echo $familia['nombre']?></td>
+                            <td id="nombre-<?php echo $gusto['id']?>"><?php echo $gusto['nombre']?></td>
                             <td class="td-actions">
-                                <a id="<?php echo $familia['id']?>" href="#test-modal" class="btn btn-danger btn-small borrar-usuario"><i class="btn-icon-only icon-remove"> </i></a>
+                                <a id="<?php echo $gusto['id']?>" href="#test-modal" class="btn btn-danger btn-small borrar-usuario"><i class="btn-icon-only icon-remove"> </i></a>
                             </td>
                         </tr>
 

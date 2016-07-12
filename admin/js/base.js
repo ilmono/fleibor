@@ -35,6 +35,26 @@ $(function () {
 				$('#div-envase-producto').html(result);
 			}});
 		});
+		$('.select-medida-pedido').change(function(event){
+			var id = $(this).attr("id").split('-');
+			id = id['3'];
+			$.ajax({url: "includes/ajax_request.php?action=getSelectUnidadesPedidos&id_producto="+id+"&id_medida="+event.target.value, success: function(result){
+				$('#empaque-pedido-'+id).html(result);
+			}});
+		});
+
+		$('#select-tipo-producto').change(function(){
+			var myValue = $(this).val();
+			if(myValue == 'color'){
+				$('#listado-colores').removeClass('ocultar');
+				$('#listado-gustos').addClass('ocultar');
+			}else{
+				$('#listado-gustos').removeClass('ocultar');
+				$('#listado-colores').addClass('ocultar');
+			}
+		});
+
+
 		$(".btn-medidas").live('click', function() {
 			var id = $(this).attr("id");
 			if($(this).find("span").hasClass('icon-chevron-down')){
@@ -45,6 +65,31 @@ $(function () {
 				$(this).find("span").addClass('icon-chevron-down');
 			}
 			$("#medida-" + id).toggle(function(){});
+		});
+
+		$(".option-to-cart").live('click', function() {
+			var id = $(this).attr("id").split('-');
+			id = id['2'];
+			//alert(id);
+
+			if($(this).html() == 'Ocultar opciones'){
+				$(this).removeClass('btn-danger');
+				$(this).addClass('btn-invert');
+				$(this).html('Ver opciones');
+				$("#product-"+id).addClass('ocultar');
+				$(this).addClass('btn-invert');
+			}else{
+				$(this).removeClass('btn-invert');
+				$(this).addClass('btn-danger');
+				$("#product-"+id).removeClass('ocultar');
+				$(this).html('Ocultar opciones');
+			}
+			$("#container-product-" + id).toggle(function(){});
+		});
+
+		$(".add-to-cart").live('click', function() {
+			var id = $(this).attr("id");
+			//alert(id);
 		});
 	});
 

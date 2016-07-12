@@ -1387,4 +1387,25 @@ Custom
 }
 .list-product-item{
 	padding: 0 30px;
+	display: inline-block;
+	margin-top: 28px;
+	margin-left: 200px;
+	min-height: 110px;
+	width: 70%;
+}
+
+.mostrar{
+	display: block;
+}
+
+.ocultar{
+	display: none;
+}
+.wraper-img{
+	display: inline-block;
+	position: absolute;
+	margin-left: 30px;
+}
+.img-producto-crear-pedido{
+	width: 150px;
 }

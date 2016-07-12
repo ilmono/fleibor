@@ -23,6 +23,10 @@
             $product = new Producto();
             $html = $product->renderOptionsProductByEnvase($_GET["envase"], 0);
             break;
+        case 'getSelectUnidadesPedidos':
+            $product = new Producto();
+            $html = $product->renderOptionsUnidadesPedidos($_GET["id_producto"], $_GET["id_medida"]);
+            break;
     }
     echo $html;
 

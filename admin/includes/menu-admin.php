@@ -6,7 +6,7 @@
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-large icon-calendar"></i><span>Pedidos</span> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="index.php">Listado de Pedidos</a></li>
-                        <li><a href="#">Agregar Pedido</a></li>
+                        <li><a href="pedidos-crear.php">Agregar Pedido</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -15,6 +15,7 @@
                         <li><a href="producto-lista.php">Listado de Productos</a></li>
                         <li><a href="producto-crear.php">Agregar Producto</a></li>
                         <li><a href="producto-color.php">Colores</a></li>
+                        <li><a href="producto-gustos.php">Gustos</a></li>
                         <li><a href="producto-envases.php">Envases</a></li>
                         <li><a href="producto-medida.php">Medidas</a></li>
                         <li><a href="producto-unidades.php">Unidades</a></li>

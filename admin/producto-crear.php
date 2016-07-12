@@ -10,6 +10,7 @@
         header("Location: producto-lista.php");
     }
     $colores = $product->getColores();
+    $gustos = $product->getGustos();
     $envases = $product->getEnvases();
     $medidas = $product->getMedidas();
     $unidades = $product->getUnidades();
@@ -56,11 +57,31 @@
                         </div>
                     </div>
                     <div class="control-group">
+                        <label class="control-label" for="lastname">Tipo</label>
+                        <div class="controls">
+                            <select id="select-tipo-producto" class='form-control span6' name="tipo">
+                                <option value='color'>Colores</option>
+                                <option value='gusto'>Gustos</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="listado-colores" class="control-group">
                         <label class="control-label" for="lastname">Colores</label>
                         <div class="controls">
                             <?php
                             foreach($colores as $color){
                                 echo '<input type="checkbox" name="color[]" value="'.$color["id"].'"> ' . ucfirst($color["nombre"]) . ' <br>';
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <div id="listado-gustos" class="control-group ocultar">
+                        <label class="control-label" for="lastname">Gustos</label>
+                        <div class="controls">
+                            <?php
+                            foreach($gustos as $gusto){
+                                echo '<input type="checkbox" name="gusto[]" value="'.$gusto["id"].'"> ' . ucfirst($gusto["nombre"]) . ' <br>';
                             }
                             ?>
                         </div>
