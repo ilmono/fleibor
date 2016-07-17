@@ -86,6 +86,7 @@ $gustos = $product->getGustos();
                                                                 <td> Medida </td>
                                                                 <td> Empaque </td>
                                                                 <td> Cantidad </td>
+                                                                <td> total </td>
                                                             </tr>
                                                         </thead>
                                                         <?php
@@ -100,7 +101,8 @@ $gustos = $product->getGustos();
                                                                         <td> <?php echo $color['nombre']; ?> </td>
                                                                         <td> <?php echo $infoProduct['medidas']; ?> </td>
                                                                         <td id="empaque-pedido-producto-<?php echo $producto['id']; ?>-color-<?php echo $color['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
-                                                                        <td> <input type="number" class="span1" id="subtitulo" name="subtitulo" min="0" value=""> </td>
+                                                                        <td> <input type="number" class="span1 calcular-total" name="cantidad" min="0" value=""> </td>
+                                                                        <td class="mostrar-total"> 0 </td>
                                                                     </tr>
                                                                 <?php }
                                                            }else if(!empty($gustosElegidos)){
@@ -109,14 +111,16 @@ $gustos = $product->getGustos();
                                                                         <td> <?php echo $gusto['nombre']; ?> </td>
                                                                         <td> <?php echo $infoProduct['medidas']; ?> </td>
                                                                         <td id="empaque-pedido-producto-<?php echo $producto['id']; ?>-color-<?php echo $gusto['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
-                                                                        <td> <input type="number" class="span1" id="subtitulo" name="subtitulo" min="0" value=""> </td>
+                                                                        <td> <input type="number" class="span1 calcular-total" name="cantidad" min="0" value=""> </td>
+                                                                        <td class="mostrar-total"> 0 </td>
                                                                     </tr>
                                                                 <?php }
                                                            }else{ ?>
                                                                 <tr>
-                                                                <td> <?php echo $infoProduct['medidas']; ?> </td>
-                                                                <td id="empaque-pedido-<?php echo $producto['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
-                                                                <td> <input type="number" class="span1" id="subtitulo" name="subtitulo" min="0" value=""> </td>
+                                                                    <td> <?php echo $infoProduct['medidas']; ?> </td>
+                                                                    <td id="empaque-pedido-<?php echo $producto['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
+                                                                    <td> <input type="number" class="span1 calcular-total" name="cantidad" min="0" value=""> </td>
+                                                                    <td class="mostrar-total"> 0 </td>
                                                                 </tr>
                                                            <?php } ?>
                                                     </table>

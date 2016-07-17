@@ -704,7 +704,7 @@ class Producto{
     public function renderOptionsUnidadesPedidos($id_producto, $id_medida){
         $selecteds = $this->getValues($id_producto);
         $packages = $this->getUnidades();
-        $select = '<select id="select-medida-pedido" class="form-control span2" name="medida">';
+        $select = '<select id="select-medida-pedido" class="select-unidades form-control span2" name="medida">';
         if(isset($selecteds["values"])){
             $values = json_decode($selecteds["values"],true);
         }else{

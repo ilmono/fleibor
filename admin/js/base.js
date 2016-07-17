@@ -73,7 +73,6 @@ $(function () {
 		$(".option-to-cart").live('click', function() {
 			var id = $(this).attr("id").split('-');
 			id = id['2'];
-			//alert(id);
 
 			if($(this).html() == 'Ocultar opciones'){
 				$(this).removeClass('btn-danger');
@@ -92,8 +91,31 @@ $(function () {
 
 		$(".add-to-cart").live('click', function() {
 			var id = $(this).attr("id");
-			//alert(id);
+			alert(parseInt(event.target.value) + " " + parseInt(id));
 		});
+
+		$(".calcular-total").bind('keyup mouseup', function () {
+			var ids = $(this).parent().parent().find("select.select-unidades option:selected").text().split(' ');
+			var unidades = ids[0];
+			if($.isNumeric(event.target.value)){
+				cant = event.target.value;
+			}else{
+				cant = 0;
+			}
+			var total = parseInt(cant) * parseInt(unidades);
+			$(this).parent().parent().find(".mostrar-total").text(total);
+		});
+
+		$(".select-unidades").live('change', function() {
+			var unidades = $("option:selected", this).text().split(' ')[0];
+			var cant = $(this).parent().parent().find(".calcular-total").val();
+			if(!$.isNumeric(cant)){
+				cant = 0;
+			}
+			var total = parseInt(cant) * parseInt(unidades);
+			$(this).parent().parent().find(".mostrar-total").text(total);
+		});
+		
 	});
 
 
