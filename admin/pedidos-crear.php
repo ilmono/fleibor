@@ -8,6 +8,7 @@ $product =  new Producto();
 $envases = $product->getEnvases();
 $listadoProducto = $product->getProductos();
 $colores = $product->getColores();
+$gustos = $product->getGustos();
 
 ?>
 <!DOCTYPE html>
@@ -55,6 +56,7 @@ $colores = $product->getColores();
                                                 <?php
                                                 $monbreColores = array();
                                                 $coloresElegidos = $product->getRelaciones($producto['id'], 'producto_colores', 'id_producto');
+                                                $gustosElegidos = $product->getRelaciones($producto['id'], 'producto_gustos', 'id_producto');
                                                 if(!empty($coloresElegidos)) {
                                                     foreach ($colores as $color) {
                                                         foreach ($coloresElegidos as $colorElegido)
@@ -63,6 +65,15 @@ $colores = $product->getColores();
                                                             }
                                                     }
                                                 }
+                                                if(!empty($gustosElegidos)) {
+                                                    foreach ($gustos as $gusto) {
+                                                        foreach ($gustosElegidos as $gustoElegido)
+                                                            if ($gusto['id'] === $gustoElegido['id_gusto']) {
+                                                                $nombreGustos[] = $gusto;
+                                                            }
+                                                    }
+                                                }
+
                                                 ?>
                                             </div>
                                             <div id="container-product-<?php echo $producto['id']; ?>" class="ocultar">
@@ -71,6 +82,7 @@ $colores = $product->getColores();
                                                         <thead>
                                                             <tr style="text-align: center; font-weight: bold;">
                                                                 <?php if(!empty($coloresElegidos)) { ?><td colspan="2">Color</td><?php } ?>
+                                                                <?php if(!empty($gustosElegidos)) { ?><td>Gustos</td><?php } ?>
                                                                 <td> Medida </td>
                                                                 <td> Empaque </td>
                                                                 <td> Cantidad </td>
@@ -79,11 +91,24 @@ $colores = $product->getColores();
                                                         <?php
                                                             if(!empty($coloresElegidos)) {
                                                                 foreach($monbreColores as $color){ ?>
-                                                                    <tr>
-                                                                        <td style="background-color: <?php echo $color['codigo']; ?>; width: 20px; height: 20px"></td>
+                                                                    <tr id="product-<?php echo $producto['id']; ?>-color-<?php echo $color['id']; ?>">
+                                                                        <?php if($color['codigo'] != '#grad'){?>
+                                                                            <td><div style="background-color: <?php echo $color['codigo']; ?>; width: 20px; height: 20px; border-radius: 10px"></div></td>
+                                                                        <?php }else{?>
+                                                                            <td><div class="grad" style="width: 20px; height: 20px; border-radius: 10px"></div></td>
+                                                                        <?php }?>
                                                                         <td> <?php echo $color['nombre']; ?> </td>
                                                                         <td> <?php echo $infoProduct['medidas']; ?> </td>
-                                                                        <td id="empaque-pedido-<?php echo $producto['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
+                                                                        <td id="empaque-pedido-producto-<?php echo $producto['id']; ?>-color-<?php echo $color['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
+                                                                        <td> <input type="number" class="span1" id="subtitulo" name="subtitulo" min="0" value=""> </td>
+                                                                    </tr>
+                                                                <?php }
+                                                           }else if(!empty($gustosElegidos)){
+                                                                foreach($nombreGustos as $gusto){ ?>
+                                                                    <tr id="product-<?php echo $producto['id']; ?>-color-<?php echo $gusto['id']; ?>">
+                                                                        <td> <?php echo $gusto['nombre']; ?> </td>
+                                                                        <td> <?php echo $infoProduct['medidas']; ?> </td>
+                                                                        <td id="empaque-pedido-producto-<?php echo $producto['id']; ?>-color-<?php echo $gusto['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
                                                                         <td> <input type="number" class="span1" id="subtitulo" name="subtitulo" min="0" value=""> </td>
                                                                     </tr>
                                                                 <?php }
