@@ -1,7 +1,7 @@
 <?php
 echo '<pre>';
 include 'includes.php';
-$product = new Producto();
-$medidas = $product->renderOptionsProductByEnvase(2);
+$pedido = new Pedido();
+echo $pedido->test();
 
 echo '</pre>';

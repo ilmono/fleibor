@@ -1369,7 +1369,6 @@ Custom
 }
 
 .mfp-content{
-	width: 500px;
 	background-color: #fff;
 	margin: 25px;
 	padding: 25px;
@@ -1420,4 +1419,25 @@ Custom
 	background: -moz-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
 	/* Standard syntax */
 	background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+}
+
+#menu-cart{
+	float: right;
+}
+.li-cart{
+	border-right: 1px solid #d9d9d9;
+}
+
+#cart-modal{
+	width: 800px;
+}
+.cart-modal-actions{
+	text-align: center;
+}
+.btn-cart-action{
+	margin-left: 35px;
+	width: 160px;
+}
+.btn-cart-action-first{
+	width: 160px;
 }

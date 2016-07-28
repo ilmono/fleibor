@@ -50,7 +50,7 @@
 .mfp-inline-holder .mfp-content,
 .mfp-ajax-holder .mfp-content {
     cursor: auto;
-    width: 500px;
+    /*width: 500px;*/
     background-color: #fff;
     margin: 25px;
     padding: 25px;

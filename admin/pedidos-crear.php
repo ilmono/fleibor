@@ -86,7 +86,7 @@ $gustos = $product->getGustos();
                                                                 <td> Medida </td>
                                                                 <td> Empaque </td>
                                                                 <td> Cantidad </td>
-                                                                <td> total </td>
+                                                                <td> Total </td>
                                                             </tr>
                                                         </thead>
                                                         <?php
@@ -94,32 +94,32 @@ $gustos = $product->getGustos();
                                                                 foreach($monbreColores as $color){ ?>
                                                                     <tr id="product-<?php echo $producto['id']; ?>-color-<?php echo $color['id']; ?>">
                                                                         <?php if($color['codigo'] != '#grad'){?>
-                                                                            <td><div style="background-color: <?php echo $color['codigo']; ?>; width: 20px; height: 20px; border-radius: 10px"></div></td>
+                                                                            <td><input type="hidden" class="color-id" value="color-<?php echo $color['id']; ?>"/><div id="<?php echo $color['id']; ?>" style="background-color: <?php echo $color['codigo']; ?>; width: 20px; height: 20px; border-radius: 10px; <?php if(strtoupper($color['codigo']) == "#FFFFFF"){ echo 'border: solid 1px;';}?>"></div></td>
                                                                         <?php }else{?>
-                                                                            <td><div class="grad" style="width: 20px; height: 20px; border-radius: 10px"></div></td>
+                                                                            <td><input type="hidden" class="color-id" value="color-<?php echo $color['id']; ?>"/><div id="<?php echo $color['id']; ?>" class="grad" style="width: 20px; height: 20px; border-radius: 10px"></div></td>
                                                                         <?php }?>
                                                                         <td> <?php echo $color['nombre']; ?> </td>
-                                                                        <td> <?php echo $infoProduct['medidas']; ?> </td>
-                                                                        <td id="empaque-pedido-producto-<?php echo $producto['id']; ?>-color-<?php echo $color['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
-                                                                        <td> <input type="number" class="span1 calcular-total" name="cantidad" min="0" value=""> </td>
+                                                                        <td class="td-select-medida"> <?php echo $infoProduct['medidas']; ?> </td>
+                                                                        <td class="td-select-unidades" id="empaque-pedido-producto-<?php echo $producto['id']; ?>-color-<?php echo $color['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
+                                                                        <td class="td-cantidad"> <input type="number" class="span1 calcular-total" name="cantidad" min="0" value="0" autocomplete="off"> </td>
                                                                         <td class="mostrar-total"> 0 </td>
                                                                     </tr>
                                                                 <?php }
                                                            }else if(!empty($gustosElegidos)){
                                                                 foreach($nombreGustos as $gusto){ ?>
-                                                                    <tr id="product-<?php echo $producto['id']; ?>-color-<?php echo $gusto['id']; ?>">
-                                                                        <td> <?php echo $gusto['nombre']; ?> </td>
-                                                                        <td> <?php echo $infoProduct['medidas']; ?> </td>
-                                                                        <td id="empaque-pedido-producto-<?php echo $producto['id']; ?>-color-<?php echo $gusto['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
-                                                                        <td> <input type="number" class="span1 calcular-total" name="cantidad" min="0" value=""> </td>
+                                                                    <tr id="product-<?php echo $producto['id']; ?>-gusto-<?php echo $gusto['id']; ?>">
+                                                                        <td id="gusto-<?php echo $gusto['id']; ?>"> <input type="hidden" class="gusto-id" value="gusto-<?php echo $gusto['id']; ?>"/><?php echo $gusto['nombre']; ?> </td>
+                                                                        <td class="td-select-medida"> <?php echo $infoProduct['medidas']; ?> </td>
+                                                                        <td class="td-select-unidades" id="empaque-pedido-producto-<?php echo $producto['id']; ?>-color-<?php echo $gusto['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
+                                                                        <td class="td-cantidad"> <input type="number" class="span1 calcular-total" name="cantidad" min="0" value="0" autocomplete="off"> </td>
                                                                         <td class="mostrar-total"> 0 </td>
                                                                     </tr>
                                                                 <?php }
                                                            }else{ ?>
                                                                 <tr>
-                                                                    <td> <?php echo $infoProduct['medidas']; ?> </td>
-                                                                    <td id="empaque-pedido-<?php echo $producto['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
-                                                                    <td> <input type="number" class="span1 calcular-total" name="cantidad" min="0" value=""> </td>
+                                                                    <td class="td-select-medida"> <?php echo $infoProduct['medidas']; ?> </td>
+                                                                    <td class="td-select-unidades" id="empaque-pedido-<?php echo $producto['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
+                                                                    <td class="td-cantidad"> <input type="number" class="span1 calcular-total" name="cantidad" min="0" value="0" autocomplete="off"> </td>
                                                                     <td class="mostrar-total"> 0 </td>
                                                                 </tr>
                                                            <?php } ?>

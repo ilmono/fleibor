@@ -27,6 +27,18 @@
             $product = new Producto();
             $html = $product->renderOptionsUnidadesPedidos($_GET["id_producto"], $_GET["id_medida"]);
             break;
+        case 'addItemPedido':
+            $pedido = new Pedido();
+            $html = $pedido->addItem($_GET["data"]);
+            break;
+        case 'getCartHtml':
+            $pedido = new Pedido();
+            $html = $pedido->getCartHtml();
+            break;
+        case 'clearCart':
+            $pedido = new Pedido();
+            $html = $pedido->clearCart();
+            break;
     }
     echo $html;
 

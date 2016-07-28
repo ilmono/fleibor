@@ -90,8 +90,56 @@ $(function () {
 		});
 
 		$(".add-to-cart").live('click', function() {
-			var id = $(this).attr("id");
-			alert(parseInt(event.target.value) + " " + parseInt(id));
+			var productId = $(this).attr("id").split('-')[1];
+			var cart = '{"product":' + productId + ',"add_to_cart":[';
+			var form = $(this).parent().parent().find("tr");
+			var cont = 0;
+			console.log();
+			form.each(function(){
+				var medida = $(this).find("td.td-select-medida select").val();
+				var unidades = $(this).find("td.td-select-unidades select").val();
+				var cant = $(this).find("input.calcular-total").val();
+				if(cant > 0 && cant != undefined){
+					var color = $(this).find("input.color-id").val();
+					var gusto = $(this).find("input.gusto-id").val();
+					if(cont > 0){
+						cart += ',';
+					}
+					cart += '{ ';
+					if(color != undefined){
+						cart += '"color":' + color.split('-')[1] +',';
+					}else if(gusto != undefined){
+						cart += '"gusto":' + gusto.split('-')[1] +',';
+					}
+					cart += '"medida":' + medida +',';
+					cart += '"unidades":' + unidades +',';
+					cart += '"cant":' + cant +' }';
+					cont ++;
+				}
+
+			});
+			cart += ']}';
+			$(this).parent().find(".option-to-cart").click();
+			var items = cart;
+			$.ajax({
+				url: "includes/ajax_request.php?action=addItemPedido&data="+items,
+				success: function(result){
+					console.log(result);
+					$('#menu-cart').show();
+					$('#open-modal-ok').click();
+			}});
+		});
+
+		$('#btn-cart').click(function(){
+			$.ajax({url: "includes/ajax_request.php?action=getCartHtml", success: function(result){
+				$('#div-cart-container').html(result);
+			}});
+		});
+		$('#clear-cart').click(function(){
+			$.ajax({url: "includes/ajax_request.php?action=clearCart", success: function(result){
+				$('#div-cart-container').html(result);
+				$('#menu-cart').hide();
+			}});
 		});
 
 		$(".calcular-total").bind('keyup mouseup', function () {
@@ -117,10 +165,4 @@ $(function () {
 		});
 		
 	});
-
-
-
-
-
-
 });

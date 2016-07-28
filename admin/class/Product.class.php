@@ -271,6 +271,28 @@ class Producto{
             return false;
         }
     }
+
+    /********************************************************
+    Este metodo devuelve una Gusto
+     ********************************************************/
+    public function getGusto($id){
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                *
+            FROM
+                gustos
+            WHERE
+              id = '.$id.'
+		';
+        $result = $mysqli->query($query);
+        $mysqli->close();
+        if($result->num_rows == 1){
+            return $result->fetch_assoc();
+        }else{
+            return false;
+        }
+    }
     /********************************************************
     Este metodo agrega un Gusto
      ********************************************************/
@@ -329,6 +351,28 @@ class Producto{
         }
     }
     /********************************************************
+    Este metodo devuelve todos los Colores
+     ********************************************************/
+    public function getColor($id){
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                *
+            FROM
+                colores
+            WHERE
+              id = '.$id.'
+		';
+        $result = $mysqli->query($query);
+        $mysqli->close();
+        if($result->num_rows == 1){
+            return $result->fetch_assoc();
+        }else{
+            return false;
+        }
+    }
+
+    /********************************************************
     Este metodo agrega un Color
      ********************************************************/
     public function agregarColor($color){
@@ -381,6 +425,28 @@ class Producto{
             return false;
         }
     }
+    /********************************************************
+    Este metodo devuelve una Medida
+     ********************************************************/
+    public function getMedida($id){
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                *
+            FROM
+                medidas
+            WHERE
+              id = '.$id.'
+		';
+        $result = $mysqli->query($query);
+        $mysqli->close();
+        if($result->num_rows == 1){
+            return $result->fetch_assoc();
+        }else{
+            return false;
+        }
+    }
+
     /********************************************************
     Este metodo agrega una Medida
      ********************************************************/
@@ -500,6 +566,28 @@ class Producto{
     }
 
     /********************************************************
+    Este metodo devuelve una Unidad
+     ********************************************************/
+    public function getUnidad($id){
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                *
+            FROM
+                unidades
+            WHERE
+              id = '.$id.'
+		';
+        $result = $mysqli->query($query);
+        $mysqli->close();
+        if($result->num_rows == 1){
+            return $result->fetch_assoc();
+        }else{
+            return false;
+        }
+    }
+
+    /********************************************************
     Este metodo agrega una Unidad
      ********************************************************/
     public function agregarUnidad($unidad){
@@ -604,6 +692,28 @@ class Producto{
             $result->free();
             $mysqli->close();
             return $unidades;
+        }else{
+            return false;
+        }
+    }
+
+    /********************************************************
+    Este metodo devuelve todos laos Envases
+     ********************************************************/
+    public function getEnvase($id){
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                *
+            FROM
+                envases
+            WHERE
+              id = '.$id.'
+		';
+        $result = $mysqli->query($query);
+        $mysqli->close();
+        if($result->num_rows == 1){
+            return $result->fetch_assoc();
         }else{
             return false;
         }
