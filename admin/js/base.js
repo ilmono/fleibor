@@ -80,6 +80,8 @@ $(function () {
 				$(this).html('Ver opciones');
 				$("#product-"+id).addClass('ocultar');
 				$(this).addClass('btn-invert');
+				$(this).parent().parent().find(".calcular-total").val(0);
+				$(this).parent().parent().find(".mostrar-total").html(0);
 			}else{
 				$(this).removeClass('btn-invert');
 				$(this).addClass('btn-danger');
@@ -162,6 +164,29 @@ $(function () {
 			}
 			var total = parseInt(cant) * parseInt(unidades);
 			$(this).parent().parent().find(".mostrar-total").text(total);
+		});
+
+		$('.btn-cart-remove-product').live('click', function(){
+			var key = $(this).attr("id").split('-')[1];
+			$.ajax({url: "includes/ajax_request.php?action=removeProduct&key="+key, success: function(result){
+				$('#div-cart-container').html(result);
+				if(result == ''){
+					$('#menu-cart').hide();
+					$('.popup-modal-dismiss').click();
+				}
+			}});
+		});
+
+		$('.btn-cart-remove-subproduct').live('click', function(){
+			var key = $(this).attr("id").split('-')[1];
+			var subKey = $(this).attr("id").split('-')[2];
+			$.ajax({url: "includes/ajax_request.php?action=removeSubProduct&key="+key+"&subKey="+subKey, success: function(result){
+				$('#div-cart-container').html(result);
+				if(result == ''){
+					$('#menu-cart').hide();
+					$('.popup-modal-dismiss').click();
+				}
+			}});
 		});
 		
 	});

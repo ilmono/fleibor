@@ -1441,3 +1441,8 @@ Custom
 .btn-cart-action-first{
 	width: 160px;
 }
+
+.btn-cart-remove-product{
+	float: right;
+	margin-right: 16px;
+}

@@ -50,7 +50,7 @@ class Pedido
 
     public function getCartHtml(){
         $html = '';
-        foreach($_SESSION['cart'] as $producto){
+        foreach($_SESSION['cart'] as $key => $producto){
             if(isset($producto['add_to_cart'][0]->color) && $producto['add_to_cart'][0]->color != false){
                 $tipo = 'color';
             }else if(isset($producto['add_to_cart'][0]->gusto) && $producto['add_to_cart'][0]->gusto != false){
@@ -63,6 +63,7 @@ class Pedido
                 $html .= '<div class="widget widget-table action-table">';
                     $html .= '<div class="widget-content" style="padding-top: 15px;">';
                         $html .= '<div class="control-group">';
+                            $html .= '<button id="cart-'.$key.'" class="btn btn-danger btn-cart-remove-product"><span class="icon-large icon-trash"></span></button>';
                             $html .= '<div class="wraper-img">';
                                 $html .= '<img class="img-producto-crear-pedido" src="'.$producto["img"].'">';
                             $html .= '</div>';
@@ -81,10 +82,11 @@ class Pedido
                                                 $html .= '<td> Medida </td>';
                                                 $html .= '<td> Empaque </td>';
                                                 $html .= '<td> Cantidad </td>';
+                                                $html .= '<td> Quitar </td>';
                                             $html .= '</tr>';
                                         $html .= '</thead>';
                                         $html .= '<tbody>';
-                                        foreach($producto['add_to_cart'] as $item){
+                                        foreach($producto['add_to_cart'] as $subKey => $item){
                                             $html .= '<tr>';
                                                 if($tipo == 'color'){
                                                     if($item->color['codigo'] != '#grad') {
@@ -94,10 +96,11 @@ class Pedido
                                                     }
                                                     $html .= '<td>'.$item->color["nombre"].'</td>';
                                                 }
-                                                if($tipo == 'gusto') { /*var_dump($item->gusto);*/$html .= '<td>'.$item->gusto["nombre"].'</td>'; }
+                                                if($tipo == 'gusto') { $html .= '<td>'.$item->gusto["nombre"].'</td>'; }
                                                 $html .= '<td class="td-select-medida">'.$item->medida["cantidad"].'</td>';
                                                 $html .= '<td class="td-select-unidades">'.$item->unidades["cantidad"].'</td>';
                                                 $html .= '<td class="td-cantidad">'.$item->cant.'</td>';
+                                                $html .= '<td class="td-cantidad"><button id="cart-'.$key.'-'.$subKey.'" class="btn btn-danger btn-cart-remove-subproduct"><span class="icon-small icon-trash"></span></button></td>';
                                             $html .= '</tr>';
                                         }
                                         $html .= '</tbody>';
@@ -110,6 +113,27 @@ class Pedido
             $html .= '</div>';
         }
         return $html;
+    }
+
+    public function removeProduct($key){
+        if(isset($_SESSION['cart'][$key])){
+            unset($_SESSION['cart'][$key]);
+            return count($_SESSION['cart']);
+        }else{
+            return -1;
+        }
+    }
+
+    public function removeSubProduct($key, $subKey){
+        if(isset($_SESSION['cart'][$key]["add_to_cart"][$subKey])){
+            unset($_SESSION['cart'][$key]["add_to_cart"][$subKey]);
+            if(count($_SESSION['cart'][$key]["add_to_cart"]) <= 0){
+                $this->removeProduct($key);
+            }
+            return count($_SESSION['cart']);
+        }else{
+            return -1;
+        }
     }
 
     public function test(){

@@ -39,6 +39,24 @@
             $pedido = new Pedido();
             $html = $pedido->clearCart();
             break;
+        case 'removeProduct':
+            $pedido = new Pedido();
+            $result = $pedido->removeProduct($_GET["key"]);
+            if($result > 0 ){
+                $html = $pedido->getCartHtml();
+            }else if($result == 0 ){
+                $html = '';
+            }
+            break;
+        case 'removeSubProduct':
+            $pedido = new Pedido();
+            $result = $pedido->removeSubProduct($_GET["key"], $_GET["subKey"]);
+            if($result > 0 ){
+                $html = $pedido->getCartHtml();
+            }else if($result == 0 ){
+                $html = '';
+            }
+            break;
     }
     echo $html;
 
