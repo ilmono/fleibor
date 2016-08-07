@@ -35,35 +35,37 @@ class Pedido
         $_SESSION['cart'][$newItes->product] = $tmpProduct;
     }
 
-    public function delItem($item){
-
-    }
-
-    public function totalItems(){
-
-    }
-
     public function clearCart(){
         $_SESSION['cart'] = [];
         return '';
     }
 
-    public function getCartHtml(){
+    public function getCartHtml($cart, $editable){
         $html = '';
-        foreach($_SESSION['cart'] as $key => $producto){
-            if(isset($producto['add_to_cart'][0]->color) && $producto['add_to_cart'][0]->color != false){
-                $tipo = 'color';
-            }else if(isset($producto['add_to_cart'][0]->gusto) && $producto['add_to_cart'][0]->gusto != false){
-                $tipo = 'gusto';
+        foreach($cart as $key => $producto){
+            if(isset($producto['add_to_cart'][0]) && is_array($producto['add_to_cart'][0])){
+                if(isset($producto['add_to_cart'][0]['color']) && $producto['add_to_cart'][0]['color'] != false){
+                    $tipo = 'color';
+                }else if(isset($producto['add_to_cart'][0]['gusto']) && $producto['add_to_cart'][0]['gusto'] != false){
+                    $tipo = 'gusto';
+                }else{
+                    $tipo = 'nada';
+                }
             }else{
-                $tipo = 'nada';
+                if(isset($producto['add_to_cart'][0]->color) && $producto['add_to_cart'][0]->color != false){
+                    $tipo = 'color';
+                }else if(isset($producto['add_to_cart'][0]->gusto) && $producto['add_to_cart'][0]->gusto != false){
+                    $tipo = 'gusto';
+                }else{
+                    $tipo = 'nada';
+                }
             }
-            //var_dump($tipo);
+
             $html .= '<div class="widget widget-table action-table">';
                 $html .= '<div class="widget widget-table action-table">';
                     $html .= '<div class="widget-content" style="padding-top: 15px;">';
                         $html .= '<div class="control-group">';
-                            $html .= '<button id="cart-'.$key.'" class="btn btn-danger btn-cart-remove-product"><span class="icon-large icon-trash"></span></button>';
+                            if($editable == true) { $html .= '<button id="cart-'.$key.'" class="btn btn-danger btn-cart-remove-product"><span class="icon-large icon-trash"></span></button>';};
                             $html .= '<div class="wraper-img">';
                                 $html .= '<img class="img-producto-crear-pedido" src="'.$producto["img"].'">';
                             $html .= '</div>';
@@ -82,12 +84,30 @@ class Pedido
                                                 $html .= '<td> Medida </td>';
                                                 $html .= '<td> Empaque </td>';
                                                 $html .= '<td> Cantidad </td>';
-                                                $html .= '<td> Quitar </td>';
+                                                if($editable == true) { $html .= '<td> Quitar </td>';};
                                             $html .= '</tr>';
                                         $html .= '</thead>';
                                         $html .= '<tbody>';
                                         foreach($producto['add_to_cart'] as $subKey => $item){
-                                            $html .= '<tr>';
+                                            if(is_array($item)){
+                                                $html .= '<tr>';
+                                                if($tipo == 'color'){
+                                                    if($item['color']['codigo'] != '#grad') {
+                                                        $html .= '<td><div style="background-color: ' . $item['color']["codigo"] . '; width: 20px; height: 20px; border-radius: 10px"></div></td>';
+                                                    }else{
+                                                        $html .= '<td><div class="grad" style="width: 20px; height: 20px; border-radius: 10px"></div></td>';
+                                                    }
+                                                    $html .= '<td>'.$item['color']["nombre"].'</td>';
+                                                }
+                                                if($tipo == 'gusto') { $html .= '<td>'.$item['gusto']["nombre"].'</td>'; }
+                                                $html .= '<td class="td-select-medida">'.$item['medida']["cantidad"].'</td>';
+                                                $html .= '<td class="td-select-unidades">'.$item['unidades']["cantidad"].'</td>';
+                                                $html .= '<td class="td-cantidad">'.$item['cant'].'</td>';
+                                                if($editable == true) { $html .= '<td class="td-cantidad"><button id="cart-'.$key.'-'.$subKey.'" class="btn btn-danger btn-cart-remove-subproduct"><span class="icon-small icon-trash"></span></button></td>';};
+
+                                                $html .= '</tr>';
+                                            }else{
+                                                $html .= '<tr>';
                                                 if($tipo == 'color'){
                                                     if($item->color['codigo'] != '#grad') {
                                                         $html .= '<td><div style="background-color: ' . $item->color["codigo"] . '; width: 20px; height: 20px; border-radius: 10px"></div></td>';
@@ -100,8 +120,10 @@ class Pedido
                                                 $html .= '<td class="td-select-medida">'.$item->medida["cantidad"].'</td>';
                                                 $html .= '<td class="td-select-unidades">'.$item->unidades["cantidad"].'</td>';
                                                 $html .= '<td class="td-cantidad">'.$item->cant.'</td>';
-                                                $html .= '<td class="td-cantidad"><button id="cart-'.$key.'-'.$subKey.'" class="btn btn-danger btn-cart-remove-subproduct"><span class="icon-small icon-trash"></span></button></td>';
-                                            $html .= '</tr>';
+                                                if($editable == true) { $html .= '<td class="td-cantidad"><button id="cart-'.$key.'-'.$subKey.'" class="btn btn-danger btn-cart-remove-subproduct"><span class="icon-small icon-trash"></span></button></td>';};
+
+                                                $html .= '</tr>';
+                                            }
                                         }
                                         $html .= '</tbody>';
                                     $html .= '</table>';
@@ -110,6 +132,11 @@ class Pedido
                         $html .= '</div>';
                     $html .= '</div>';
                 $html .= '</div>';
+            $html .= '</div>';
+        }
+        if($editable == true){
+            $html .= '<div>';
+            $html .= '<textarea id="comentario-cart" class="form-control" style="resize: none; width: 99%;" placeholder="Escribenos tus preferencias o especificacions"></textarea>';
             $html .= '</div>';
         }
         return $html;
@@ -140,7 +167,6 @@ class Pedido
         $newItes = '{"product":9,"add_to_cart":[{ "color":36,"medida":3,"unidades":1,"cant":1 },{ "color":121,"medida":3,"unidades":1,"cant":2 }]}';
         $this->addItem($newItes);
         echo $this->getCartHtml();
-        //return var_dump($newItes);
     }
 
     private function updateCart($productIda, $item){
@@ -154,6 +180,97 @@ class Pedido
             }
         }
         return $update;
+    }
+
+    public function agregarPedido($idUsuario, $cart, $comentario){
+        $mysqli = DataBase::connex();
+        $query = '
+			INSERT INTO pedidos (`id`, `id_cliente`, `pedido`, `comentario`, `estado`, `fecha`)
+                       VALUES (NULL, ' . $idUsuario . ', "' . $mysqli->real_escape_string(json_encode($cart)) . '", "' . $mysqli->real_escape_string($comentario) . '", "pendiente", "' . date('Y-m-d') . '");
+		';
+        $result = $mysqli->query($query);
+        $mysqli->close();
+        return $result;
+    }
+
+    public function getPedidos(){
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                pedidos.id as id,
+                pedidos.comentario as comentario,
+                pedidos.estado as estado,
+                pedidos.fecha as fecha,
+                usuarios.nombre as usuario
+            FROM
+                pedidos
+            INNER JOIN
+                usuarios
+            ON
+                pedidos.id_cliente = usuarios.id
+            ORDER BY
+              pedidos.id
+            DESC
+		';
+
+        $result = $mysqli->query($query);
+        if($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()){
+                $pedidos[] = $row;
+            }
+            $result->free();
+            $mysqli->close();
+            return $pedidos;
+        }else{
+            return false;
+        }
+    }
+
+    public function misPedidos($idUsuario){
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                *
+            FROM
+                pedidos
+            WHERE
+              id_cliente = '.$idUsuario.'
+            ORDER BY
+              id
+            DESC
+		';
+
+        $result = $mysqli->query($query);
+        if($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()){
+                $pedidos[] = $row;
+            }
+            $result->free();
+            $mysqli->close();
+            return $pedidos;
+        }else{
+            return false;
+        }
+    }
+
+    public function getPedido($id){
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                *
+            FROM
+                pedidos
+            WHERE
+              id = '.$id.'
+		';
+        $result = $mysqli->query($query);
+        if($result->num_rows == 1){
+            $pedido = $result->fetch_assoc();
+            $pedido['cart'] = $this->getCartHtml(json_decode($pedido["pedido"],true), false);
+            return $pedido;
+        }else{
+            return false;
+        }
     }
 }
 ?>

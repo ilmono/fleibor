@@ -33,7 +33,7 @@
             break;
         case 'getCartHtml':
             $pedido = new Pedido();
-            $html = $pedido->getCartHtml();
+            $html = $pedido->getCartHtml($_SESSION['cart'], true);
             break;
         case 'clearCart':
             $pedido = new Pedido();
@@ -43,7 +43,7 @@
             $pedido = new Pedido();
             $result = $pedido->removeProduct($_GET["key"]);
             if($result > 0 ){
-                $html = $pedido->getCartHtml();
+                $html = $pedido->getCartHtml($_SESSION['cart'], true);
             }else if($result == 0 ){
                 $html = '';
             }
@@ -52,9 +52,17 @@
             $pedido = new Pedido();
             $result = $pedido->removeSubProduct($_GET["key"], $_GET["subKey"]);
             if($result > 0 ){
-                $html = $pedido->getCartHtml();
+                $html = $pedido->getCartHtml($_SESSION['cart'], true);
             }else if($result == 0 ){
                 $html = '';
+            }
+            break;
+        case 'realizarPedido':
+            $pedido = new Pedido();
+            $result = $pedido->agregarPedido($_SESSION['usuario'], $_SESSION['cart'], $_GET['comentario']);
+            if($result == true){
+                $pedido->clearCart();
+                $html = true;
             }
             break;
     }

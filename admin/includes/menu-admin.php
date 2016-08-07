@@ -6,6 +6,7 @@
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-large icon-calendar"></i><span>Pedidos</span> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="index.php">Listado de Pedidos</a></li>
+                        <li><a href="mis-pedidos.php">Mis Pedidos</a></li>
                         <li><a href="pedidos-crear.php">Agregar Pedido</a></li>
                     </ul>
                 </li>
@@ -47,7 +48,7 @@
     <div id="cart-modal" class="mfp-hide white-popup-block">
         <div id="div-cart-container"></div>
         <div class="form-actions cart-modal-actions">
-            <button class="btn btn-success btn-cart-action-first">Realizar Pedido</button>
+            <button id="realizar-pedido" class="btn btn-success btn-cart-action-first">Realizar Pedido</button>
             <a href="#" id="clear-cart" class="btn btn-error popup-modal-dismiss btn-cart-action">Limpiar Carrito</a>
             <a href="#" class="btn btn-warning popup-modal-dismiss btn-cart-action">Cerrar</a>
         </div>

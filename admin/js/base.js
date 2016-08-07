@@ -126,7 +126,6 @@ $(function () {
 			$.ajax({
 				url: "includes/ajax_request.php?action=addItemPedido&data="+items,
 				success: function(result){
-					console.log(result);
 					$('#menu-cart').show();
 					$('#open-modal-ok').click();
 			}});
@@ -185,6 +184,16 @@ $(function () {
 				if(result == ''){
 					$('#menu-cart').hide();
 					$('.popup-modal-dismiss').click();
+				}
+			}});
+		});
+
+		$('#realizar-pedido').live('click', function(){
+			var comentario =  $('#comentario-cart').val();
+			$.ajax({url: "includes/ajax_request.php?action=realizarPedido&comentario=" + comentario, success: function(result){
+				if(result == true){
+					alert("El pedido se ha realizado correctamente");
+					window.location.replace("mis-pedidos.php");
 				}
 			}});
 		});
