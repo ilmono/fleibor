@@ -4,11 +4,6 @@ if(!isset($_SESSION['usuario'])){
     header("Location: login.php");
 }
 include 'includes.php';
-
-if(!in_array($_SESSION['permisos'], array(1,3))){
-    header("Location: index.php");
-}
-
 $user = new User();
 $categorias = $user->getCategorias();
 if(isset($_GET['usuario'])){
@@ -18,6 +13,9 @@ if(isset($_POST['codigo'])){
     if($user->modificarUsuario($_POST)){
         header("Location: usuario-lista.php");
     }
+}
+if(!in_array($_SESSION['permisos'], array(1, 2, 3)) && $_GET['usuario'] != $_SESSION['usuario']){
+        header("Location: usuario-perfil.php?usuario=".$_SESSION['usuario']);
 }
 
 ?>
@@ -39,7 +37,7 @@ if(isset($_POST['codigo'])){
         <!-- /widget -->
         <div class="widget widget-table action-table">
             <div class="widget-header"> <i class="icon-group"></i>
-                <h3>Agregar nuevo Usuario</h3>
+                <h3>Perfil de Usuario</h3>
             </div>
             <!-- /widget-header -->
             <div class="widget-content" style="padding-top: 15px;">
@@ -47,74 +45,46 @@ if(isset($_POST['codigo'])){
                     <div class="control-group">
                         <label class="control-label" for="firstname">Codigo de Cliente</label>
                         <div class="controls">
-                            <input type="hidden" value="<?php echo $myUser['id'];?>" name="id">
-                            <input type="text" class="span6" id="codigo" name="codigo" value="<?php echo $myUser['codigo'];?>">
+                            <span><?php echo $myUser['codigo'];?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="firstname">Razon Social</label>
                         <div class="controls">
-                            <input type="text" class="span6" id="razon_social" name="razon_social" value="<?php echo $myUser['nombre'];?>">
+                            <span><?php echo $myUser['nombre'];?></span>
                         </div>
                     </div>
 
                     <div class="control-group">
                         <label class="control-label" for="firstname">Nombre de Usuario</label>
                         <div class="controls">
-                            <input type="text" class="span6" id="usuario" name="usuario" value="<?php echo $myUser['user'];?>">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="password1">Contraseña</label>
-                        <div class="controls">
-                            <input type="password" class="span6" id="pass" name="pass" value="<?php echo $myUser['codigo'];?>">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="lastname">Categoria</label>
-                        <div class="controls">
-                            <select class='form-control span6' name="categoria">
-                                <option value=''>Seleccionar</option>
-                                <?php
-                                    foreach($categorias as $categoria){
-                                        $slc = '';
-                                        if(isset($myUser["categoria"]) && $categoria['id'] == $myUser["categoria"]){
-                                            $slc = 'selected';
-                                        }
-                                        echo '<option value="' . $categoria['id'] . '" ' . $slc . '>' . ucfirst($categoria['nombre']) . '</option>';
-                                    }
-                                ?>
-                            </select>
+                            <span><?php echo $myUser['user'];?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="email">Email</label>
                         <div class="controls">
-                            <input type="email" class="span6" id="email" name="email" value="<?php echo $myUser['mail'];?>">
+                            <span><?php echo $myUser['mail'];?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="firstname">Domicilio</label>
                         <div class="controls">
-                            <input type="text" class="span6" id="domicilio" name="domicilio" value="<?php echo $myUser['domicilio'];?>">
+                            <span><?php echo $myUser['domicilio'];?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="firstname">Localidad</label>
                         <div class="controls">
-                            <input type="text" class="span6" id="localidad" name="localidad" value="<?php echo $myUser['localidad'];?>">
+                            <span><?php echo $myUser['localidad'];?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="firstname">Telefono</label>
                         <div class="controls">
-                            <input type="text" class="span6" id="telefono" name="telefono" value="<?php echo $myUser['telefono'];?>">
+                            <span><?php echo $myUser['telefono'];?></span>
                         </div>
                     </div>
-                    <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Save</button>
-                        <a href="usuario-lista.php" class="btn">Cancel</a>
-                    </div> <!-- /form-actions -->
                 </form>
             </div>
             <!-- /widget-content -->

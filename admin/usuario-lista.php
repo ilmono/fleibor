@@ -62,10 +62,18 @@ if(isset($_POST['id'])){
                             <td><?php echo $usuario['categoria']?></td>
                             <td><?php echo $usuario['telefono']?></td>
                             <td><?php echo $usuario['mail']?></td>
+                            <?php if(in_array($_SESSION['permisos'], array(1,3))){ ?>
                             <td class="td-actions">
-                                <a href="usuario-ver.php?usuario=<?php echo $usuario['id']?>" class="btn btn-small btn-success"><i class="btn-icon-only icon-search"> </i></a>
-                                <a id="<?php echo $usuario['id']?>" href="#test-modal" class="btn btn-danger btn-small borrar-usuario"><i class="btn-icon-only icon-remove"> </i></a>
+                                <a href="usuario-perfil.php?usuario=<?php echo $usuario['id']?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-search"> </i></a>
+                                <a href="usuario-ver.php?usuario=<?php echo $usuario['id']?>" class="btn btn-small btn-success"><i class="btn-icon-only icon-pencil"> </i></a>
+                                <?php if(in_array($_SESSION['permisos'], array(1))){ ?><a id="<?php echo $usuario['id']?>" href="#test-modal" class="btn btn-danger btn-small borrar-usuario"><i class="btn-icon-only icon-remove"> </i></a><?php } ?>
                             </td>
+                            <?php } ?>
+                            <?php if(in_array($_SESSION['permisos'], array(2))){ ?>
+                                <td class="td-actions">
+                                    <a href="usuario-perfil.php?usuario=<?php echo $usuario['id']?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-search"> </i></a>
+                                </td>
+                            <?php } ?>
                         </tr>
 
                     <?php } ?>

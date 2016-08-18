@@ -4,6 +4,11 @@ if(!isset($_SESSION['usuario'])){
     header("Location: login.php");
 }
 include 'includes.php';
+
+if(!in_array($_SESSION['permisos'], array(1))){
+    header("Location: index.php");
+}
+
 $user = new User();
 $categorias = $user->getCategorias();
 $errors = array ();

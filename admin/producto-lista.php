@@ -4,6 +4,9 @@ if(!isset($_SESSION['usuario'])){
     header("Location: login.php");
 }
 include 'includes.php';
+if(!in_array($_SESSION['permisos'], array(1,2,3))){
+    header("Location: mis-pedidos.php");
+}
 $product =  new Producto();
 $listadoProducto = $product->getProductos();
 if(isset($_POST['id'])){

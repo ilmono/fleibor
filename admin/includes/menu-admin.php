@@ -5,31 +5,35 @@
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-large icon-calendar"></i><span>Pedidos</span> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="index.php">Listado de Pedidos</a></li>
-                        <li><a href="mis-pedidos.php">Mis Pedidos</a></li>
-                        <li><a href="pedidos-crear.php">Agregar Pedido</a></li>
+                        <?php if(in_array($_SESSION['permisos'], array(1, 2, 3))){ ?><li><a href="index.php">Listado de Pedidos</a></li> <?php } ?>
+                        <?php if(in_array($_SESSION['permisos'], array(4))){ ?><li><a href="mis-pedidos.php">Mis Pedidos</a></li> <?php } ?>
+                        <?php if(in_array($_SESSION['permisos'], array(4))){ ?><li><a href="pedidos-crear.php">Agregar Pedido</a></li> <?php } ?>
+
+
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-large  icon-beaker"></i><span>Productos</span> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="producto-lista.php">Listado de Productos</a></li>
-                        <li><a href="producto-crear.php">Agregar Producto</a></li>
-                        <li><a href="producto-color.php">Colores</a></li>
-                        <li><a href="producto-gustos.php">Gustos</a></li>
-                        <li><a href="producto-envases.php">Envases</a></li>
-                        <li><a href="producto-medida.php">Medidas</a></li>
-                        <li><a href="producto-unidades.php">Unidades</a></li>
+                        <li><a href="producto-catalogo.php">Catalogo de Productos</a></li>
+                        <?php if(in_array($_SESSION['permisos'], array(1))){ ?><li><a href="producto-lista.php">Listado de Productos</a></li><?php } ?>
+                        <?php if(in_array($_SESSION['permisos'], array(1))){ ?><li><a href="producto-crear.php">Agregar Producto</a></li><?php } ?>
+                        <?php if(in_array($_SESSION['permisos'], array(1))){ ?><li><a href="producto-color.php">Colores</a></li><?php } ?>
+                        <?php if(in_array($_SESSION['permisos'], array(1))){ ?><li><a href="producto-gustos.php">Gustos</a></li><?php } ?>
+                        <?php if(in_array($_SESSION['permisos'], array(1))){ ?><li><a href="producto-envases.php">Envases</a></li><?php } ?>
+                        <?php if(in_array($_SESSION['permisos'], array(1))){ ?><li><a href="producto-medida.php">Medidas</a></li><?php } ?>
+                        <?php if(in_array($_SESSION['permisos'], array(1))){ ?><li><a href="producto-unidades.php">Unidades</a></li><?php } ?>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-large icon-user"></i><span>Usuarios</span> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="usuario-lista.php">Listado de Usuarios</a></li>
-                        <li><a href="usuario-crear.php">Agregar Usuario</a></li>
-                        <li><a href="usuario-categoria.php">Agregar Categoria</a></li>
-                        <li><a href="usuario-seccion.php">Agregar Seccion</a></li>
-                        <li><a href="usuario-permisos.php">Asignar Permisos</a></li>
+                        <?php if(in_array($_SESSION['permisos'], array(4))){ ?><li><a href="usuario-perfil.php?usuario=<?php echo $_SESSION['usuario'] ?>">Mi Perfil</a></li><?php } ?>
+                        <?php if(in_array($_SESSION['permisos'], array(1, 2, 3))){ ?><li><a href="usuario-lista.php">Listado de Usuarios</a></li><?php } ?>
+                        <?php if(in_array($_SESSION['permisos'], array(1, 3))){ ?><li><a href="usuario-crear.php">Agregar Usuario</a></li><?php } ?>
+                        <?php if(in_array($_SESSION['permisos'], array(1))){ ?><li><a href="usuario-categoria.php">Agregar Categoria</a></li><?php } ?>
+                        <?php if(in_array($_SESSION['permisos'], array(1))){ ?><li><a href="usuario-seccion.php">Agregar Seccion</a></li><?php } ?>
+                        <?php if(in_array($_SESSION['permisos'], array(1))){ ?><li><a href="usuario-permisos.php">Asignar Permisos</a></li><?php } ?>
                     </ul>
                 </li>
             </ul>

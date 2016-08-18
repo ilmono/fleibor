@@ -4,6 +4,11 @@
         header("Location: login.php");
     }
     include 'includes.php';
+
+    if(!in_array($_SESSION['permisos'], array(1))){
+        header("Location: index.php");
+    }
+
     $user = new User();
     if(isset($_GET["categoria"])){
         $permisos = $user->getPermisos($_GET["categoria"]);

@@ -4,6 +4,11 @@
         header("Location: login.php");
     }
     include 'includes.php';
+
+    if(!in_array($_SESSION['permisos'], array(1))){
+        header("Location: index.php");
+    }
+
     $product = new Producto();
     if(isset($_POST['nombre'])){
         $product->agregarGusto($_POST);

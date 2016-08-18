@@ -267,10 +267,40 @@ class Pedido
         if($result->num_rows == 1){
             $pedido = $result->fetch_assoc();
             $pedido['cart'] = $this->getCartHtml(json_decode($pedido["pedido"],true), false);
+            $result->free();
+            $mysqli->close();
             return $pedido;
         }else{
+            $result->free();
+            $mysqli->close();
             return false;
         }
+    }
+
+    public function repetirPedido($idUsuario, $data){
+        $mysqli = DataBase::connex();
+        $query = '
+			SELECT
+                *
+            FROM
+                pedidos
+            WHERE
+              id = '.$data['pedido_id'].'
+		';
+        $result = $mysqli->query($query);
+        if($result->num_rows == 1){
+            $pedido = $result->fetch_assoc();
+            $pedido = json_decode($pedido["pedido"]);
+            $this->agregarPedido($idUsuario, $pedido, $data['comentario']);
+            $result->free();
+            $mysqli->close();
+            return true;
+        }else{
+            $result->free();
+            $mysqli->close();
+            return false;
+        }
+
     }
 }
 ?>

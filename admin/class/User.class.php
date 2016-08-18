@@ -25,7 +25,7 @@ class User
         if(isset($user['user']) && $user['user'] == $myUser){
             session_start();
             $_SESSION['usuario'] = $user['id'];
-            $_SESSION['permisos'] = $this->getPermisos($user['categoria']);
+            $_SESSION['permisos'] = $user['categoria'];
             $result->free();
             $mysqli->close();
             header("Location: index.php");

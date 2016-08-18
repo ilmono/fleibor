@@ -6,6 +6,10 @@ if(!isset($_SESSION['usuario'])){
 include 'includes.php';
 $pedidos = new Pedido();
 $listaPedidos = $pedidos->getPedidos();
+
+if(!in_array($_SESSION['permisos'], array(1, 2, 3))){
+    header("Location: mis-pedidos.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
