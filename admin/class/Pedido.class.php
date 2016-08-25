@@ -1,5 +1,5 @@
 <?php
-//session_start();
+
 class Pedido
 {
     public $product = '';
@@ -184,12 +184,22 @@ class Pedido
 
     public function agregarPedido($idUsuario, $cart, $comentario){
         $mysqli = DataBase::connex();
+        $pedido = json_encode($cart);
         $query = '
 			INSERT INTO pedidos (`id`, `id_cliente`, `pedido`, `comentario`, `estado`, `fecha`)
-                       VALUES (NULL, ' . $idUsuario . ', "' . $mysqli->real_escape_string(json_encode($cart)) . '", "' . $mysqli->real_escape_string($comentario) . '", "pendiente", "' . date('Y-m-d') . '");
+            VALUES (NULL, ' . $idUsuario . ', "' . $mysqli->real_escape_string($pedido) . '", "' . $mysqli->real_escape_string($comentario) . '", "pendiente", "' . date('Y-m-d') . '");
 		';
-        $result = $mysqli->query($query);
+        $mysqli->query($query);
+        $result = $mysqli->insert_id;
         $mysqli->close();
+
+        if($result){
+            $params['id'] = $result;
+            $params['pedido'] = json_decode($pedido);
+            $params['comentario'] = $comentario;
+            $email = new Mail();
+            $email->sendMail($_SESSION["email"], 'repetirPedido', $params);
+        }
         return $result;
     }
 
@@ -302,6 +312,5 @@ class Pedido
         }
 
     }
-
 }
 ?>

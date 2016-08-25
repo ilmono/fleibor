@@ -26,6 +26,7 @@ class User
             session_start();
             $_SESSION['usuario'] = $user['id'];
             $_SESSION['permisos'] = $user['categoria'];
+            $_SESSION['email'] = $user['mail'];
             $result->free();
             $mysqli->close();
             header("Location: index.php");
