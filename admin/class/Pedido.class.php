@@ -189,12 +189,12 @@ class Pedido
 			INSERT INTO pedidos (`id`, `id_cliente`, `pedido`, `comentario`, `estado`, `fecha`)
             VALUES (NULL, ' . $idUsuario . ', "' . $mysqli->real_escape_string($pedido) . '", "' . $mysqli->real_escape_string($comentario) . '", "pendiente", "' . date('Y-m-d') . '");
 		';
-        $mysqli->query($query);
-        $result = $mysqli->insert_id;
+        $result = $mysqli->query($query);
+        $insert_id = $mysqli->insert_id;
         $mysqli->close();
 
         if($result){
-            $params['id'] = $result;
+            $params['id'] = $insert_id;
             $params['pedido'] = json_decode($pedido);
             $params['comentario'] = $comentario;
             $email = new Mail();
