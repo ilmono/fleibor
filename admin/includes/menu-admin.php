@@ -46,7 +46,7 @@
                     <li class="dropdown">
                         <form method="POST" style="display: inline;">
                             <b>Buscar Compra: <br /></b>
-                            <input type="text" name="id_pedido" style="width: 80px; margin: 5px 5px 2px 10px;"/>
+                            <input required min="0" type="number" name="id_pedido" style="width: 80px; margin: 5px 5px 2px 10px;"/>
                             <input class="btn btn-success btn-icon-only" type="submit" value="Buscar"/>
                         </form>
                     </li>
