@@ -19,6 +19,14 @@
     if(isset($_POST['btn-reclamar'])){
         $reclamar = $pedidos->reclamarPedido($_POST);
     }
+
+    if(isset($_POST['estado'])){
+        $result = $pedidos->actualizarEstado($_POST['pedido_id'],$_POST['estado']);
+        if($result != true){
+            header("Location: index.php");
+        }
+    }
+
     $pedido = $pedidos->getPedido($_GET['pedido']);
     if($pedido == false){
         header("Location: index.php");
@@ -76,51 +84,53 @@
                     <div class="widget widget-table action-table">
                         <div class="widget-content" style="padding-top: 15px;">
                             <div class="control-group">
-                                <div style="margin-left: 50px; display: inline-block;">
-                                    <p><b>Pedido N°: </b><?php echo $pedido['id']?></p>
-                                    <p><b>Fecha: </b><?php echo $pedido['fecha']?></p>
-                                    <p><b>Estado: </b>
-                                        <?php if(in_array($_SESSION['permisos'], array(1))){ ?>
-                                            <select>
-                                                <option value="<?php echo $pedido['estado']?>"><?php echo $pedido['estado']?></option>
-                                                <option value="Parcialmente Despachado">Parcialmente Despachado</option>
-                                                <option value="Totalmente Despachado">Totalmente Despachado</option>
-                                                <option value="Facturado">Facturado</option>
-                                            </select>
+                                <form method="POST" style="display: inline;">
+                                    <div style="margin-left: 50px; display: inline-block;">
+                                        <p><b>Pedido N°: </b><?php echo $pedido['id']?></p>
+                                        <p><b>Fecha: </b><?php echo $pedido['fecha']?></p>
+                                        <?php if(in_array($_SESSION['permisos'], array(2,3))){ ?>
+                                        <p><b>Estado Actual: </b><?php echo $pedido['estado']?></p>
                                         <?php } ?>
-                                        <?php if(in_array($_SESSION['permisos'], array(2))){ ?>
-                                            <select>
-                                                <option value="<?php echo $pedido['estado']?>"><?php echo $pedido['estado']?></option>
-                                                <option value="Parcialmente Despachado">Parcialmente Despachado</option>
-                                                <option value="Totalmente Despachado">Totalmente Despachado</option>
-                                            </select>
-                                        <?php } ?>
-                                        <?php if(in_array($_SESSION['permisos'], array(3))){ ?>
-                                            <select>
-                                                <option value="<?php echo $pedido['estado']?>"><?php echo $pedido['estado']?></option>
-                                                <option value="Facturado">Facturado</option>
-                                            </select>
-                                        <?php } ?>
+                                        <p><b>Estado: </b>
+                                            <?php if(in_array($_SESSION['permisos'], array(1))){ ?>
+                                                <select name="estado">
+                                                    <option <?php if($pedido['estado'] == "Pendiente"){echo 'selected';}?> value="Pendiente">Pendiente</option>
+                                                    <option <?php if($pedido['estado'] == "Parcialmente Despachado"){echo 'selected';}?> value="Parcialmente Despachado">Parcialmente Despachado</option>
+                                                    <option <?php if($pedido['estado'] == "Totalmente Despachado"){echo 'selected';}?> value="Totalmente Despachado">Totalmente Despachado</option>
+                                                    <option <?php if($pedido['estado'] == "Facturado"){echo 'selected';}?> value="Facturado">Facturado</option>
+                                                </select>
+                                            <?php } ?>
+                                            <?php if(in_array($_SESSION['permisos'], array(2))){ ?>
+                                                <select name="estado">
+                                                    <option value="">Seleccione una opcion</option>
+                                                    <option <?php if($pedido['estado'] == "Parcialmente Despachado"){echo 'selected';}?> value="Parcialmente Despachado">Parcialmente Despachado</option>
+                                                    <option <?php if($pedido['estado'] == "Totalmente Despachado"){echo 'selected';}?> value="Totalmente Despachado">Totalmente Despachado</option>
+                                                </select>
+                                            <?php } ?>
+                                            <?php if(in_array($_SESSION['permisos'], array(3))){ ?>
+                                                <select name="estado">
+                                                    <option value="">Seleccione una opcion</option>
+                                                    <option <?php if($pedido['estado'] == "Facturado"){echo 'selected';}?> value="Facturado">Facturado</option>
+                                                </select>
+                                            <?php } ?>
+                                            <?php if(in_array($_SESSION['permisos'], array(4))){ ?>
+                                                <?php echo $pedido['estado']?>
+                                            <?php } ?>
+                                        </p>
+                                        <p><b>Comentario: </b><?php echo $pedido['comentario']?></p>
+                                    </div>
+                                    <div class="pedidos-ver-acciones">
                                         <?php if(in_array($_SESSION['permisos'], array(4))){ ?>
-                                            <?php echo $pedido['estado']?>
+                                            <a id="<?php echo $pedido['id']?>" href="#test-modal" class="btn btn-success btn-small borrar-usuario btn-repetir">Repetir pedido</a><br />
+                                            <a id="<?php echo $pedido['id']?>" href="#repetir-modal" class="btn btn-danger btn-small borrar-usuario btn-repetir">Reclamar Pedido</a><br />
                                         <?php } ?>
-                                    </p>
-                                    <p><b>Comentario: </b><?php echo $pedido['comentario']?></p>
-                                </div>
-                                <div class="pedidos-ver-acciones">
-                                    <?php if(in_array($_SESSION['permisos'], array(4))){ ?>
-                                        <a id="<?php echo $pedido['id']?>" href="#test-modal" class="btn btn-success btn-small borrar-usuario btn-repetir">Repetir pedido</a><br />
-                                        <a id="<?php echo $pedido['id']?>" href="#repetir-modal" class="btn btn-danger btn-small borrar-usuario btn-repetir">Reclamar Pedido</a><br />
-                                    <?php } ?>
-                                    <?php if(in_array($_SESSION['permisos'], array(1,2,3))){ ?>
-                                        <form method="POST" style="display: inline;">
-                                            <input type="hidden" name="pedido_id" value="<?php echo $pedido['id']?>"/>
-                                            <input class="btn btn-small btn-warning btn-pedidos-accion" type="submit" name="btn-actualizar" value="Guardar Cambios">
-                                        </form>
-                                    <?php } ?>
+                                        <?php if(in_array($_SESSION['permisos'], array(1,2,3))){ ?>
 
-
-                                </div>
+                                                <input type="hidden" name="pedido_id" value="<?php echo $pedido['id']?>"/>
+                                                <input class="btn btn-small btn-warning btn-pedidos-accion" type="submit" name="btn-actualizar" value="Guardar Cambios">
+                                        <?php } ?>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

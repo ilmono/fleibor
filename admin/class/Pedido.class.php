@@ -187,7 +187,7 @@ class Pedido
         $pedido = json_encode($cart);
         $query = '
 			INSERT INTO pedidos (`id`, `id_cliente`, `pedido`, `comentario`, `estado`, `fecha`)
-            VALUES (NULL, ' . $idUsuario . ', "' . $mysqli->real_escape_string($pedido) . '", "' . $mysqli->real_escape_string($comentario) . '", "pendiente", "' . date('Y-m-d') . '");
+            VALUES (NULL, ' . $idUsuario . ', "' . $mysqli->real_escape_string($pedido) . '", "' . $mysqli->real_escape_string($comentario) . '", "Pendiente", "' . date('Y-m-d') . '");
 		';
         $result = $mysqli->query($query);
         $insert_id = $mysqli->insert_id;
@@ -317,6 +317,15 @@ class Pedido
         $email = new Mail();
         $email->sendMail($_SESSION["email"], 'reclamarPedido', $data);
         return true;
+    }
+
+    public function actualizarEstado($id, $estado){
+        $mysqli = DataBase::connex();
+        $query = 'UPDATE pedidos SET estado = "'.$estado.'" WHERE id = '.$id;
+        $result = $mysqli->query($query);
+        $mysqli->close();
+
+        return $result;
     }
 }
 ?>
