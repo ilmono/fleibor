@@ -58,6 +58,7 @@
             }
             break;
         case 'realizarPedido':
+            $html = false;
             $pedido = new Pedido();
             $result = $pedido->agregarPedido($_SESSION['usuario'], $_SESSION['cart'], $_GET['comentario']);
             if($result == true){

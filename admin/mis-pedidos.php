@@ -21,6 +21,14 @@ $misPedidos = $pedidos->misPedidos($_SESSION['usuario']);
         <!-- /subnavbar -->
         <div class="main">
             <div class="container">
+
+                <?php if(isset($_GET["pedido"]) && $_GET["pedido"] == "ok"){ ?>
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        Pedido realizado correctamente
+                    </div>
+                <?php } ?>
+
                 <!-- /widget -->
                 <div class="widget widget-table action-table">
                     <div class="widget-header"> <i class="icon-th-list"></i>

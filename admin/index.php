@@ -25,6 +25,7 @@ if(!in_array($_SESSION['permisos'], array(1, 2, 3))){
 <!-- /subnavbar -->
 <div class="main">
     <div class="container">
+
         <!-- /widget -->
         <div class="widget widget-table action-table">
             <div class="widget-header"> <i class="icon-th-list"></i>

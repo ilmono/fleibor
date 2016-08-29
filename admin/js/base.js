@@ -191,9 +191,8 @@ $(function () {
 		$('#realizar-pedido').live('click', function(){
 			var comentario =  $('#comentario-cart').val();
 			$.ajax({url: "includes/ajax_request.php?action=realizarPedido&comentario=" + comentario, success: function(result){
-				if(result == true){
-					alert("El pedido se ha realizado correctamente");
-					window.location.replace("mis-pedidos.php");
+				if(result != false){
+					setInterval(function(){ window.location.replace("mis-pedidos.php?pedido=ok") }, 1000);
 				}
 			}});
 		});

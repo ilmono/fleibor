@@ -21,39 +21,31 @@ class Mail
         $classMail->Host = "mail.laboratoriofleibor.com.ar";
 
         $classMail->From = "pedidos@laboratoriofleibor.com.ar";
-        $classMail->FromName = "Laboratorio Fleibor";
         $classMail->AddAddress("$email");
+        $classMail->FromName = "Laboratorio Fleibor";
         $classMail->Port = 25;
         $classMail->WordWrap =200;
         $this->params = $params;
-        $classMail->Subject = "Pedido Realizado";
-        $classMail->Body = $this->bodysMail($type);
-        $classMail->Send();
-    }
-
-    private function bodysMail($type){
         switch ($type){
-            case 'realizarPedido':
-                return $this->bodyRealizar();
-                break;
             case 'repetirPedido':
-                return $this->bodyRepetir();
+                $classMail->Subject = "Pedido Realizado";
+                $classMail->From = "pedidos@laboratoriofleibor.com.ar";
+                $classMail->AddAddress("$email");
+                $classMail->Body = $this->bodyRepetir();
                 break;
             case 'reclamarPedido':
-                return $this->bodyReclamar();
+                $classMail->Subject = "Reclamo de Pedido N°".$params["pedido_id"];
+                $classMail->From = "$email";
+                $classMail->AddAddress("pedidos@laboratoriofleibor.com.ar");
+                $classMail->Body = $this->bodyReclamar();
                 break;
         }
 
+        $classMail->Send();
     }
-    private function bodyRealizar(){
-        $body = '<pre>';
-        $body .= var_dump($this->params);
-        return $body;
-    }
-    private function bodyRepetir(){
-        $html = '<html>';
-        $html .= '
-            <head>
+
+    private function getStyles(){
+        $body = '<head>
                 <style type=\'text/css\'>
                     <!--
                     body {
@@ -116,10 +108,14 @@ class Mail
                     }
                     -->
                 </style>
-                <title>Pedido Realizado</title>
                 <meta charset="UTF-8">
-            </head>
-        ';
+            </head>';
+        return $body;
+    }
+
+    private function bodyRepetir(){
+        $html = '<html>';
+        $html .= $this->getStyles();
         $html .= '<body><div class="container" >';
         $html .= '
             <p><b>Pedido N°: </b>'.$this->params["id"].'</p>
@@ -220,48 +216,25 @@ class Mail
             $html .= '</div>';
         }
         $html .= '</div></body>';
+        $html .= '</html>';
 
         return $html;
     }
+
     private function bodyReclamar(){
-        $body = '<pre>';
-        $body .= var_dump($this->params);
-        return $body;
+        $html = '<html>';
+        $html .= $this->getStyles();
+        $html .= '<body><div class="container" >';
+        $html .= '
+            <h1>Reclamo de Pedido</h1>
+            <p><b>Pedido N°: </b>'.$this->params["pedido_id"].'</p>
+            <p><b>Fecha: </b>'.date('Y-m-d').'</p>
+            <p><b>Comentario: </b>'.$this->params["comentario"].'</p>
+            ';
+        $html .= '</div></body>';
+        $html .= '</html>';
+        return $html;
     }
 }
-
-
-
-
-/*
-
-<div class="container" >
-
-    <table class="email-table">
-        <thead>
-        <tr>
-            <th colspan="5">Nombre del producto</th>
-        </tr>
-        <tr>
-            <th><span class="th-margen">Color</span></th>
-            <th><span class="th-margen">Medida</span></th>
-            <th><span class="th-margen">Empaque</span></th>
-            <th><span class="th-margen">Cantidad</span></th>
-            <th><span class="th-margen">Total</span></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td><span class="th-margen">Amarillo</span></th>
-            <td><span class="th-margen">30 CC</span></th>
-            <td><span class="th-margen">4 unidades</span></th>
-            <td><span class="th-margen">2</span></th>
-            <td><span class="th-margen">8</span></th>
-        </tr>
-        </tbody>
-    </table>
-</div>
-</body>
-</html>*/
 
 ?>

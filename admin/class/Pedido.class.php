@@ -312,5 +312,11 @@ class Pedido
         }
 
     }
+
+    public function reclamarPedido($data){
+        $email = new Mail();
+        $email->sendMail($_SESSION["email"], 'reclamarPedido', $data);
+        return true;
+    }
 }
 ?>

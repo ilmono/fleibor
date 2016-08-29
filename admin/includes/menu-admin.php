@@ -1,3 +1,9 @@
+<?php
+    if(isset($_POST["id_pedido"])){
+        header("Location: pedido-ver.php?pedido=".$_POST["id_pedido"]);
+    }
+?>
+
 <div class="subnavbar">
     <div class="subnavbar-inner">
         <div class="container">
@@ -36,6 +42,15 @@
                         <?php if(in_array($_SESSION['permisos'], array(1))){ ?><li><a href="usuario-permisos.php">Asignar Permisos</a></li><?php } ?>
                     </ul>
                 </li>
+                <?php if(in_array($_SESSION['permisos'], array(1,2,3))){ ?>
+                    <li class="dropdown">
+                        <form method="POST" style="display: inline;">
+                            <b>Buscar Compra: <br /></b>
+                            <input type="text" name="id_pedido" style="width: 80px; margin: 5px 5px 2px 10px;"/>
+                            <input class="btn btn-success btn-icon-only" type="submit" value="Buscar"/>
+                        </form>
+                    </li>
+                <?php } ?>
             </ul>
             <ul id="menu-cart" class="mainnav" <?php if(empty($_SESSION['cart'])){ echo 'style="display: none"';}  ?>>
                 <li class="li-cart">
