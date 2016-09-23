@@ -12,6 +12,9 @@
                     <button value="2" type="submit" name="idioma" id="port" class="selectidioma" title='Idioma Portugues' ><img class="img-circle banderas" src="img/brasilport.jpg"></button>
                   </form>
                 </div>
+		<div style="float: right; margin: 15px;">
+                        <a href="admin" target="_banck" title='Admin' >Ingresar</a>
+                </div>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
