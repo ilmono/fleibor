@@ -58,6 +58,7 @@ $gustos = $product->getGustos();
                                                 $coloresElegidos = $product->getRelaciones($producto['id'], 'producto_colores', 'id_producto');
                                                 $gustosElegidos = $product->getRelaciones($producto['id'], 'producto_gustos', 'id_producto');
                                                 if(!empty($coloresElegidos)) {
+                                                    $monbreColores = array();
                                                     foreach ($colores as $color) {
                                                         foreach ($coloresElegidos as $colorElegido)
                                                             if ($color['id'] === $colorElegido['id_color']) {
@@ -66,6 +67,7 @@ $gustos = $product->getGustos();
                                                     }
                                                 }
                                                 if(!empty($gustosElegidos)) {
+                                                    $nombreGustos = array();
                                                     foreach ($gustos as $gusto) {
                                                         foreach ($gustosElegidos as $gustoElegido)
                                                             if ($gusto['id'] === $gustoElegido['id_gusto']) {
@@ -73,7 +75,6 @@ $gustos = $product->getGustos();
                                                             }
                                                     }
                                                 }
-
                                                 ?>
                                             </div>
                                             <div id="container-product-<?php echo $producto['id']; ?>" class="ocultar">
@@ -110,7 +111,7 @@ $gustos = $product->getGustos();
                                                                     </tr>
                                                                 <?php }
                                                            }else{ ?>
-                                                                <tr>
+                                                                <tr id="product-<?php echo $producto['id']; ?>">
                                                                     <td class="td-select-medida"> <?php echo $infoProduct['medidas']; ?> </td>
                                                                     <td class="td-select-unidades" id="empaque-pedido-<?php echo $producto['id']; ?>">  <?php echo $infoProduct['unidades']; ?> </td>
                                                                 </tr>

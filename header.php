@@ -1,5 +1,4 @@
 <?php
-    session_start();
 	$path = explode("/" , trim($_SERVER['SCRIPT_NAME']));
 ?>
 <div class="navbar-wrapper">
@@ -12,13 +11,6 @@
                     <button value="1" type="submit" name="idioma" id="espa" class="selectidioma" title='Idioma Español'><img  class="img-circle banderas"   src="img/argid.jpg"></button>
                     <button value="2" type="submit" name="idioma" id="port" class="selectidioma" title='Idioma Portugues' ><img class="img-circle banderas" src="img/brasilport.jpg"></button>
                   </form>
-                </div>
-		        <div style="float: right; margin: 15px;">
-                    <?php if(!isset($_SESSION['usuario'])){ ?>
-                        <a href="/fleibor/admin" title='Admin' >Ingresar</a>
-                    <?php }else{ ?>
-                        <a href="/fleibor/admin/usuario-perfil.php?usuario=<?php echo $_SESSION['usuario']?>" title='Admin' >Mi Perfil</a> | <a href="/fleibor/admin/logout.php" title='Admin' >Salir</a>
-                    <?php }?>
                 </div>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

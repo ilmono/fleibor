@@ -84,6 +84,7 @@
                     <thead>
                     <tr>
                         <th>Muestra</th>
+                        <th style="width: 65px;">Codigo</th>
                         <th>Nombre</th>
                         <th class="td-actions">Borrar</th>
                     </tr>
@@ -92,6 +93,7 @@
                     <?php if(!empty($colores)){foreach($colores as $color){ ?>
                         <tr>
                             <td id="nombre-<?php echo $color['id']?>" style="width: 50px; background-color: <?php echo $color['codigo']?>"></td>
+                            <td id="nombre-<?php echo $color['id']?>"><?php echo $color['codigo']?></td>
                             <td id="nombre-<?php echo $color['id']?>"><?php echo $color['nombre']?></td>
                             <td class="td-actions">
                                 <a id="<?php echo $color['id']?>" href="#test-modal" class="btn btn-danger btn-small borrar-usuario"><i class="btn-icon-only icon-remove"> </i></a>

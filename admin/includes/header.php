@@ -15,9 +15,9 @@
                 </div>
                 <div style="float: right; margin: 15px;">
                     <?php if(!isset($_SESSION['usuario'])){ ?>
-                        <a href="/fleibor/admin" title='Admin' >Ingresar</a>
+                        <a href="/admin" title='Admin' >Ingresar</a>
                     <?php }else{ ?>
-                        <a href="/fleibor/admin/usuario-perfil.php?usuario=<?php echo $_SESSION['usuario']?>" title='Admin' >Mi Perfil</a> | <a href="/fleibor/admin/logout.php" title='Admin' >Salir</a>
+                        <a href="/admin/usuario-perfil.php?usuario=<?php echo $_SESSION['usuario']?>" title='Admin' >Mi Perfil</a> | <a href="/admin/logout.php" title='Admin' >Salir</a>
                     <?php }?>
 
                 </div>

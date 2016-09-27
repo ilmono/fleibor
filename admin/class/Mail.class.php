@@ -22,6 +22,7 @@ class Mail
 
         $classMail->From = "pedidos@laboratoriofleibor.com.ar";
         $classMail->AddAddress("$email");
+        $classMail->AddCC("pedidos@laboratoriofleibor.com.ar");
         $classMail->FromName = "Laboratorio Fleibor";
         $classMail->Port = 25;
         $classMail->WordWrap =200;
@@ -31,16 +32,17 @@ class Mail
                 $classMail->Subject = "Pedido Realizado";
                 $classMail->From = "pedidos@laboratoriofleibor.com.ar";
                 $classMail->AddAddress("$email");
+
                 $classMail->Body = $this->bodyRepetir();
                 break;
             case 'reclamarPedido':
                 $classMail->Subject = "Reclamo de Pedido N°".$params["pedido_id"];
                 $classMail->From = "$email";
                 $classMail->AddAddress("pedidos@laboratoriofleibor.com.ar");
+                $classMail->AddCC("$email");
                 $classMail->Body = $this->bodyReclamar();
                 break;
         }
-
         $classMail->Send();
     }
 

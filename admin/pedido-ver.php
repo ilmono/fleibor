@@ -49,7 +49,7 @@
                 <?php if(isset($reclamar) && $reclamar === true){ ?>
                 <div class="alert alert-error">
                     <button type="button" class="close" data-dismiss="alert">×</button>
-                    Su reclamo se a efectuado correctamente
+                    Su reclamo se ha efectuado correctamente
                 </div>
                 <?php } ?>
                 <div>

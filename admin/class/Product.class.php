@@ -163,9 +163,9 @@ class Producto{
 			SELECT
                 *
             FROM
-                ' . $tabla . '
+                `' . $tabla . '`
             WHERE
-                ' . $id . ' = ' . $id_producto . '
+                `' . $id . '` = ' . $id_producto . '
 		';
         $result = $mysqli->query($query);
 
@@ -788,6 +788,7 @@ class Producto{
     public function renderOptionsMedidasPedidos($id_producto){
         $medidas = $this->getMedidas();
         $selecteds = $this->getValues($id_producto);
+
         $select = '<select id="select-medida-pedido-' . $id_producto . '" class="select-medida-pedido form-control span2" name="medida">';
         if(isset($selecteds["values"])){
             $values = json_decode($selecteds["values"],true);

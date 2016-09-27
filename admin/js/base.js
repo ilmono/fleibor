@@ -39,10 +39,13 @@ $(function () {
 			var ids = $(this).parent().parent().attr("id").split('-');
 			id = ids['1'];
 			color_id = ids['3'];
-			console.log('empaque-pedido-producto-'+id+'-color'+color_id);
-			console.log(event.target.value);
+			if(color_id !== undefined){
+				var element = '#empaque-pedido-producto-'+id+'-color-'+color_id;
+			}else{
+				var element = '#empaque-pedido-'+id;
+			}
 			$.ajax({url: "includes/ajax_request.php?action=getSelectUnidadesPedidos&id_producto="+id+"&id_medida="+event.target.value, success: function(result){
-				$('#empaque-pedido-producto-'+id+'-color-'+color_id).html(result);
+				$(element).html(result);
 			}});
 		});
 
