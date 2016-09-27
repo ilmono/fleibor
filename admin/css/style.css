@@ -1303,8 +1303,9 @@ Custom
 }
 
 .container-menu{
-	float: right;
-	margin-right: 325px;
+	position: absolute;
+	left: 200px;
+	top: 0;
 }
 
 .container-menu .nav li{

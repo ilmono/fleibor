@@ -13,6 +13,14 @@
                         </button>
                     </form>
                 </div>
+                <div style="float: right; margin: 15px;">
+                    <?php if(!isset($_SESSION['usuario'])){ ?>
+                        <a href="/fleibor/admin" title='Admin' >Ingresar</a>
+                    <?php }else{ ?>
+                        <a href="/fleibor/admin/usuario-perfil.php?usuario=<?php echo $_SESSION['usuario']?>" title='Admin' >Mi Perfil</a> | <a href="/fleibor/admin/logout.php" title='Admin' >Salir</a>
+                    <?php }?>
+
+                </div>
                 <div class="navbar-header container-logo">
                     <a class="navbar-brand" ><img class="img-circle logo" src="../img/logoweb2.jpg" width="130"></a>
                 </div>
