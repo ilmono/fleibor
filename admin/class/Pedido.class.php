@@ -196,6 +196,7 @@ class Pedido
         if($result){
             $params['id'] = $insert_id;
             $params['pedido'] = json_decode($pedido);
+            $params['cliente'] = '('.$_SESSION["codigo"].') ' . $_SESSION["razon_social"];
             $params['comentario'] = $comentario;
             $email = new Mail();
             $email->sendMail($_SESSION["email"], 'repetirPedido', $params);
