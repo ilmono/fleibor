@@ -27,6 +27,8 @@ class User
             $_SESSION['usuario'] = $user['id'];
             $_SESSION['permisos'] = $user['categoria'];
             $_SESSION['email'] = $user['mail'];
+	    $_SESSION['codigo'] = $user['codigo'];
+            $_SESSION['razon_social'] = $user['nombre'];
             $result->free();
             $mysqli->close();
             header("Location: index.php");
