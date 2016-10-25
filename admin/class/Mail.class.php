@@ -121,6 +121,7 @@ class Mail
         $html .= '<body><div class="container" >';
         $html .= '
             <p><b>Pedido N°: </b>'.$this->params["id"].'</p>
+            <p><b>Cliente: </b>'.$this->params["cliente"].'</p>
             <p><b>Fecha: </b>'.date('Y-m-d').'</p>
             <p><b>Comentario: </b>'.$this->params["comentario"].'</p>
             <p><b>Detalle:</b></p>
